@@ -1,1 +1,3 @@
-# logica1-20262
+# Logica y Representación 1
+
+En construccion...
