@@ -1,3 +1,5 @@
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
+
 # Clase 1 - Conociendo las Herramientas de Trabajo
 
 Sección de recursos para comenzar a programar: herramientas requeridas, entornos de práctica en línea y actividades de calentamiento para desarrollar una noción intuitiva de la codificación antes de entrar de lleno al curso.
@@ -132,3 +134,6 @@ Al completar esta clase, el estudiante estará en capacidad de:
 - Identificar y diferenciar las plataformas de práctica que apoyarán su proceso de aprendizaje a lo largo del curso, y con qué conceptos se relaciona cada una.
 - Explicar, con sus propias palabras y a partir de las actividades gamificadas realizadas, qué es una secuencia de instrucciones y cómo se relaciona con la idea de un algoritmo.
 - Reconocer, de forma intuitiva, patrones de decisión (condicionales) y repetición (ciclos) en un entorno de programación visual, como base para su formalización posterior en Python.
+
+> [!Important]
+> Se usó IA generativa para redactar y organizar este contenido a partir de indicaciones del docente. El docente revisó y validó la versión final.
