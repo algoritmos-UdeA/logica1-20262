@@ -150,13 +150,9 @@ Este enfoque exige un compromiso constante con el trabajo independiente, a cambi
 | CS106A: Programming Methodology¹ | Stanford Online | Metodología de programación, fuerte énfasis pedagógico | https://online.stanford.edu/courses/cs106a-programming-methodology |
 | CS50's Introduction to AI with Python (opcional, avanzado) | Harvard (edX) | Hacia dónde puede evolucionar la lógica de programación | https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python |
 
-> ¹ Stanford migró CS106A de Java a Python, por lo que su enfoque actual es coherente con el de este curso.
-
 ---
 
 ## Libros y sitios de curso interactivos
-
-Recursos de acceso libre con formato de "libro/sitio de curso navegable", organizados progresivamente por niveles o capítulos, en la línea del proyecto CUPI2 de la Universidad de los Andes.
 
 | Recurso | Idioma | Enlace |
 |---|---|---|
