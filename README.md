@@ -97,12 +97,12 @@ La evaluación del curso combina pruebas parciales individuales con un proyecto 
 | Evaluación parcial 1 | Algoritmos secuenciales | 10 % |
 | Evaluación parcial 2 | Estructuras de control selectivas y repetitivas | 20 % |
 | Evaluación parcial 3 | Programación orientada a objetos | 15 % |
-| Evaluación parcial 4 | Arreglos 1D, 2D y archivos | 20 % |
-| Proyecto de aula — talleres por unidad | Entregable al cierre de cada unidad | 15 % |
-| Proyecto de aula — Entrega 2 (sustentación) | Proyecto integrador final | 20 % |
+| Evaluación parcial 4 | Arreglos 1D y 2D | 20 % |
+| Laboratorio | Laboratorios | 20 % |
+| Proyecto de aula | Proyecto integrador | 15 % |
 | **Total** | | **100 %** |
 
-> Esta distribución corresponde al **cronograma tentativo** vigente para el semestre 2026-2 y ajusta ligeramente los porcentajes sugeridos en el microcurrículo oficial (por ejemplo, la evaluación parcial 1 se redujo de 15 % a 10 %, compensando el incremento del proyecto de aula de 10 % a 15 %). Cualquier cambio será comunicado oportunamente por el docente.
+> Esta distribución corresponde al **cronograma tentativo** vigente para el semestre 2026-2 y ajusta ligeramente los porcentajes sugeridos en el microcurrículo oficial. Cualquier cambio será comunicado oportunamente por el docente.
 
 ---
 
