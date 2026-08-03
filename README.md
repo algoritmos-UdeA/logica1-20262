@@ -136,6 +136,55 @@ Este enfoque exige un compromiso constante con el trabajo independiente, pero a 
 | Herrera, A., Ebratt, R. & Capacho, J. *Diseño y construcción de algoritmos*, Universidad del Norte, 2016 | Algoritmos y programación (en español) |
 | Matthes, E. *Python Crash Course*, No Starch Press, 2023 | Programación práctica en Python |
 
+## 🌐 Cursos y recursos complementarios en línea
+
+| Curso | Institución/Plataforma | Enfoque | Enlace |
+|---|---|---|---|
+| CS50x: Introduction to Computer Science | Harvard (edX/OCW) | Pensamiento computacional general | https://cs50.harvard.edu/x/ |
+| CS50P: Introduction to Programming with Python | Harvard (edX/OCW) | Python puro; mismo enfoque de la reestructuración U1→U3→U4→U2 | https://cs50.harvard.edu/python/ |
+| 6.0001 / 6.100L: Introduction to CS and Programming Using Python | MIT OpenCourseWare | Rigor algorítmico, buen contraste con CS50 | https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/ |
+| CS106A: Programming Methodology | Stanford Online | Metodología de programación, fuerte énfasis pedagógico | https://online.stanford.edu/courses/cs106a-programming-methodology |
+| CS50's Introduction to AI with Python (opcional, avanzado) | Harvard (edX) | Hacia dónde puede evolucionar la lógica de programación | https://www.edx.org/learn/artificial-intelligence/harvard-university-cs50-s-introduction-to-artificial-intelligence-with-python |
+
+## 📖 Libros y sitios de curso interactivos
+
+Recursos de acceso libre con formato "libro/sitio de curso navegable", organizados progresivamente por niveles o capítulos, en la línea del proyecto CUPI2 de Uniandes.
+
+## 📖 Libros y sitios de curso interactivos afines a CUPI2-IP
+
+| Recurso | Idioma | Enlace |
+|---|---|---|
+| Cupi2 — Introducción a la Programación (IP) | Español | https://cupi2.virtual.uniandes.edu.co/ |
+| Piensa en Python (trad. de Think Python 2e) | Español | https://www.picuino.com/es/_downloads/thinkpython2-spanish.pdf |
+| Think Python 3e | Inglés | https://allendowney.github.io/ThinkPython/ |
+| How to Think Like a Computer Scientist: Interactive Edition (thinkcspy) | Inglés | https://runestone.academy/ns/books/published/thinkcspy/index.html |
+| Foundations of Python Programming (FOPP) | Inglés | https://runestone.academy/ns/books/published/fopp/index.html |
+| PythonEd (trad. de Problem Solving with Algorithms and Data Structures) | Español | https://runestone.academy/ns/books/published/pythoned/index.html |
+| Composing Programs | Inglés | https://www.composingprograms.com/ |
+
+## 🧩 Plataformas de problemas con juez automático
+
+| Recurso | Idioma | Nivel | Enlace |
+|---|---|---|---|
+| Rosalind | Inglés | Progresivo (bioinformática + Python Village para principiantes) | https://rosalind.info/problems/locations/ |
+| Project Euler | Inglés | Progresivo (problemas matemático-algorítmicos) | https://projecteuler.net/ |
+| Advent of Code | Inglés | Progresivo (calendario diario, primeros días aptos para principiantes) | https://adventofcode.com/ |
+| Computer Science Circles (CEMC, Waterloo) | Inglés/Francés | Principiante (curso in-browser con juez automático) | https://cscircles.cemc.uwaterloo.ca/ |
+| e-olymp | Español/Inglés/Ruso | Progresivo (incluye sección para principiantes) | https://www.e-olymp.com/ |
+| ¡Acepta el reto! | Español | Progresivo (solo C, C++, Java — sin soporte Python) | https://aceptaelreto.com/ |
+
+## 🎮 Complementos gamificados adicionales
+
+| Plataforma | Enfoque | Enlace |
+|---|---|---|
+| CheckiO | Retos de Python con narrativa de juego | https://py.checkio.org/ |
+| PyBites Code Challenges | Retos cortos de Python, hábito diario | https://codechalleng.es/ |
+| Brilliant.org | Pensamiento lógico interactivo, puente antes de programar | https://brilliant.org/ |
+
+Nota: para CS106A, Stanford ya migró el curso a Python (antes era Java), así que encaja bien con su enfoque. La versión antigua en Java (SEE-Stanford Engineering Everywhere) sigue disponible por si prefiere mostrarla como referencia histórica, pero recomiendo enlazar la versión actual en Python que puse arriba.
+
+¿Quiere que integre esto directamente en el README del repo con Claude Code, o prefiere revisarlo primero y pegarlo usted mismo?
+
 ---
 
 ## 💬 Canales de comunicación
