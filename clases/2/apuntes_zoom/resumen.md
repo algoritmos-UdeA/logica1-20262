@@ -1,3 +1,5 @@
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
+
 # Resumen de la clase
 
 **Fecha**: 10/08/2026
@@ -67,7 +69,7 @@ area = (base * height) / 2
 print(f"El área del triángulo es: {area}")
 ```
 
-## 4. Ejemplo práctico: Calculo de meses
+## 5. Ejemplo práctico: cálculo de meses
 
 Se requiere diseñar un algoritmo que calcule el
 número de meses que hay entre los años A y B.
@@ -88,7 +90,7 @@ Los pasos 2, 3 y 4 se resumen en los siguientes dos algoritmos:
   
   **Implementación en python**: [link](https://pythontutor.com/visualize.html#code=%23%201.%20Entradas%0AA%20%3D%20int%28input%28%22Ingrese%20el%20a%C3%B1o%20inicial%20%28A%29%3A%20%22%29%29%0AB%20%3D%20int%28input%28%22Ingrese%20el%20a%C3%B1o%20final%20%28B%29%3A%20%22%29%29%0A%0A%23%202.%20Proceso%0Aanhos%20%3D%20B%20-%20A%20%20%20%20%20%20%20%20%20%20%23%20Variable%20auxiliar%20intermedia%0Ameses%20%3D%2012%20*%20anhos%0A%0A%23%203.%20Salida%0Aprint%28f%22Meses%3A%20%7Bmeses%7D%22%29&curInstr=0&mode=display&origin=opt-frontend.js&py=311)
 
-  ```python
+```python
   # 1. Entradas
   A = int(input("Ingrese el año inicial (A): "))
   B = int(input("Ingrese el año final (B): "))
@@ -99,7 +101,7 @@ Los pasos 2, 3 y 4 se resumen en los siguientes dos algoritmos:
 
   # 3. Salida
   print(f"Meses: {meses}")
-  ```
+```
   
 * **Diseño 2**: El numero de meses se obtuvo a partir de las entradas (Años inicial (`A`) y final (`B`)).
 
@@ -107,7 +109,7 @@ Los pasos 2, 3 y 4 se resumen en los siguientes dos algoritmos:
 
   **Implementación en python**: [link](https://pythontutor.com/visualize.html#code=%23%201.%20Entradas%0AA%20%3D%20int%28input%28%22Ingrese%20el%20a%C3%B1o%20inicial%20%28A%29%3A%20%22%29%29%0AB%20%3D%20int%28input%28%22Ingrese%20el%20a%C3%B1o%20final%20%28B%29%3A%20%22%29%29%0A%0A%23%202.%20Proceso%0Ameses%20%3D%2012%20*%20%28B%20-%20A%29%0A%0A%23%203.%20Salida%0Aprint%28f%22Meses%3A%20%7Bmeses%7D%22%29&curInstr=0&mode=display&origin=opt-frontend.js&py=311)
 
-  ```python
+```python
   # 1. Entradas
   A = int(input("Ingrese el año inicial (A): "))
   B = int(input("Ingrese el año final (B): "))
@@ -117,11 +119,11 @@ Los pasos 2, 3 y 4 se resumen en los siguientes dos algoritmos:
 
   # 3. Salida
   print(f"Meses: {meses}")
-  ```
+```
 
 
 
-## 5. Introducción a la programación en Python
+## 6. Introducción a la programación en Python
 - Se mostró cómo convertir un algoritmo en código en Python.
 - Se enfatizó que los programadores trabajan con código, mientras que los usuarios interactúan con la interfaz.
 - Se destacó la importancia de seguir una secuencia lógica para asegurar que la solución sea correcta.
@@ -130,3 +132,4 @@ Los pasos 2, 3 y 4 se resumen en los siguientes dos algoritmos:
 - El profesor indicó que el material de la clase será compartido con los estudiantes.
 - Se mencionó que pueden consultar dudas con él.
 - También se planean ejercicios prácticos adicionales para reforzar los conceptos aprendidos.
+
