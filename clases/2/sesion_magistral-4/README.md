@@ -5,7 +5,7 @@
 * **Tipo**: Virtual.
 * **Fecha**: 10/08/2026
 
-Se cubrió la teoría del tema 2 [link](../teoria/clase-02.pdf) desde la diapositiva 26, analizando el método de Polya para el planteamiento de algoritmos. Debido al terremoto y a la suspensión de la clase presencial siguiente por una diligencia inaplazable del docente, esta sesión se dictó de forma virtual por Zoom. Se abordaron los fundamentos de los algoritmos estructurados (entradas, proceso y salida) y los primeros conceptos de programación en Python, aplicados mediante el método de Polya a dos ejemplos prácticos: el cálculo del área de un triángulo y el cálculo del número de meses entre dos años.
+Se cubrió la teoría del tema 2 [link](../teoria/) desde la diapositiva 26, analizando el método de Polya para el planteamiento de algoritmos. Debido al terremoto y a la suspensión de la clase presencial siguiente por una diligencia inaplazable del docente, esta sesión se dictó de forma virtual por Zoom. Se abordaron los fundamentos de los algoritmos estructurados (entradas, proceso y salida) y los primeros conceptos de programación en Python, aplicados mediante el método de Polya a dos ejemplos prácticos: el cálculo del área de un triángulo y el cálculo del número de meses entre dos años.
 
 ## Recursos
 
