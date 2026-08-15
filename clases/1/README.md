@@ -6,6 +6,19 @@ Sección de recursos para comenzar a programar: herramientas requeridas, entorno
 
 ---
 
+## Teoría
+
+- [`teoria/README.md`](teoria/README.md) — resumen del tema: computador, hardware/software, algoritmos y lenguajes de programación.
+- [`teoria/clase-01.pdf`](teoria/clase-01.pdf) / [`teoria/clase-01.pptx`](teoria/clase-01.pptx) — diapositivas completas.
+
+## Sesiones magistrales
+
+| Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
+|---|---|---|---|---|
+| 2 | Mar 4 ago (bloque 1, 14-16) | 🏫 Presencial | Teoría del tema completa | [sesion_magistral-2](sesion_magistral-2/README.md) |
+
+---
+
 ## Objetivos
 
 - Instalar y configurar las herramientas necesarias para el desarrollo del curso.

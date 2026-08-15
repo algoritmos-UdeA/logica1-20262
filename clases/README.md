@@ -14,15 +14,15 @@ Una fila por **sesión magistral real**, con el tema y el material vigentes a la
 |---|---|---|---|---|---|---|
 | 1 | Lun 3 ago | 🏫 | [0](0/README.md) | Presentación del curso | Presentación del curso, completa | [sesion_magistral-1](0/sesion_magistral-1/README.md) |
 | 2 | Mar 4 ago (bloque 1, 14-16) | 🏫 | [1](1/README.md) | Conceptos básicos (computador, hardware/software, lenguajes de programación) | Teoría del tema 1 completa | [sesion_magistral-2](1/sesion_magistral-2/README.md) |
-| 3 | Mar 4 ago (bloque 2, 16-18) | 🏫 | [2](2/teoria/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Teoría del tema 2 hasta la diapositiva 26 (variables), antes del método de Polya | [sesion_magistral-3](2/sesion_magistral-3/README.md) |
-| 4 | Lun 10 ago | 💻 | [2](2/teoria/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Continuación desde la diapositiva 26: método de Polya aplicado al planteamiento de algoritmos | [sesion_magistral-4](2/sesion_magistral-4/README.md) |
-| 5 | Jue 13 ago | 💻 | [2](2/teoria/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Refuerzo del planteamiento de algoritmos con el ejemplo de nómina | [sesion_magistral-5](2/sesion_magistral-5/README.md) |
-| 6 | Vie 14 ago | 💻 | [2](2/teoria/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Sesión breve: recuento rápido del material visto hasta el momento, para estudio propio; el contenido planeado se movió a la sesión 7 | [sesion_magistral-6](2/sesion_magistral-6/README.md) |
-| 7 | Por confirmar | — | [3](3/teoria/README.md) | Conceptos básicos de Python | Pendiente por dictar | [sesion_magistral-7](3/sesion_magistral-7/README.md) *(README aún sin diligenciar)* |
-| 8 | Mar 18 ago (bloque 2, 16-18) | 🏫 | [4](4/teoria/README.md) | Operadores y expresiones en Python | Pendiente por dictar | [sesion_magistral-8](4/sesion_magistral-8/README.md) |
+| 3 | Mar 4 ago (bloque 2, 16-18) | 🏫 | [2](2/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Teoría del tema 2 hasta la diapositiva 26 (variables), antes del método de Polya | [sesion_magistral-3](2/sesion_magistral-3/README.md) |
+| 4 | Lun 10 ago | 💻 | [2](2/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Continuación desde la diapositiva 26: método de Polya aplicado al planteamiento de algoritmos | [sesion_magistral-4](2/sesion_magistral-4/README.md) |
+| 5 | Jue 13 ago | 💻 | [2](2/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Refuerzo del planteamiento de algoritmos con el ejemplo de nómina | [sesion_magistral-5](2/sesion_magistral-5/README.md) |
+| 6 | Vie 14 ago | 💻 | [2](2/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Sesión breve: recuento rápido del material visto hasta el momento, para estudio propio; el contenido planeado se movió a la sesión 7 | [sesion_magistral-6](2/sesion_magistral-6/README.md) |
+| 7 | Por confirmar | — | [3](3/README.md) | Conceptos básicos de Python | Pendiente por dictar | [sesion_magistral-7](3/sesion_magistral-7/README.md) *(README aún sin diligenciar)* |
+| 8 | Mar 18 ago (bloque 2, 16-18) | 🏫 | [4](4/README.md) | Operadores y expresiones en Python | Pendiente por dictar | [sesion_magistral-8](4/sesion_magistral-8/README.md) |
 
 > **Nota:** la sesión 8 quedó agendada para el martes 18 de agosto porque el 17 de agosto es festivo. La sesión 7 (clase 3) todavía no tiene fecha asignada en su README — vale la pena confirmar si va antes o después del 18 de agosto.
 
 Notas sobre la fusión:
-- La columna **Clase** enlaza al README de la clase cuando existe (clases 0 y 1), o al `teoria/README.md` cuando aún no hay un README de clase propio (clases 2-4).
+- La columna **Clase** enlaza al README de la clase (`clases/<n>/README.md`), el hub de navegación del tema con enlaces a `teoria/` y a cada sesión magistral.
 - Todas las carpetas de sesión siguen ya el patrón `sesion_magistral-N` (unificado el 2026-08-14).

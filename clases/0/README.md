@@ -9,6 +9,16 @@
   </figcaption>
 </figure>
 
+## Sesiones magistrales
+
+Esta clase no tiene una carpeta `teoria/` separada (el material es la presentación misma): [`clase_00.pdf`](clase_00.pdf) / [`clase-00.pptx`](clase-00.pptx).
+
+| Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
+|---|---|---|---|---|
+| 1 | Lun 3 ago | 🏫 Presencial | Presentación del curso, completa | [sesion_magistral-1](sesion_magistral-1/README.md) |
+
+---
+
 ## 1. Información del docente
 
 - **Docente**: Henry Arcila (henry.arcila@udea.edu.co)
