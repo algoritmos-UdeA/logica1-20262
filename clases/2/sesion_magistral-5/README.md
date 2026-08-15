@@ -1,3 +1,10 @@
-# Clase zoom
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
 
-**Simulación**: [link](https://pythontutor.com/visualize.html#code=%0A%23%20Inicializacion%0ATASA_SALUD%20%3D%200.10%0ATASA_PENSION%20%3D%200.05%0A%0A%23%20Entrada%20de%20datos%0Anombre%20%3D%20input%28%22Ingrese%20el%20nombre%20del%20trabajador%3A%20%22%29%0Aid%20%3D%20input%28%22Ingrese%20el%20documento%20del%20empleado%3A%20%22%29%0Anum_horas%20%3D%20float%28input%28%22Ingrese%20el%20numero%20de%20horas%20que%20trabajo%20el%20empleado%3A%20%22%29%29%0Aval_hora%20%3D%20float%28input%28%22Ingrese%20valor%20de%20cada%20hora%3A%20%22%29%29%0A%0A%23%20Proceso%0Asalario_base%20%3D%20num_horas%20*%20val_hora%0Aimp_salud%20%3D%20salario_base%20*%20TASA_SALUD%0Aimp_pesion%20%3D%20salario_base%20*%20TASA_PENSION%0Asalario_neto%20%3D%20salario_base%20-%20imp_salud%20-%20imp_pesion%0A%0A%23%20Salida%20de%20datos%0Aprint%28%22*******************************************************************************%22%29%0Aprint%28%22*****%20RECIBO%20DE%20PAGO%20*****%22%29%0Aprint%28%22-%20Salario%20base%3A%20%22,salario_base%29%0Aprint%28%22-%20Impuesto%20de%20transporte%3A%20%22,imp_pesion%29%0Aprint%28%22-%20Impuesto%20de%20salud%3A%20%22,imp_salud%29%0Aprint%28%22-------------------------------------%22%29%0Aprint%28%22Salario%20neto%3A%20%22,salario_neto%29%0Aprint%28%22%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%22%29%0Aprint%28%22Paguese%20a%20%22,nombre,%20%22identificado%20con%20CC%3A%20%22,%20id,%20%22la%20suma%20de%20%24%22,%20salario_neto%29%0Aprint%28%22Identificado%20con%20id%3A%20%22,id%29%0Aprint%28%22*******************************************************************************%22%29&curInstr=0&mode=display&origin=opt-frontend.js&py=311)
+# Sesion magistral 5
+
+* **Tipo**: Virtual.
+* **Fecha**: 13/08/2026
+
+Se reforzo lo visto en la clase anterior (tema 2 [link](../teoria/clase-02.pdf) sobre el planteamiento de algoritmos usando el metodo Polya). Para ello se hizo el ejemplo de la clase [link](./ejemplo_clase/)
+
+
