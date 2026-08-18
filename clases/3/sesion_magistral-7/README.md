@@ -16,7 +16,7 @@ La siguiente tabla contiene los recursos disponibles:
 |---|---|---|
 |1| Presentaciones de la teoria | [[ppt]](../teoria/clase-03.pptx) [[pdf]](../teoria/clase-03.pdf) 
 |2|Algoritmos|[[pdf]](./ejemplos_clase/algoritmos/Ejercicios%20de%20repaso.pdf) [[diagramas]](./ejemplos_clase/algoritmos/diagramas/)|
-|3|Códigos|[code](./ejemplos_clase/codigos/)|
+|3|Códigos|[[code]](./ejemplos_clase/codigos/)|
 
 
 ## Agradecimientos 
