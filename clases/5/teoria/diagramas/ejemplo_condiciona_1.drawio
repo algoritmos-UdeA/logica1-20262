@@ -1,0 +1,56 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Página-1" id="0oW2U7XfzMUDAhejm7N-">
+    <mxGraphModel dx="713" dy="434" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ym7pK3g02xRcO9taw003-4" edge="1" parent="1" source="Ym7pK3g02xRcO9taw003-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Ym7pK3g02xRcO9taw003-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-5" edge="1" parent="1" source="Ym7pK3g02xRcO9taw003-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="Ym7pK3g02xRcO9taw003-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-1" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="angulo == 90" vertex="1">
+          <mxGeometry height="50" width="120" x="300" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;El angulo es recto&quot;)" vertex="1">
+          <mxGeometry height="40" width="200" x="140" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;El angulo no es recto&quot;)" vertex="1">
+          <mxGeometry height="40" width="200" x="380" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-6" edge="1" parent="1" source="Ym7pK3g02xRcO9taw003-2" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="280" />
+              <mxPoint x="360" y="280" />
+            </Array>
+            <mxPoint x="340" y="230" as="sourcePoint" />
+            <mxPoint x="360" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Ym7pK3g02xRcO9taw003-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="360" y="100" as="sourcePoint" />
+            <mxPoint x="360" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-9" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="Ym7pK3g02xRcO9taw003-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="280" />
+            </Array>
+            <mxPoint x="360" y="280" as="sourcePoint" />
+            <mxPoint x="470" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="yes" vertex="1">
+          <mxGeometry height="25" width="60" x="240" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Ym7pK3g02xRcO9taw003-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="no" vertex="1">
+          <mxGeometry height="25" width="60" x="430" y="135" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
