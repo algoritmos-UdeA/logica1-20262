@@ -20,6 +20,7 @@ Una fila por **sesión magistral real**, con el tema y el material vigentes a la
 | 6 | Vie 14 ago | 💻 | [2](2/README.md) | Algoritmos y diagramas de flujo (método de Polya) | Sesión breve: recuento rápido del material visto hasta el momento, para estudio propio; el contenido planeado se movió a la sesión 7 | [sesion_magistral-6](2/sesion_magistral-6/README.md) |
 | 7 | Mar 18 ago (14-16) | 🏫 | [3](3/README.md) | Conceptos básicos de Python | Pendiente por dictar | [sesion_magistral-7](3/sesion_magistral-7/README.md) |
 | 8 | Mar 18 ago (16-18)| 🏫 | [4](4/README.md) | Operadores y expresiones en Python | Pendiente por dictar | [sesion_magistral-8](4/sesion_magistral-8/README.md) |
+| 9 | Mar 25 ago (bloque 1, 14-16) | 🏫 | [5](5/README.md) | Condicionales | Prueba de escritorio; condicional simple y doble con los ejemplos del bar de Moe (precio según sexo) y el subsidio de transporte; ejemplos adicionales de paridad y subsidio con `and` | [sesion_magistral-9](5/sesion_magistral-9/README.md) |
 
 > **Nota:** la sesión 8 quedó agendada para el martes 18 de agosto porque el 17 de agosto es festivo. La sesión 7 (clase 3) todavía no tiene fecha asignada en su README — vale la pena confirmar si va antes o después del 18 de agosto.
 
