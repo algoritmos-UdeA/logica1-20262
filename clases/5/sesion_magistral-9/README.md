@@ -360,3 +360,6 @@ print("-----------------------")
 ## Referencia
 
 - Malan, D. (Harvard). *CS50's Introduction to Programming with Python* — [Lecture 1: Conditionals](https://cs50.harvard.edu/python/notes/1/#if-statements).
+
+> [!Important]
+> Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.

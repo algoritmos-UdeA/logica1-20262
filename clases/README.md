@@ -21,6 +21,7 @@ Una fila por **sesión magistral real**, con el tema y el material vigentes a la
 | 7 | Mar 18 ago (14-16) | 🏫 | [3](3/README.md) | Conceptos básicos de Python | Pendiente por dictar | [sesion_magistral-7](3/sesion_magistral-7/README.md) |
 | 8 | Mar 18 ago (16-18)| 🏫 | [4](4/README.md) | Operadores y expresiones en Python | Pendiente por dictar | [sesion_magistral-8](4/sesion_magistral-8/README.md) |
 | 9 | Mar 25 ago (bloque 1, 14-16) | 🏫 | [5](5/README.md) | Condicionales | Prueba de escritorio; condicional simple y doble con los ejemplos del bar de Moe (precio según sexo) y el subsidio de transporte; ejemplos adicionales de paridad y subsidio con `and` | [sesion_magistral-9](5/sesion_magistral-9/README.md) |
+| 10 | Mar 25 ago (bloque 2, 16-18) | 🏫 | [6](6/README.md) | Condicionales múltiples | Implementación de condicionales múltiples: se retoma el bar de Moe para agregarle validación de entradas inválidas, y se introducen las notas de Springfield (fragmentos de prueba y programa completo); el ejemplo del subsidio no se alcanzó a analizar y la nómina semanal quedó para la siguiente sesión | [sesion_magistral-10](6/sesion_magistral-10/README.md) |
 
 > **Nota:** la sesión 8 quedó agendada para el martes 18 de agosto porque el 17 de agosto es festivo. La sesión 7 (clase 3) todavía no tiene fecha asignada en su README — vale la pena confirmar si va antes o después del 18 de agosto.
 
