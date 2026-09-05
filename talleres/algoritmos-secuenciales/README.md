@@ -2,7 +2,8 @@
 
 # Taller 1 — Expresiones y Algoritmos Secuenciales
 
-> **Autoría:** Este taller fue diseñado y es propiedad intelectual del docente **Carlos Andrés Mera Banguero**. Lo unico que se hizo fue transcribirlo este archivo y agregar algunas cosas adicionales de acuerdo a la notación vista en clase.
+> [!important]
+> **Autoría:** Este taller fue diseñado y es propiedad intelectual del docente **Carlos Andrés Mera Banguero**. Lo unico que se hizo fue transcribirlo en este archivo y agregar algunas cosas adicionales de acuerdo a la notación vista en clase teorica.
 
 ## 1. Expresiones
 
@@ -211,8 +212,6 @@ El punto 3 (algoritmos secuenciales) se resuelve más fácilmente si se sigue el
 | 3. Implementar el plan | ¿Cómo se traduce el plan a diagrama de flujo y a seudocódigo? | Diagrama de flujo (bloques de la tabla A.1) y seudocódigo (`Inicio` / `Leer` / … / `Escribir` / `Fin`) |
 | 4. Revisar el plan | ¿El algoritmo funciona para distintos casos de prueba? | Prueba de escritorio con al menos dos casos (↓ valores que ingresan, ↑ valores que se calculan) |
 
-> Plantilla y ejemplo diligenciado disponibles en [`clases/2/template_polya/`](../../clases/2/template_polya/README.md) (plantilla en blanco) y en [`clases/2/sesion_magistral-5/ejemplo_clase/`](../../clases/2/sesion_magistral-5/ejemplo_clase/nomina_polya.md) (ejemplo resuelto de cálculo de salario neto). Ver también el resumen teórico en [`clases/2/teoria/README.md`](../../clases/2/teoria/README.md).
-
 ### A.7 Cómo hacer la prueba de escritorio
 
 La prueba de escritorio (paso 4 del método de Polya) consiste en simular a mano, **en el orden dado**, la ejecución del algoritmo (diagrama de flujo o seudocódigo) con valores concretos, para verificar que produce el resultado esperado antes de programarlo.
@@ -269,7 +268,5 @@ Cada fila corresponde a una vuelta del ciclo `Mientras`:
 2. Mientras `num <= N` sea verdadero se ejecuta el cuerpo del ciclo (`suma = suma + num` y después `num = num + 1`), lo que agrega una fila nueva por cada vuelta: `num` pasa de 1 a 2, de 2 a 3, etc., y `suma` va acumulando el total.
 3. La última fila (`num = 5`) es la que hace que la condición `5 <= 4` sea **falsa** y el ciclo termine; el valor final que se escribe en pantalla es `suma = 10` (filas con ↑).
 
-**Ciclo recomendado:** *Entender → Diseñar → Predecir (prueba de escritorio) → Implementar → Verificar*. Primero se predice el resultado a mano; luego se corre el código con los mismos datos. Si la salida real no coincide con la predicción, no se corrige el código de inmediato — primero se identifica si el error está en el algoritmo, en la predicción o en la implementación.
-
-> Ejemplo completo diligenciado en [`clases/2/sesion_magistral-5/ejemplo_clase/nomina_polya.md`](../../clases/2/sesion_magistral-5/ejemplo_clase/nomina_polya.md); ejemplo con un ciclo y una decisión en [`clases/5/sesion_magistral-9/`](../../clases/5/sesion_magistral-9/README.md).
-
+> [!tip]
+> **Ciclo recomendado:** *Entender → Diseñar → Predecir (prueba de escritorio) → Implementar → Verificar*. Primero se predice el resultado a mano; luego se corre el código con los mismos datos. Si la salida real no coincide con la predicción, no se corrige el código de inmediato — primero se identifica si el error está en el algoritmo, en la predicción o en la implementación.
