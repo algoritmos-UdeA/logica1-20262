@@ -18,6 +18,9 @@ $$w = \frac{-2(3x^{-2}+5y-2yz)}{5x+4yz-\left(\frac{3}{4}+y\right)^{\frac{2}{5}}}
 
 $$k = \sqrt{\frac{(4z)^2}{(b)^3}}$$
 
+> [!Tip]
+> **Pista**: si no recuerda el orden en que se evalúan los operadores, consulte la tabla de prioridad y asociatividad del Anexo A.3. Además, una raíz n-ésima se puede escribir como una potencia con exponente fraccionario (por ejemplo, la raíz cúbica de `x` equivale a `x^(1/3)`).
+
 ---
 
 ## 2. Prueba de escritorio
@@ -50,6 +53,9 @@ Inicio
 Fin
 ```
 
+> [!Tip]
+> **Pista**: si no recuerda el orden en que se evalúan los operadores aritméticos, relacionales y lógicos cuando aparecen combinados en una misma expresión, consulte la tabla de prioridad y asociatividad del Anexo A.3.
+
 **2.2** Realice la prueba de escritorio del siguiente diagrama de flujo con el valor de entrada `n = 3`:
 
 ![diagrama de flujo forma 1](diagrama_flujo2.png)
@@ -66,11 +72,20 @@ Escriba en seudocódigo la secuencia de pasos que ayuden a solucionar cada uno d
 
 **3.1** Haga un algoritmo que dado el tamaño de un disco duro en MegaBytes (MB) permita a una persona saber el tamaño de ese disco en GigaBytes (GB) y TeraBytes (TB).
 
+> [!Tip]
+> **Pista**: recuerde que 1 GB equivale a 1024 MB, y 1 TB equivale a 1024 GB.
+
 **3.2** Haga un algoritmo que calcule y muestre la edad de Pedro a partir de las edades de sus tres hijos sabiendo lo siguiente. Primero se le debe preguntar la edad a Carlos, es decir, este es un dato de entrada. Maria tiene tres veces la edad de Carlos, menos el módulo entre 100 y la edad de Carlos. Julian tiene tantos años como el resultado de hacer la división entera entre 85 y la edad de Maria, más el año actual módulo la edad de Carlos. Luego la edad de Pedro es dos veces la edad de Carlos, más la edad de Maria módulo 5, menos dos veces la edad de Julian dividida de manera entera con 10.
 
 **3.3** Se requiere un algoritmo que permita calcular el salario semanal de un empleado que trabaja por horas. El valor de la hora varía así: cada hora diurna se paga a una tarifa de $12.500, mientras que la hora nocturna tiene un recargo del 25% sobre el valor de la hora diurna. La empresa debe descontar al empleado el 4% de lo devengado por salud y el 8% por pensión, además de un 10% por retención en la fuente. El algoritmo debe mostrar el salario bruto, el valor de cada descuento y el salario neto que debe recibir el empleado dadas las horas diurnas y nocturnas trabajadas en la semana.
 
+> [!Tip]
+> **Pista**: recuerde convertir cada porcentaje (25%, 4%, 8%, 10%) a su forma decimal (0.25, 0.04, 0.08, 0.10) antes de multiplicarlo.
+
 **3.4** Dada una medida de tiempo expresada en horas, minutos y segundos con valores arbitrarios, elabore un programa que transforme dicha medida en una expresión correcta. Por ejemplo, dada la medida 3h 118m 195s, el algoritmo debe mostrar como resultado 5h 1m 15s.
+
+> [!Tip]
+> **Pista**: para convertir un exceso de segundos a minutos (o de minutos a horas), use la división entera (`//`) para obtener las unidades completas que se acarrean, y el módulo (`%`) para obtener el resto que queda en la unidad original.
 
 **3.5** Escriba un algoritmo que permita calcular las calorías quemadas durante una rutina de ejercicios. El usuario debe ingresar el tiempo (en minutos) dedicado a cada actividad: correr, nadar y hacer ciclismo. El algoritmo debe utilizar las siguientes fórmulas para calcular las calorías quemadas:
 
@@ -91,6 +106,9 @@ $$r = \frac{i}{100 \cdot 12}$$
 **3.7** El profesor de geometría requiere que usted desarrolle un programa que le ayude a los estudiantes a calcular los ángulos A y B de un triángulo irregular, a partir del ángulo C y el valor de los catetos a y b.
 
 ![triangulo](triangulo.png)
+
+> [!Tip]
+> **Pista**: recuerde la ley del coseno, `c² = a² + b² - 2ab·cos(C)`, para hallar el lado `c` que falta, y luego la ley del seno, `a/sen(A) = b/sen(B) = c/sen(C)`, para hallar los ángulos `A` y `B` restantes.
 
 ---
 
