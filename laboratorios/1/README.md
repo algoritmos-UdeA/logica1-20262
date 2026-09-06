@@ -324,9 +324,9 @@ No es necesario usar condicionales para resolver el acarreo de minutos a horas n
 
 Seleccione una de las soluciones desarrolladas, preferiblemente **Número invertido** o **Un minuto después**, y ejecútela utilizando **Python Tutor** (ver [Herramientas necesarias](#herramientas-necesarias)). Compare:
 
-1. su prueba de escritorio;
-2. su predicción;
-3. la ejecución mostrada por Python Tutor.
+1. Su prueba de escritorio.
+2. Su predicción.
+3. La ejecución mostrada por Python Tutor.
 
 Observe especialmente cómo cambian los valores almacenados en las variables durante la ejecución, y pregúntese: **¿la ejecución real del programa coincide con el modelo que tenía en mente?**
 

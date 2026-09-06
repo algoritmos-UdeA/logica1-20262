@@ -38,6 +38,9 @@ Realice la prueba de escritorio de las siguientes expresiones, **en el orden dad
 
 ```
 Inicio
+  a = 5, b = 4, CUATRO = 6, TRES = 2
+  x = 0.5, y = 2
+
   a = 5 + b % CUATRO
   p = 6 // CUATRO < TRES % 6
   q = TRES + b - 1 != a or b >= -b * a and a ^ 2 <= 10
