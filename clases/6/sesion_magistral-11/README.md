@@ -31,7 +31,7 @@ La siguiente tabla resume las variables que va a necesitar la solución completa
 
 |#|Tipo|Nombre|Descripción|
 |---|---|---|---|
-|1|Constante (Entera)|`HORA_BASE = 35`|Cantidad mínima de horas normales|
+|1|Constante (Entera)|`HORA_BASE = 35`|Límite superior de horas pagadas a tarifa normal (a partir de ahí se cobra como extra)|
 |2|Constante (Real)|`EXTRA = 1.5`|Factor de cobro para la hora extra|
 |3|Entrada (Texto)|`nom`|Nombre del empleado|
 |4|Entrada (Entera)|`hr`|Cantidad total de horas trabajadas|
@@ -88,9 +88,11 @@ Fin
 |----|----|----|----|
 |~~~?~~~|~~~?~~~|~~~?~~~|~~~?~~~|
 |↘ 45|↘ 10000 |~~~0~~~|~~~0~~~|
-|    |         | 10 | 500000 ↗|
+|    |         | 10 ↗| 500000 ↗|
 
 Con estos dos casos se cubre tanto la rama de horas normales (Prueba 1) como la rama de horas extra (Prueba 2), que es justo la que conviene comprobar con más cuidado por ser la más propensa a errores de planteamiento.
+
+> **Para reflexionar:** las dos pruebas anteriores recorren cada rama del `Si/Sino`, pero ninguna cae justo en el límite. ¿Qué pasaría con un empleado que trabaja exactamente 35 horas? ¿Y con 35.5? Cuando una condición tiene un límite explícito (aquí, `hr <= HORA_BASE`), conviene también probar valores en esa frontera y alrededor de ella, no solo un valor cómodo de cada lado.
 
 El código Python correspondiente a esta primera parte queda así:
 
@@ -270,7 +272,7 @@ Con lo visto hasta ahora (instrucciones secuenciales y estructuras condicionales
 
 **Sobre variables y datos**
 
-* **Declarar antes de usar, e inicializar siempre.** Toda variable de salida o auxiliar (`sal_base`, `imp`, `hr_extra`, `resto`) se inicializa antes del `Leer`, aunque el valor final se calcule más adelante. Esto evita depender de un valor "basura" si alguna rama del condicional no llega a asignarla.
+* **Declarar antes de usar, e inicializar siempre.** Toda variable de salida o auxiliar (`sal_base`, `imp`, `hr_extra`, `resto`) se inicializa antes del `Leer`, siguiendo la misma convención de la tabla de variables. La razón de fondo no es "poner todo en cero por costumbre", sino asegurarse de que **ninguna ruta de ejecución posible deje la variable sin un valor definido** antes de usarla: al diseñar el algoritmo, revisa si existe algún camino (alguna combinación de condiciones) en el que una variable llegue a leerse o imprimirse sin haber sido asignada. Inicializarla explícitamente es, en esta etapa, la forma más simple de garantizarlo.
 * **Usar CONSTANTES para los valores fijos del enunciado.** `HORA_BASE` y `EXTRA` no cambian entre ejecuciones; escribirlas como constantes con nombre (en mayúsculas) en vez de repetir `35` o `1.5` sueltos en el código hace que, si el enunciado cambia esos valores, solo haya que modificarlos en un lugar.
 * **Nombrar las variables por lo que representan**, no por su tipo o posición (`sal_base`, `sal_neto`, `hr_extra` se entienden solos; `x1`, `aux2` no).
 * **No asumir que el dato de entrada es válido.** CS50 lo resume como "nunca asumas que la entrada del usuario es correcta": aquí `hr` y `valor_hr` se leen directamente sin comprobar, por ejemplo, que no sean negativos. No hace falta resolverlo todavía, pero es un hábito a tener presente a medida que los programas crecen.
@@ -298,7 +300,7 @@ Con lo visto hasta ahora (instrucciones secuenciales y estructuras condicionales
 **Sobre la relación pseudocódigo–código**
 
 * **Mantener pseudocódigo y código fuente sincronizados.** Si se corrige un error en uno, debe reflejarse en el otro; de lo contrario quedan como dos versiones distintas del algoritmo y el pseudocódigo deja de servir como referencia confiable.
-* **Usar impresiones temporales para verificar por partes, y luego comentarlas (no borrarlas).** El `print(sal_base)` intermedio de este ejemplo es un buen hábito de depuración incremental: se deja comentado una vez confirmado, como rastro de que esa parte ya se validó.
+* **Usar impresiones temporales para observar valores intermedios durante la construcción y depuración del algoritmo.** El `print(sal_base)` de este ejemplo es un buen hábito de depuración incremental: construir → observar → verificar → continuar. Una vez validada esa parte, elimina o comenta la instrucción según convenga — no se trata de acumular `print` comentados indefinidamente, sino de dejar rastro solo mientras aporte al proceso de verificación.
 
 **Para profundizar**
 
