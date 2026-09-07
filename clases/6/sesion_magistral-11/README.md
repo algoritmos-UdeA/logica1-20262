@@ -1,6 +1,6 @@
 ![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
 
-# Sesion magistral 11
+# Sesión magistral 11
 
 * **Tipo**: Presencial
 * **Fecha**: 01/09/2026
@@ -8,15 +8,16 @@
 
 ## Resumen
 
-Se continua repasando un ejemplo de implementación de condicionales multiples de las presentaciones de clase. Este ejemplo se realiza en el tablero por partes.
+Se continúa repasando, en el tablero y por partes, un ejemplo de implementación de condicionales múltiples visto en las presentaciones de clase. El ejercicio combina dos fuentes de complejidad —una estructura condicional simple para el cálculo de horas extra y una estructura condicional anidada para el cálculo de impuestos por tramos— y se resuelve dividiéndolo en dos etapas independientes, verificando cada una con datos de prueba antes de integrarlas. Esta forma de avanzar no es solo una conveniencia de tablero: es el mismo hábito que conviene tener al programar cualquier problema con varias reglas de negocio — resolver y probar una parte a la vez, en vez de escribir todo de un tirón y depurar al final.
 
 ## Ejemplos
 
 ### Ejemplo 1
 
-Se desea obtener la nomina semanal (salario neto) – de los empleados de una empresa cuyo trabajo se paga por horas y del siguiente modo:
-* Las horas inferiores o iguales a 35 horas (normales) se pagan a una tarifa que se debe introducir por teclado igual que el numero de horas y el nombre del trabajador.
-* Las horas superiores a 35 se pagaran como extra a un precio de 1.5 horas normales. 
+Se desea obtener la nómina semanal (salario neto) de los empleados de una empresa cuyo trabajo se paga por horas, del siguiente modo:
+
+* Las horas inferiores o iguales a 35 horas (normales) se pagan a una tarifa que se debe introducir por teclado, igual que el número de horas y el nombre del trabajador.
+* Las horas superiores a 35 se pagarán como extra, a un precio de 1.5 veces la hora normal.
 * Los impuestos a deducir a los trabajadores varían en función de su sueldo mensual:
   * Si sueldo <= 300000, libre de impuestos.
   * Los siguientes 150000 al 20%.
@@ -24,29 +25,32 @@ Se desea obtener la nomina semanal (salario neto) – de los empleados de una em
 
 #### Solución
 
-Este problema se abordo por partes (ha analizaba y se codificaba). Inicialmente solo se abordo la parte asociada al calculo del salario base segun las condiciones dadas en el enunciado y se probo. La siguiente tabla muestra la declaración de variables
+El enunciado tiene dos reglas de negocio bien diferenciadas —el pago de horas (incluyendo el recargo por horas extra) y la deducción de impuestos por tramos— así que conviene resolverlas por separado: primero se plantea y se prueba únicamente el cálculo del salario base, y solo una vez confirmado que esa parte funciona correctamente se añade la lógica de impuestos sobre el resultado ya validado. Esto evita mezclar dos posibles fuentes de error en un solo intento y hace más fácil ubicar cualquier falla durante las pruebas.
+
+La siguiente tabla resume las variables que va a necesitar la solución completa (algunas, como `imp`, `sal_neto` y `resto`, solo entran en juego en la segunda parte, pero se listan aquí desde el inicio para tener panorama completo del problema):
 
 |#|Tipo|Nombre|Descripción|
 |---|---|---|---|
-|1|Constante (Entera)|`HORA_BASE = 35`|Cantidad minima de horas normales|
+|1|Constante (Entera)|`HORA_BASE = 35`|Cantidad mínima de horas normales|
 |2|Constante (Real)|`EXTRA = 1.5`|Factor de cobro para la hora extra|
 |3|Entrada (Texto)|`nom`|Nombre del empleado|
-|4|Entrada (Entera)|`hr`|Cantida total de horas trabajadas|
+|4|Entrada (Entera)|`hr`|Cantidad total de horas trabajadas|
 |5|Entrada (Entera)|`valor_hr`|Valor de la hora|
-|6|Auxiliar (Entera)|`hr_extra`|Cantidad de horas extras|
+|6|Auxiliar (Entera)|`hr_extra`|Cantidad de horas extra|
 |7|Salida (Real)|`sal_base`|Salario base (sin descontar impuestos)|
 |8|Salida (Real)|`imp`|Impuestos|
 |9|Salida (Real)|`sal_neto`|Salario a pagar (base - impuestos)|
 
+Para verificar que el cálculo del salario base está bien planteado, antes de tocar el tema de impuestos, se usan estos dos casos:
 
-Los siguientes valores de prueba se van a emplear para verificar que el algoritmo de calculo de suelto esta bien planteado:
-
-|#|Valor hora|Horas trabajadas|Salario base|
+|#|Valor hora|Horas trabajadas|Salario base esperado|
 |----|----|----|----|
 |1|10000|30|300000|
 |2|10000|45|500000|
 
-#### Pseudocodigo
+##### Parte 1 — Cálculo del salario base
+
+El siguiente pseudocódigo cubre únicamente esta primera parte del problema:
 
 ```
 Inicio
@@ -68,7 +72,7 @@ Inicio
 Fin
 ```
 
-#### Pruebas de escritorio
+**Pruebas de escritorio**
 
 **Prueba 1**
 
@@ -76,18 +80,19 @@ Fin
 |----|----|----|----|
 |~~~?~~~|~~~?~~~|~~~?~~~|~~~?~~~|
 |↘ 30|↘ 10000 |~~~0~~~|~~~0~~~|
-|    |         | 10 |300000 ↗|
+|    |         | 0 |300000 ↗|
 
 **Prueba 2**
 
 |`hr`|`valor_hr`|`hr_extra`|`sal_base`|
 |----|----|----|----|
 |~~~?~~~|~~~?~~~|~~~?~~~|~~~?~~~|
-|↘ 40|↘ 10000 |~~~0~~~|~~~0~~~|
+|↘ 45|↘ 10000 |~~~0~~~|~~~0~~~|
 |    |         | 10 | 500000 ↗|
 
+Con estos dos casos se cubre tanto la rama de horas normales (Prueba 1) como la rama de horas extra (Prueba 2), que es justo la que conviene comprobar con más cuidado por ser la más propensa a errores de planteamiento.
 
-#### Codigo python
+El código Python correspondiente a esta primera parte queda así:
 
 ```py
 # Constantes
@@ -99,7 +104,6 @@ sal_base = 0
 hr_extra = 0
 imp = 0
 sal_neto = 0
-
 
 # Entrada de datos
 nom = input("Nombre: ")
@@ -114,21 +118,20 @@ else:
     sal_base = valor_hr*HORA_BASE + EXTRA*valor_hr*hr_extra
 
 print(sal_base)  # Se imprime para verificar el calculo del salario base
-
-# Calculo de los impuestos
-# To Do...
 ```
 
-El problema aun esta incompleto. Inicialmente vamos a definir otras auxiliares mas para la implementación de esta parte:
+##### Parte 2 — Cálculo de impuestos
+
+Con el salario base ya validado, se aborda la segunda regla de negocio. Para esto se necesita una variable auxiliar adicional:
 
 |#|Tipo|Nombre|Descripción|
 |---|---|---|---|
-|10|Auxiliar (Real)|`resto`|Parte del salario por encima del minimo base sin impuestos|
+|10|Auxiliar (Real)|`resto`|Parte del salario por encima del mínimo del tramo, sobre la que se aplica cada tarifa|
 
-A continuación, el siguiente pseudocogido implementa la parte donde se hacen las validaciones necesarias para obtener el impuesto:
+El pseudocódigo de esta parte traduce directamente los tres tramos del enunciado: sin impuesto hasta 300000, 20% sobre los siguientes 150000, y 30% sobre lo que exceda 450000 (nótese que en el tramo más alto el segundo tramo se cobra completo, `0.2*150000`, y el 30% aplica solo sobre el excedente):
 
 ```
-SI sal_base <= 300000 Entonces
+Si sal_base <= 300000 Entonces
     imp = 0
 Sino
     Si sal_base <= 450000 Entonces
@@ -142,14 +145,14 @@ Fin_Si
 sal_neto = sal_base - imp
 ```
 
-Vamos a realizar los siguientes casos de test para el pseucododigo anterior, continuando con los valores previos obtenidos para el salario neto.
+Se retoman los salarios base ya confirmados en la parte anterior para probar este bloque:
 
-|#|Valor hora|Horas trabajadas|Salario base|Impuesto|Salario neto|
+|#|Valor hora|Horas trabajadas|Salario base|Impuesto esperado|Salario neto esperado|
 |----|----|----|----|----|----|
 |1|10000|30|300000|0|300000|
-|2|10000|45|500000|45|455000|
+|2|10000|45|500000|45000|455000|
 
-A continuación se muestran las pruebas de escritorio para cada caso:
+**Pruebas de escritorio**
 
 **Prueba 1**
 
@@ -167,8 +170,9 @@ A continuación se muestran las pruebas de escritorio para cada caso:
 |500000| ~~~0~~~ |~~~0~~~|~~~0~~~|
 |      |    45000 ↗ | 50000 | 455000 ↗|
 
+##### Solución completa
 
-Finalmente, el pseudocodigo completo del problema se muestra a continuación:
+Con las dos partes ya verificadas por separado, se integran en un solo algoritmo:
 
 ```
 Inicio
@@ -188,7 +192,7 @@ Inicio
     sal_base = valor_hr*HORA_BASE + EXTRA*valor_hr*hr_extra 
   Fin_Si  
 
-  SI sal_base <= 300000 Entonces
+  Si sal_base <= 300000 Entonces
     imp = 0
   Sino
     Si sal_base <= 450000 Entonces
@@ -205,7 +209,7 @@ Inicio
 Fin
 ```
 
-Finalmente, el código python asociado al pseudocodigo anterior se muestra a continuación:
+Y el código Python completo, ya con la salida en forma de recibo de pago:
 
 ```py
 # Constantes
@@ -228,7 +232,7 @@ if hr <= HORA_BASE:
 else:
     hr_extra = hr - HORA_BASE
     sal_base = valor_hr*HORA_BASE + EXTRA*valor_hr*hr_extra
-# print(sal_base) # Se comento por que se verifico previamente que el calculo del salario base es correcto
+# print(sal_base) # Se comento porque ya se verifico previamente que el calculo del salario base es correcto
 
 # Calculo de los impuestos
 if sal_base <= 300000:
@@ -260,9 +264,48 @@ print(f"- Salario neto: $ {sal_neto}")
 print("----------------------------------")
 ```
 
+## Buenas prácticas
+
+Con lo visto hasta ahora (instrucciones secuenciales y estructuras condicionales, simples y anidadas), conviene ir adquiriendo estos hábitos. Algunos puntos se complementan con las notas de CS50 sobre [fundamentos de Python](https://cs50.harvard.edu/python/notes/1/) y [condicionales](https://cs50.harvard.edu/x/notes/1/#conditionals), referenciadas al final.
+
+**Sobre variables y datos**
+
+* **Declarar antes de usar, e inicializar siempre.** Toda variable de salida o auxiliar (`sal_base`, `imp`, `hr_extra`, `resto`) se inicializa antes del `Leer`, aunque el valor final se calcule más adelante. Esto evita depender de un valor "basura" si alguna rama del condicional no llega a asignarla.
+* **Usar CONSTANTES para los valores fijos del enunciado.** `HORA_BASE` y `EXTRA` no cambian entre ejecuciones; escribirlas como constantes con nombre (en mayúsculas) en vez de repetir `35` o `1.5` sueltos en el código hace que, si el enunciado cambia esos valores, solo haya que modificarlos en un lugar.
+* **Nombrar las variables por lo que representan**, no por su tipo o posición (`sal_base`, `sal_neto`, `hr_extra` se entienden solos; `x1`, `aux2` no).
+* **No asumir que el dato de entrada es válido.** CS50 lo resume como "nunca asumas que la entrada del usuario es correcta": aquí `hr` y `valor_hr` se leen directamente sin comprobar, por ejemplo, que no sean negativos. No hace falta resolverlo todavía, pero es un hábito a tener presente a medida que los programas crecen.
+
+**Sobre las condiciones**
+
+* **Verificar que la condición compare la variable correcta.** Es el error más fácil de cometer y más difícil de detectar a simple vista: escribir `Si (sal_base <= HORA_BASE)` en vez de `Si (hr <= HORA_BASE)` compila y "corre" igual, pero calcula mal. Antes de dar por buena una condición, preguntarse: ¿esta variable ya tiene, en este punto del algoritmo, el valor que necesito comparar?
+* **No confundir comparar con asignar.** En Python, `=` asigna un valor (`sal_base = valor_hr*hr`) y `==` compara si dos valores son iguales. Es una de las confusiones más comunes al empezar (CS50 la señala explícitamente): una condición como `if sal_base = 300000` no compara nada, es un error de sintaxis en Python — la forma correcta es `if sal_base == 300000`.
+* **Probar cada rama del condicional, no solo el caso "feliz".** Un solo caso de prueba con horas normales no habría revelado el error anterior; hizo falta un caso con horas extra para forzar la otra rama. Como regla práctica: si una estructura `Si/Sino` tiene dos caminos, se necesitan casos de prueba que recorran los dos.
+* **Encadenar condiciones mutuamente excluyentes en vez de anidar sin necesidad.** El bloque de impuestos ya hace esto: una vez se sabe que `sal_base > 300000`, no hace falta volver a preguntar por ese caso, solo por los que quedan. En Python esto se escribe de forma más plana con `elif` en lugar de un `else` que contiene otro `if` adentro:
+
+  ```py
+  if sal_base <= 300000:
+      imp = 0
+  elif sal_base <= 450000:
+      resto = sal_base - 300000
+      imp = 0.2*resto
+  else:
+      resto = sal_base - 450000
+      imp = 0.2*150000 + 0.3*resto
+  ```
+
+  Es equivalente a la versión con `if` anidado dentro del `else` que ya usamos, pero con un nivel menos de sangría — vale la pena tenerlo presente para cuando el número de tramos o condiciones crezca.
+
+**Sobre la relación pseudocódigo–código**
+
+* **Mantener pseudocódigo y código fuente sincronizados.** Si se corrige un error en uno, debe reflejarse en el otro; de lo contrario quedan como dos versiones distintas del algoritmo y el pseudocódigo deja de servir como referencia confiable.
+* **Usar impresiones temporales para verificar por partes, y luego comentarlas (no borrarlas).** El `print(sal_base)` intermedio de este ejemplo es un buen hábito de depuración incremental: se deja comentado una vez confirmado, como rastro de que esa parte ya se validó.
+
+**Para profundizar**
+
+* CS50P — [Conditionals and functions](https://cs50.harvard.edu/python/notes/1/)
+* CS50x — [Conditionals](https://cs50.harvard.edu/x/notes/1/#conditionals)
 
 ### Referencia
-
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
