@@ -3,10 +3,8 @@
 # Sesion magistral 12
 
 * **Tipo**: Presencial
-* **Fecha**: 01/09/2026*
-* **Parte**: Segundo bloque de clase (16-18)*
-
-\* Fecha y bloque inferidos de las marcas de tiempo en los scripts de la sesión y de la numeración continua tras la sesión 11 (misma fecha, primer bloque) — pendiente de confirmar.
+* **Fecha**: 01/09/2026
+* **Parte**: Segundo bloque de clase (16-18)
 
 ## Resumen
 
@@ -29,7 +27,7 @@ Antes de resolver un problema concreto, se ejecuta un ciclo mínimo cuyo único 
 Inicio
   N = 10
   i = 0
-  Mientras (i <= N) Entonces
+  Mientras (i <= N) Haga
     i = i + 1
     Escribir('Hola')
   Fin_Mientras
@@ -94,7 +92,7 @@ Se avanza de 1 en 1 y se filtra con el operador módulo (`%`) cuáles valores so
 Inicio
   Leer(N)
   num = 0
-  Mientras (num <= N) Entonces
+  Mientras (num <= N) Haga
     Si (num % 2 == 0) Entonces
       Escribir(num)
     Fin_Si
@@ -145,7 +143,7 @@ Como se parte de `num = 0` (ya par), avanzar directamente de 2 en 2 genera solo 
 Inicio
   Leer(N)
   num = 0
-  Mientras (num <= N) Entonces
+  Mientras (num <= N) Haga
     Escribir(num)
     num = num + 2
   Fin_Mientras
