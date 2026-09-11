@@ -469,7 +469,7 @@ Inicio
     prom_impares = sum_impares/cant_impares
     print(cant_pares, cant_impares)
     print(prom_pares, prom_impares)
-  FinSi
+  Fin_Si
 Fin
 ```
 
@@ -495,6 +495,8 @@ flowchart TD
 ```
 
 La implementación en Python del pseudocódigo anterior se muestra a continuación:
+
+**Código**: [numeros.py](numeros.py) — el script tal como quedó guardado tras la sesión conserva, además, un par de rastros de su construcción en vivo que no se muestran arriba: el `# print(i)` (sin el comentario aclaratorio) usado para depurar el conteo de iteraciones, y un pequeño error de tipeo en un comentario (`sum_paresd` en vez de `sum_pares`) que no afecta la ejecución por tratarse solo de un comentario.
 
 ```py
 cant_pares = 0
@@ -665,3 +667,6 @@ else:
     print(f"El promedio de los {cant_pares} ingresados fue {prom_pares:.2f}")
     print(f"El promedio de los {cant_impares} ingresados fue {prom_impares:.2f}")
 ```
+
+> [!Important]
+> Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
