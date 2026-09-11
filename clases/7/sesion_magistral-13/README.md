@@ -4,7 +4,7 @@
 
 * **Tipo**: Presencial
 * **Fecha**: 08/09/2026
-* **Parte**: Primer bloque de clase (16-18)
+* **Parte**: Primer bloque de clase (14-16)
 
 ## Resumen
 
