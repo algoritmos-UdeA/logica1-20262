@@ -8,7 +8,7 @@
 
 ## Resumen
 
-Continuando la introducción a ciclos de las diapositivas de la clase [(teoría)](../teoria/), esta sesión formaliza los tres componentes de un ciclo `Mientras`/`while` (inicialización, condición de control y cuerpo con actualización obligatoria), y los repasa con seis casos que exploran la frontera de la condición, el orden de las instrucciones dentro del cuerpo y el riesgo de un ciclo infinito. Sobre esa base se introducen los tipos de variables de apoyo en ciclos (variable de control, contador, acumulador, bandera, centinela) mediante un programa que clasifica números pares e impares, calculando su cantidad y su promedio. El programa se construye y se depura en vivo: una prueba de escritorio revela un bug de división por cero en la validación de "no hay pares/impares", que se corrige primero con `if` anidados y luego se reescribe con `if-elif-else` para evitar el anidamiento.
+Continuando la introducción a ciclos de las diapositivas de la clase ([teoría](../teoria/#contenido-cubierto)) y la práctica en vivo de la sesión anterior ([sesión 12](../sesion_magistral-12/README.md)), esta sesión formaliza los tres componentes de un ciclo `Mientras`/`while` (inicialización, condición de control y cuerpo con actualización obligatoria), y los repasa con seis casos que exploran la frontera de la condición, el orden de las instrucciones dentro del cuerpo y el riesgo de un ciclo infinito. Sobre esa base se introducen los tipos de variables de apoyo en ciclos (variable de control, contador, acumulador, bandera, centinela) mediante un programa de número de iteraciones **conocido** — a diferencia del cine del señor Burns de la teoría, aquí `N` se pide al usuario antes de empezar — que clasifica números pares e impares, calculando su cantidad y su promedio. El programa se construye y se depura en vivo: una prueba de escritorio revela un bug de división por cero en la validación de "no hay pares/impares", que se corrige primero con `if` anidados y luego se reescribe con `if-elif-else` para evitar el anidamiento.
 
 ## Parte 1
 
@@ -35,7 +35,7 @@ flowchart TD
 
 1. **① Inicialización** — se ejecuta una sola vez, *antes* de entrar al ciclo. No es parte del ciclo: por eso nunca vuelve a ejecutarse en ninguna iteración.
 2. **② Condición de control (o parada)** — se evalúa antes de cada iteración, incluida la primera. Mientras sea verdadera, el cuerpo se ejecuta; en el instante en que es falsa, el ciclo termina.
-3. **③ Cuerpo** — instrucciones que se repiten en cada iteración. Debe incluir, obligatoriamente, la actualización de la variable de control: si falta, o está mal ubicada dentro del cuerpo, la condición nunca cambia (ciclo infinito) o cambia en el momento equivocado (como el off-by-one visto en `hola_ciclos`).
+3. **③ Cuerpo** — instrucciones que se repiten en cada iteración. Debe incluir, obligatoriamente, la actualización de la variable de control: si falta, o está mal ubicada dentro del cuerpo, la condición nunca cambia (ciclo infinito) o cambia en el momento equivocado (como el off-by-one visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)).
 
 Estos tres componentes se ven exactamente igual en las tres representaciones que se usan en el curso:
 
@@ -168,7 +168,7 @@ while i < 3:
 |~~2~~|~~Verdadera~~|~~3~~|
 |**3**|**Falsa**|**—**|
 
-**Salida esperada** (mismas 3 iteraciones que el Caso 1 — misma inicialización y misma condición — pero corrida una unidad porque `i = i + 1` ocurre **antes** de `Escriba(i)`: se imprime el valor ya actualizado. Es el mismo mecanismo del off-by-one visto en `hola_ciclos`):
+**Salida esperada** (mismas 3 iteraciones que el Caso 1 — misma inicialización y misma condición — pero corrida una unidad porque `i = i + 1` ocurre **antes** de `Escriba(i)`: se imprime el valor ya actualizado. Es el mismo mecanismo del off-by-one visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)):
 
 ```
 1
@@ -338,12 +338,14 @@ El siguiente ejemplo estará enfocado en ilustrar los tres primeros conceptos:
 
 ### Ejemplo
 
-Realizar un programa que permita ingresar `N` números enteros no negativos (incluido el `0`) por teclado. El programa debe permitir desplegar la siguiente información:
+Realizar un programa que permita ingresar `N` números enteros (positivos, negativos o cero) por teclado. El programa debe permitir desplegar la siguiente información:
 
 * Cantidad de pares e impares ingresados.
 * Promedio de números pares e impares.
 
 El programa debe validar el caso en que no haya números pares o impares.
+
+Es un problema de número de iteraciones **conocido**: `N` se pide al usuario antes de entrar al ciclo, así que la variable de control (`i`) sabe exactamente cuándo detenerse — a diferencia de los problemas de iteraciones **desconocidas** de la teoría, como el cine del señor Burns o las notas de un curso ([ver teoría](../teoria/#contenido-cubierto)), donde hace falta una bandera o un centinela porque no se sabe de antemano cuántas veces se va a repetir el ciclo.
 
 #### De Polya a la práctica
 
@@ -395,6 +397,23 @@ Fin
 | 6 | 1 | 7 | 1 | 0 | 7 | 0 |
 | 7 | 3 | 0, 1, 2 | 1 | 2 | 1 | 2 |
 | 8 | 3 | -4, -3, 6 | 1 | 2 | -3 | 2 |
+
+El caso 8 confirma que el operador módulo (`%`) también clasifica correctamente números negativos en Python (`-3 % 2` da `1`, no `-1`), lo cual justifica no restringir el enunciado a números no negativos.
+
+A modo de ejemplo, así se traza paso a paso el caso 1 (`N = 5`, con los números `3, 4, 7, 8, 10`):
+
+|`N`|`i`|`num`|`¿par?`|`cant_pares`|`sum_pares`|`cant_impares`|`sum_impares`|
+|---|---|---|---|---|---|---|---|
+|~~5~~|~~0~~| | |~~0~~|~~0~~|~~0~~|~~0~~|
+| |~~1~~|~~3~~|~~No~~|~~0~~|~~0~~|~~1~~|~~3~~|
+| |~~2~~|~~4~~|~~Sí~~|~~1~~|~~4~~|~~1~~|~~3~~|
+| |~~3~~|~~7~~|~~No~~|~~1~~|~~4~~|~~2~~|~~10~~|
+| |~~4~~|~~8~~|~~Sí~~|~~2~~|~~12~~|~~2~~|~~10~~|
+| |**5**|**10**|**Sí**|**3**|**22**|**2**|**10**|
+
+Los valores finales (`cant_pares = 3`, `sum_pares = 22`, `cant_impares = 2`, `sum_impares = 10`) coinciden con la fila 1 de la tabla resumen — esa es la garantía de que el ciclo, hasta aquí, funciona correctamente.
+
+Estos 8 casos van a ser útiles más adelante para poner a prueba la parte que falta (el cálculo de los promedios): en particular, el **caso 4** (`N = 0`, ningún número) y los **casos 5 y 6** (un solo número, de un solo tipo) son justamente los que expondrán el bug de división por cero de la sección [Encontrando el bug](#encontrando-el-bug).
 
 La codificación en Python asociada al pseudocódigo anterior se muestra a continuación; observe el uso de `print` para hacer la prueba de escritorio, evaluando el estado de las variables:
 
@@ -667,6 +686,24 @@ else:
     print(f"El promedio de los {cant_pares} ingresados fue {prom_pares:.2f}")
     print(f"El promedio de los {cant_impares} ingresados fue {prom_impares:.2f}")
 ```
+
+#### Verificando la corrección con los casos que antes fallaban
+
+Retomando la tabla de 8 casos, los que antes disparaban el bug ahora se resuelven así:
+
+- **Caso 4** (`N = 0`, ningún número): entra a la primera rama (`cant_impares == 0 and cant_pares == 0`) → imprime `"No se ingresaron numeros"`, sin intentar calcular ningún promedio.
+- **Caso 5** (`N = 1`, número `8`): `cant_impares` es `0` y `cant_pares` no, así que entra a `elif cant_pares == 0` → imprime `"No se ingresaron pares"` y calcula solo `prom_impares = 8/1 = 8.00`.
+- **Caso 6** (`N = 1`, número `7`): simétricamente, entra a `elif cant_impares == 0` → imprime `"No se ingresaron impares"` y calcula solo `prom_pares = 7/1 = 7.00`.
+
+En los tres casos se evita la división entre cero, y — a diferencia del programa original — el mensaje impreso ya corresponde al grupo que realmente está vacío.
+
+## Para explorar por su cuenta
+
+*Idea complementaria para conectar esta sesión con la teoría de la clase.*
+
+### El mismo patrón de bug, en dos ejemplos distintos
+
+El error de dividir entre cero al promediar un grupo que puede quedar vacío no es exclusivo de este ejercicio: es exactamente lo que dejan pendiente, a propósito, los ejemplos 6 y 7 de la teoría de esta clase ([ver teoría](../teoria/#contenido-cubierto)) — el promedio de notas de un curso, cuando todos los estudiantes aprueban o todos reprueban. Vale la pena resolver ese ejemplo aplicando la misma estrategia usada aquí (validar cada grupo por separado con `if-elif-else`, en vez de una sola condición combinada con "o") y comprobar que funciona igual de bien, aunque el dominio del problema sea distinto (pares/impares vs. aprobados/reprobados).
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.

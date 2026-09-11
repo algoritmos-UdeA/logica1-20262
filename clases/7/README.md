@@ -14,6 +14,7 @@ Continuación de la clase 6: tras cerrar el bloque de condicionales, se introduc
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
 | 12 | Mar 1 sep (bloque 2, 16-18)* | 🏫 Presencial | Primer contacto práctico con ciclos: `hola_ciclos` (contar iteraciones de un `while`) y dos formas de generar la serie de números pares hasta `N` — filtrando pares con módulo desde un contador que avanza de 1 en 1, y generando directamente con paso 2 | [sesion_magistral-12](sesion_magistral-12/README.md) |
+| 13 | Mar 8 sep (bloque 1, 16-18) | 🏫 Presencial | Componentes de un ciclo formalizados con 6 casos de repaso sobre la frontera de la condición, el orden de instrucciones y el ciclo infinito; luego contador y acumulador con un programa que clasifica pares e impares (cantidad y promedio de cada uno), depurado en vivo tras descubrir con una prueba de escritorio un bug de división por cero, corregido primero con `if` anidados y luego con `if-elif-else` | [sesion_magistral-13](sesion_magistral-13/README.md) |
 
 \* Fecha y bloque inferidos de las marcas de tiempo en los scripts de la sesión (01/09/2026, tarde) y de la numeración continua tras la sesión 11 (misma fecha, bloque 1) — pendiente de confirmar cuando se redacte el `README.md` propio de la sesión.
 
