@@ -1,0 +1,59 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 15 15:37:16 2026
+
+@author: Soportedrai
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 15 15:21:17 2026
+
+@author: Soportedrai
+"""
+
+"""
+Created on Tue Sep 15 15:02:56 2026
+
+@author: Soportedrai
+"""
+
+
+cant_pares = 0
+cant_impares = 0
+sum_pares = 0
+sum_impares = 0
+i = 0 
+
+num = int(input("Ingrese el numero positivo (-1 para terminar): "))
+while num != -1:
+    # print(i)   # Para mirar el estado de i    
+    if num%2 == 0:
+        # Caso numero par
+        cant_pares += 1    # cant_pares = cant_pares + 1
+        sum_pares += num   # sum_pares = sum_pares + num
+    else:
+        # Caso numero impar
+        cant_impares += 1
+        sum_impares += num
+    num = int(input("Ingrese el numero positivo (-1 para terminar): "))
+
+if (cant_impares == 0) and (cant_pares == 0):
+    # No se ingresaron numeros
+    print("No se ingresaron numeros")
+elif cant_pares == 0:
+    # Todos los numeros ingresados fueron impares
+    print("No se ingresaron pares")
+    prom_impares = sum_impares/cant_impares
+    print(f"El promedio de los {cant_impares} ingresados fue {prom_impares:.2f}")
+elif cant_impares == 0:
+    # Todos los numeros ingresados fueron pares
+    print("No se ingresaron impares")
+    prom_pares = sum_pares/cant_pares
+    print(f"El promedio de los {cant_pares} ingresados fue {prom_pares:.2f}")
+else:
+    # Se ingresaron tanto numeros pares como impares
+    prom_pares = sum_pares/cant_pares
+    prom_impares = sum_impares/cant_impares
+    print(f"El promedio de los {cant_pares} ingresados fue {prom_pares:.2f}")
+    print(f"El promedio de los {cant_impares} ingresados fue {prom_impares:.2f}")
