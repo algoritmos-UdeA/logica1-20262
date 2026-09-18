@@ -57,6 +57,8 @@ Se traza el valor de `i` en cada evaluación de la condición `i <= N` (todas ve
 **Salida esperada**: `Hola` se imprime 11 veces, y el último mensaje es `Valor de i al salir: 11`.
 
 > **Para reflexionar:** aunque `N = 10`, la prueba de escritorio muestra que `i` toma 11 valores distintos (0 a 10) mientras la condición es verdadera, y termina en 11, no en 10. La razón está en el orden de las instrucciones dentro del cuerpo: como `i = i + 1` ocurre *antes* del `Escribir('Hola')`, la condición `i <= N` todavía se evalúa como verdadera cuando `i` vale 10, así que el cuerpo se ejecuta una vez más de lo que parece a primera vista. Es el mismo tipo de error de conteo ("off-by-one") que se puede cometer al no fijarse en el orden exacto de las instrucciones dentro del cuerpo del ciclo.
+>
+> **¿Qué es un "off-by-one"?** "Off-by-one" (literalmente, *desviado por uno*) es el nombre en inglés —sin una traducción fija al español; se suele dejar tal cual o llamarlo "error de conteo corrido en uno"— de un error en el que un ciclo termina ejecutándose exactamente una vez de más o una vez de menos de lo esperado, o un valor queda desplazado en una unidad respecto al que se esperaba. Sus causas más comunes son: usar `<` en vez de `<=` (o viceversa) en la condición del ciclo, inicializar la variable de control en el valor equivocado, o —como aquí, en `hola_ciclos`— actualizar la variable de control *antes* de usarla en vez de *después*. Es un error sutil precisamente porque el ciclo sí termina y sí produce una salida: solo que esa salida está corrida en uno respecto a la esperada.
 
 #### Código Python
 

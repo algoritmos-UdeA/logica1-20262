@@ -35,7 +35,7 @@ flowchart TD
 
 1. **① Inicialización** — se ejecuta una sola vez, *antes* de entrar al ciclo. No es parte del ciclo: por eso nunca vuelve a ejecutarse en ninguna iteración.
 2. **② Condición de control (o parada)** — se evalúa antes de cada iteración, incluida la primera. Mientras sea verdadera, el cuerpo se ejecuta; en el instante en que es falsa, el ciclo termina.
-3. **③ Cuerpo** — instrucciones que se repiten en cada iteración. Debe incluir, obligatoriamente, la actualización de la variable de control: si falta, o está mal ubicada dentro del cuerpo, la condición nunca cambia (ciclo infinito) o cambia en el momento equivocado (como el off-by-one visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)).
+3. **③ Cuerpo** — instrucciones que se repiten en cada iteración. Debe incluir, obligatoriamente, la actualización de la variable de control: si falta, o está mal ubicada dentro del cuerpo, la condición nunca cambia (ciclo infinito) o cambia en el momento equivocado (como el [off-by-one](../sesion_magistral-12/README.md#ejemplo-1--hola_ciclos) visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)).
 
 Estos tres componentes se ven exactamente igual en las tres representaciones que se usan en el curso:
 
@@ -168,7 +168,7 @@ while i < 3:
 |~~2~~|~~Verdadera~~|~~3~~|
 |**3**|**Falsa**|**—**|
 
-**Salida esperada** (mismas 3 iteraciones que el Caso 1 — misma inicialización y misma condición — pero corrida una unidad porque `i = i + 1` ocurre **antes** de `Escriba(i)`: se imprime el valor ya actualizado. Es el mismo mecanismo del off-by-one visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)):
+**Salida esperada** (mismas 3 iteraciones que el Caso 1 — misma inicialización y misma condición — pero corrida una unidad porque `i = i + 1` ocurre **antes** de `Escriba(i)`: se imprime el valor ya actualizado. Es el mismo mecanismo del [off-by-one](../sesion_magistral-12/README.md#ejemplo-1--hola_ciclos) visto en [`hola_ciclos`](../sesion_magistral-12/hola_ciclos.py)):
 
 ```
 1
