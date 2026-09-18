@@ -30,6 +30,7 @@ while otro_numero == 'y' or otro_numero == 'Y':
         # Caso numero impar
         cant_impares += 1
         sum_impares += num
+    i += 1   # i = i + 1
     otro_numero = input("Desea ingresar un numero (y/n)? ")
 
 if (cant_impares == 0) and (cant_pares == 0):

@@ -337,32 +337,32 @@ El fragmento correspondiente en Python:
 ```py
 otro_numero = input("Desea ingresar un numero (y/n)? ")
 while otro_numero == 'y' or otro_numero == 'Y':
-    # print(i)   # Para mirar el estado de i
     num = int(input(f"Ingrese el numero {i + 1}: "))
     # Determinacion si el numero es par o impar
     # Codigo ...
+    i += 1   # i = i + 1
     otro_numero = input("Desea ingresar un numero (y/n)? ")
 ```
 
-El archivo conserva dos rezagos de cuando esta variante se derivó de `v2` (que sí usaba `i` como contador): un comentario de depuración `# print(i)` sin usar, y la propia `i` — declarada en 0 al inicio pero nunca actualizada dentro del ciclo, por lo que el mensaje `Ingrese el numero {i + 1}` siempre muestra "1", sin importar cuántos números se lleven ingresados. Se nota en la salida de ejecución para el mismo caso de prueba usado antes (3, 4, 7, 8, 10):
+Nótese que aquí `i` ya no es la variable de control del ciclo (ese papel lo tiene la bandera `otro_numero`): es solo un contador auxiliar que numera cada solicitud en el mensaje `Ingrese el numero {i + 1}`, y por eso debe actualizarse dentro del cuerpo aunque no aparezca en la condición del `Mientras`. La salida de ejecución para el mismo caso de prueba usado antes (3, 4, 7, 8, 10) es:
 
 ```
 Desea ingresar un numero (y/n)? y
 Ingrese el numero 1: 3
 Desea ingresar un numero (y/n)? y
-Ingrese el numero 1: 4
+Ingrese el numero 2: 4
 Desea ingresar un numero (y/n)? y
-Ingrese el numero 1: 7
+Ingrese el numero 3: 7
 Desea ingresar un numero (y/n)? y
-Ingrese el numero 1: 8
+Ingrese el numero 4: 8
 Desea ingresar un numero (y/n)? y
-Ingrese el numero 1: 10
+Ingrese el numero 5: 10
 Desea ingresar un numero (y/n)? n
 El promedio de los 3 ingresados fue 7.33
 El promedio de los 2 ingresados fue 5.00
 ```
 
-Los promedios finales coinciden exactamente con los de la variante por contador — el bloque de reporte (`elif`) es el mismo en las tres versiones —, pero el numerado de la solicitud de entrada quedó roto por ese rezago.
+Los promedios finales coinciden exactamente con los de la variante por contador — el bloque de reporte (`elif`) es el mismo en las tres versiones —; lo único que cambia es el encabezado del ciclo.
 
 ### Iteraciones desconocidas - Uso de centinela
 
