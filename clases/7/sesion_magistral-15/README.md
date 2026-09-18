@@ -151,19 +151,19 @@ Retomando estos 4 casos, se traza el bloque de anidados tomando `cant_impares`, 
 | 3 | 0 | 0 | 3 | 12 | — | 4.00 |
 | 4 | 2 | 10 | 3 | 22 | 5.00 | 7.33 |
 
-El pseudocódigo del curso no cuenta con una estructura equivalente a `elif`: solo permite anidar bloques `Si...Entonces...Sino...Fin_Si`, uno dentro de otro. Por esta razón, el pseudocódigo presentado anteriormente sigue siendo válido para describir la lógica de `v2` — las cuatro preguntas de la Tabla 1 se evalúan en el mismo orden en ambas versiones. Lo que cambia entre `v1` y `v2` no es la lógica, sino la forma en que Python organiza esas preguntas en el código.
+El pseudocódigo del curso no cuenta con una estructura equivalente a `elif`: solo permite anidar bloques `Si...Entonces...Sino...Fin_Si`, uno dentro de otro. Por esta razón, el pseudocódigo presentado anteriormente sigue siendo válido para describir la lógica de `v2` — las mismas tres condiciones de la Tabla 1 se evalúan en el mismo orden en ambas versiones, y el cuarto caso ("hay de ambos") no se evalúa explícitamente: es lo que queda por descarte cuando ninguna de las tres condiciones anteriores se cumplió. Lo que cambia entre `v1` y `v2` no es la lógica, sino la forma en que Python organiza esas condiciones en el código.
 
 > [!TIP]
 > ### Por qué demasiado anidamiento dificulta la lectura
 >
-> Cada nivel de anidamiento obliga a recordar, mientras se lee el código, a qué condición pertenece cada `Sino` — entre más profundo el anidamiento, más difícil es rastrear esa relación sin perder el hilo, sobre todo porque en Python no existe un `Fin_Si` explícito: es solo la indentación la que marca dónde empieza y termina cada bloque. En `v1`, la cuarta pregunta ("¿hay de ambos?") queda a tres niveles de indentación de distancia de la primera; en `v2`, las cuatro preguntas quedan al mismo nivel, una después de otra, como una lista de casos que se revisan en orden. El resultado es idéntico en ambas versiones — lo que cambia es cuánta memoria exige seguir el rastro de los `Sino` anidados para llegar a ese resultado.
+> Cada nivel de anidamiento obliga a recordar, mientras se lee el código, a qué condición pertenece cada `Sino` — entre más profundo el anidamiento, más difícil es rastrear esa relación sin perder el hilo, sobre todo porque en Python no existe un `Fin_Si` explícito: es solo la indentación la que marca dónde empieza y termina cada bloque. En `v1`, el cuarto caso ("hay de ambos") queda a tres niveles de indentación de distancia del primero; en `v2`, las tres condiciones explícitas quedan al mismo nivel, una después de otra, y el `else` final captura ese cuarto caso sin necesidad de evaluarlo. El resultado es idéntico en ambas versiones — lo que cambia es cuánta memoria exige seguir el rastro de los `Sino` anidados para llegar a ese resultado.
 
-| Pregunta (Tabla 1) | Ubicación en v1 | Ubicación en v2 |
+| Caso (Tabla 1) | Ubicación en v1 | Ubicación en v2 |
 |---|---|---|
-| ¿No hay pares ni impares? | primer `if` | primer `if` |
-| ¿No hay pares? | `if` dentro del primer `else` | `elif` |
-| ¿No hay impares? | `if` dentro del segundo `else` anidado | `elif` |
-| ¿Hay de ambos? | `else` más profundo | `else` |
+| ¿No hay pares ni impares? (evaluado) | primer `if` | primer `if` |
+| ¿No hay pares? (evaluado) | `if` dentro del primer `else` | `elif` |
+| ¿No hay impares? (evaluado) | `if` dentro del segundo `else` anidado | `elif` |
+| Hay de ambos (por descarte, no se evalúa) | `else` más profundo | `else` |
 
 El fragmento correspondiente en Python ([impares_v2.py](codigo/impares_v2.py)) queda así:
 
@@ -189,7 +189,7 @@ else:
     print(f"El promedio de los {cant_impares} ingresados fue {prom_impares:.2f}")
 ```
 
-Por eso los resultados de la Tabla 3 no cambian entre versiones: `v1` y `v2` responden las mismas preguntas, en el mismo orden — solo cambia cuánto anidamiento hace falta para expresarlas.
+Por eso los resultados de la Tabla 3 no cambian entre versiones: `v1` y `v2` evalúan las mismas tres condiciones explícitas, en el mismo orden, y llegan al mismo cuarto caso por descarte — solo cambia cuánto anidamiento hace falta para expresarlo.
 
 ### Conclusiones de la Parte 1
 
@@ -208,6 +208,8 @@ Antes de continuar con el mismo ejercicio de pares/impares, conviene repasar los
 | Acumulador | acumula el resultado de una operación que se repite; se actualiza en una cantidad variable | `sum_pares`, `sum_impares` |
 | Bandera | toma dos valores excluyentes; sirve como condición del ciclo o como estado interno | `otro_numero` (`'y'`/`'n'`) |
 | Centinela | valor fuera del rango válido de los datos, usado directamente en la condición del ciclo | `num == -1` |
+
+Estos roles no son categorías excluyentes: una misma variable puede cumplir más de uno a la vez. En la variante por contador, `i` es simultáneamente contador y variable de control (aparece en `i = i + 1` y en `i < N`); en la variante por bandera, `otro_numero` es a la vez bandera y variable de control.
 
 Según si el número de iteraciones se conoce o no antes de entrar al ciclo, los problemas con ciclos se clasifican en dos tipos:
 
@@ -234,6 +236,8 @@ flowchart TD
 ```
 
 En esta sesión se retomó el mismo enunciado de pares/impares tres veces, cambiando únicamente el encabezado del ciclo de lectura — contador, bandera y centinela — y reutilizando en las tres el mismo bloque final de reporte (`v2`, con `elif`) analizado en la Parte 1.
+
+En ninguna de las tres variantes que siguen se valida que el número ingresado cumpla el rango del enunciado (`>= 0`): se asume como precondición que el usuario ingresa datos válidos, porque el objetivo de esta sesión es comparar formas de controlar un ciclo, no la validación de entradas.
 
 ### Iteraciones conocidas
 
@@ -301,7 +305,7 @@ Como `N` se conoce desde el inicio, basta un contador (`i`) acotado por `i < N` 
 
 ### Iteraciones desconocidas - Uso de bandera
 
-Si no se sabe de antemano cuántos números va a ingresar el usuario, un contador acotado ya no sirve. En su lugar, se puede usar una **bandera**: una variable que se pregunta explícitamente antes de cada iteración para decidir si el ciclo continúa o se detiene. En [impares_v3.py](codigo/impares_v3.py) esa bandera es `otro_numero`, con valores `'y'`/`'n'`:
+Si no se sabe de antemano cuántos números va a ingresar el usuario, un contador acotado (`i < N`) ya no sirve como criterio de parada, porque no hay ningún `N` que darle. En su lugar, se puede usar una **bandera**: una variable que se pregunta explícitamente antes de cada iteración para decidir si el ciclo continúa o se detiene. En [impares_v3.py](codigo/impares_v3.py) esa bandera es `otro_numero`, con valores `'y'`/`'n'` — un contador (`i`) todavía puede existir, pero ya no como criterio de parada, sino solo como se ve más abajo: numerando cada solicitud:
 
 ```
 Inicio
@@ -433,6 +437,14 @@ Las tres variantes de esta sesión (contador, bandera, centinela) resuelven el m
 
 * Si el número de datos es conocido (`N`), un contador acotado (`i < N`) es la opción más simple.
 * Si no se conoce, hace falta preguntar explícitamente si hay más datos (bandera) o reservar un valor especial dentro de los mismos datos para señalar el final (centinela) — ese valor especial solo es seguro si de verdad queda fuera del rango de los datos válidos, como el `-1` de esta variante, imposible de confundir con un número mayor o igual que cero.
+
+En el fondo, el `Mientras`/`while` sigue siendo exactamente la misma estructura en las tres variantes — lo único que cambia es de dónde sale la información con la que se construye su condición de continuación:
+
+| Estrategia | ¿Cuándo usarla? | Variable de control | Condición típica |
+|---|---|---|---|
+| Contador | Se conoce de antemano el número de repeticiones | `i` | `i < N` |
+| Bandera | Una respuesta explícita del usuario indica si continuar | `otro_numero` | `otro_numero == 'y'` |
+| Centinela | Un valor especial, dentro de los mismos datos, señala el final | `num` | `num != -1` |
 
 ## Para explorar por su cuenta
 
