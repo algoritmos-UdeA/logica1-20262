@@ -3,7 +3,7 @@
 # Sesion magistral 16
 
 * **Tipo**: Presencial
-* **Fecha**: 08/09/2026
+* **Fecha**: 15/09/2026
 * **Parte**: Segundo bloque de clase (16-18)
 
 ## Resumen
@@ -129,13 +129,18 @@ Ambas versiones inicializan igual (`i = 1`, `suma = 0`), usan la misma condició
 * **Caso 1** (`i` primero): en cada vuelta se suma el valor de `i` *ya incrementado*, así que `suma` termina acumulando 2 + 3 + 4.
 * **Caso 2** (`suma` primero): en cada vuelta se suma el valor de `i` *todavía sin incrementar*, así que `suma` termina acumulando 1 + 2 + 3.
 
-Es el mismo mecanismo del off-by-one señalado en la sesión 13: cuando el cuerpo tiene varias instrucciones que usan la misma variable, no basta con saber *qué* se hace — también importa *en qué momento*, porque cada instrucción ve el valor de `i` tal como quedó después de las instrucciones que la precedieron en esa misma vuelta. Además, a diferencia de los casos de la Parte 2, aquí `i` sí se actualiza dentro del cuerpo y llega a violar la condición, así que en ambas variantes el ciclo termina. Ese mismo cuidado por *dónde* vive cada instrucción dentro del cuerpo reaparece en la Parte 3, al comparar en qué punto exacto del ciclo se ubica la ruptura.
+> [!NOTE]
+> ### ¿Qué es un "off-by-one"?
+>
+> "Off-by-one" (literalmente, *desviado por uno*) es el nombre en inglés — sin una traducción fija al español, se suele dejar tal cual o llamarlo "error de conteo corrido en uno" — de un error en el que un ciclo termina ejecutándose exactamente una vez de más o una vez de menos de lo esperado, o un valor queda desplazado en una unidad respecto al que se esperaba. Sus causas más comunes son: usar `<` en vez de `<=` (o viceversa) en la condición del ciclo, inicializar la variable de control en el valor equivocado, o —como en el Caso 1 de esta misma parte— actualizar la variable de control *antes* de usarla en vez de *después*. Es un error sutil precisamente porque el ciclo sí termina y sí produce una salida: solo que esa salida está corrida en uno respecto a la esperada.
+
+Está estrechamente emparentado con el off-by-one señalado en la sesión 13: cuando el cuerpo tiene varias instrucciones que usan la misma variable, no basta con saber *qué* se hace — también importa *en qué momento*, porque cada instrucción ve el valor de `i` tal como quedó después de las instrucciones que la precedieron en esa misma vuelta. Además, a diferencia de los casos de la Parte 2, aquí `i` sí se actualiza dentro del cuerpo y llega a violar la condición, así que en ambas variantes el ciclo termina. Ese mismo cuidado por *dónde* vive cada instrucción dentro del cuerpo reaparece en la Parte 3, al comparar en qué punto exacto del ciclo se ubica la ruptura.
 
 ## Parte 2 — Ciclos infinitos
 
 ### Repaso rápido: ¿qué es un ciclo infinito?
 
-Según la [teoría](../teoria/#contenido-cubierto): un ciclo infinito es aquel cuya condición nunca se vuelve falsa por sí sola. Puede presentarse **por error** de programación — se olvidó la actualización de la variable de control, el mismo tipo de descuido que causó el off-by-one de la [sesión 12](../sesion_magistral-12/README.md) — o de forma **intencional**, cuando no existe una condición de parada natural para escribir desde el encabezado del ciclo. Un ciclo infinito intencional solo es útil si existe una forma de detenerlo desde adentro, lo cual se resuelve mediante la ruptura de ciclos (Parte 3 de esta misma sesión):
+Según la [teoría](../teoria/#contenido-cubierto): un ciclo infinito es aquel cuya condición nunca se vuelve falsa por sí sola. Puede presentarse **por error** de programación — se olvidó por completo la actualización de la variable de control, como en el [Caso 4 de la sesión 13](../sesion_magistral-13/README.md#caso-4) (`while i < 3` sin actualizar `i`) — o de forma **intencional**, cuando no existe una condición de parada natural para escribir desde el encabezado del ciclo. Ese olvido de actualización es un pariente cercano, pero no idéntico, del off-by-one visto en la [sesión 12](../sesion_magistral-12/README.md): el off-by-one hace que el ciclo repita una vez de más o de menos, mientras que aquí el ciclo directamente no llega a terminar. Un ciclo infinito intencional solo es útil si existe una forma de detenerlo desde adentro, lo cual se resuelve mediante la ruptura de ciclos (Parte 3 de esta misma sesión):
 
 ```mermaid
 flowchart TD
@@ -152,7 +157,7 @@ flowchart TD
     class End unreachable
 ```
 
-A partir de [`ciclos_infinitos.py`](codigo/ciclos_infinitos.py), a continuación se muestran los casos trabajados junto con su pseudocódigo equivalente. Los cuatro están comentados en el script (no se ejecutan) porque ilustran distintas formas de generar, **intencionalmente**, un ciclo infinito en Python.
+A partir de [`ciclos_infinitos.py`](codigo/ciclos_infinitos.py), a continuación se muestran los casos trabajados junto con su pseudocódigo equivalente. Los cuatro están comentados en el script (no se ejecutan). Los Casos 1, 2 y 4 expresan **deliberadamente** una condición siempre verdadera (`while True`, `while 1`, `while 5`); el Caso 3 es distinto — reproduce el patrón típico de un ciclo que se vuelve infinito **por error**, porque la variable de control nunca se actualiza.
 
 ### Caso 1 — `while 1`
 
@@ -241,7 +246,10 @@ else:
 
 **Código**: bloque comentado en [ciclos_infinitos.py](codigo/ciclos_infinitos.py).
 
-**Ciclo infinito**: como `i` nunca se actualiza dentro del cuerpo, la condición `i <= 0` siempre es verdadera. Por eso el `else` de Python (última línea del pseudocódigo) nunca se alcanza: esa cláusula solo se ejecuta cuando el ciclo termina de forma natural (sin `break`), y aquí el ciclo jamás termina.
+> [!NOTE]
+> La cláusula `else` asociada a un `while` es una particularidad propia de Python: el pseudocódigo del curso no tiene ningún equivalente de esto. No hace falta memorizarla — lo importante aquí es la condición del `while`.
+
+**Ciclo infinito**: a diferencia de los tres casos anteriores (que fijan la condición en un valor siempre verdadero a propósito), aquí el ciclo se vuelve infinito **por error**: `i` nunca se actualiza dentro del cuerpo, así que la condición `i <= 0` siempre es verdadera. Por eso el `else` de Python (última línea del pseudocódigo) nunca se alcanza: esa cláusula solo se ejecuta cuando el ciclo termina de forma natural (sin `break`), y aquí el ciclo jamás termina.
 
 ### Caso 4 — `while 5`
 
@@ -273,7 +281,9 @@ while 5:
 
 ### Conclusiones de la Parte 2
 
-Los cuatro casos de esta parte son ciclos infinitos **intencionales**, no errores: se escriben así a propósito. Por sí solos no sirven de mucho — para ser útiles necesitan una forma de detenerse desde adentro, que es justo el tema de la Parte 3. Ojo: allí los ejemplos no usan literalmente `Mientras (Verdadero)`, sino una condición acotada (`i < N`) que ya trae su propia salida natural; el patrón puro *ciclo infinito + `Romper`* (`Mientras (Verdadero) Haga ... Si (condición) Entonces Romper`) se retoma más adelante en "Para explorar por su cuenta", con la cita de CS50P.
+Los Casos 1, 2 y 4 de esta parte son ciclos infinitos **intencionales**: se escriben así a propósito, casi siempre como preparación para instalar después una ruptura de ciclo dentro del cuerpo. El Caso 3 es la excepción: reproduce el patrón típico de un ciclo que se vuelve infinito **por error** (variable de control sin actualizar), aunque aquí se haya escrito así a propósito, con fines didácticos. De los tres casos intencionales, `while True` (Caso 2) es la forma idiomática y recomendada en código real; `while 1` y `while 5` (Casos 1 y 4) solo sirven para mostrar que Python evalúa como verdadero cualquier número distinto de cero.
+
+Ninguno de los cuatro sirve de mucho por sí solo — para ser útiles necesitan una forma de detenerse desde adentro, que es justo el tema de la Parte 3. Ojo: allí los ejemplos no usan literalmente `Mientras (Verdadero)`, sino una condición acotada (`i < N`) que ya trae su propia salida natural; el patrón puro *ciclo infinito + `Romper`* (`Mientras (Verdadero) Haga ... Si (condición) Entonces Romper`) se retoma más adelante en "Para explorar por su cuenta", con la cita de CS50P.
 
 ## Parte 3 — Ruptura de ciclos
 
@@ -447,7 +457,7 @@ flowchart TD
 
 A diferencia del Caso 1, ahora la pregunta del rombo sí incluye a `encontrado`: apenas se vuelve verdadero, la siguiente vez que el diagrama llega al rombo, la respuesta es "Falso" y se sale por `Fin`.
 
-**Código**: [numero_romper_bandera.py](codigo/numero_romper_bandera.py)
+**Código**: [numero_romper_bandera.py](codigo/numero_romper_bandera.py) — nota: una forma más idiomática en Python de la misma condición sería `while i < N and not encontrado:`; aquí se usó la forma explícita (`!= True`) porque hace más directa la traducción línea a línea desde el pseudocódigo.
 
 **Prueba de escritorio** (misma entrada: `N = 4`, números `0, 13, 1, 8`):
 
@@ -568,7 +578,7 @@ Los tres casos comparten enunciado, entrada y estructura general, pero difieren 
 | **Caso 2** (bandera) | En el encabezado del `Mientras` (`and encontrado != Verdadero`) | 1 | `1` — correcta |
 | **Caso 3** (`Romper`/`break`) | En el cuerpo, dentro del `Si` que detecta el valor | 1 | `1` — correcta |
 
-El Caso 1 dispara ambos problemas a la vez (lecturas de más y un dato de salida incorrecto) precisamente por no tener ninguna forma de romper el ciclo antes de agotar `i < N`. Los Casos 2 y 3 resuelven exactamente lo mismo, y solo se diferencian en el mecanismo: mover la condición de parada al encabezado (estructurado) o dejarla donde ocurre el hallazgo, dentro del cuerpo, con una instrucción explícita (`Romper`/`break`) — el mismo contraste que señala la teoría: *"la condición de parada no desaparece: se mueve"*.
+El Caso 1 dispara ambos problemas a la vez (lecturas de más y un dato de salida incorrecto) precisamente por no tener ninguna forma de romper el ciclo antes de agotar `i < N`. Los Casos 2 y 3 resuelven exactamente lo mismo, y solo se diferencian en el mecanismo: mover la condición de parada al encabezado (estructurado) o dejarla donde ocurre el hallazgo, dentro del cuerpo, con una instrucción explícita (`Romper`/`break`) — el mismo contraste que señala la teoría: *"la condición de parada no desaparece: se mueve"*. En últimas, el algoritmo no cambia solo porque se use `Romper`/`break`; lo que cambia es dónde se expresa la condición de terminación.
 
 ## Para explorar por su cuenta
 
