@@ -42,7 +42,7 @@ Estos tres componentes se ven exactamente igual en las tres representaciones que
 | Componente | Diagrama de flujo | Pseudocódigo | Python |
 |---|---|---|---|
 | ① Inicialización | Bloque antes de llegar al rombo | Instrucción antes de `Mientras` | Instrucción antes de `while` |
-| ② Condición de control | Rombo de decisión | `Mientras (condición) Entonces` | `while (condición):` |
+| ② Condición de control | Rombo de decisión | `Mientras (condición) Haga` | `while (condición):` |
 | ③ Cuerpo (con actualización) | Bloques dentro del ciclo, antes de volver al rombo | Entre `Mientras` y `Fin_Mientras` | Cuerpo indentado del `while` |
 
 ### Casos de repaso — frontera de la condición y componentes del ciclo

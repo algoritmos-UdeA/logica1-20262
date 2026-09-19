@@ -7,3 +7,6 @@
 * **Parte**: Segundo bloque de clase (16-18)
 
 A esta hora se realizo el primer parcial.
+
+* [Enunciado del Parcial 1](logica1_parcial1_2026-2.pdf)
+* [Solución del Parcial 1](logica1_parcial1_2026-2-sol.pdf)
