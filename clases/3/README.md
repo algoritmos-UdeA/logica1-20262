@@ -14,9 +14,7 @@ Este tema es el primer contacto en profundidad con Python: retoma los tres ejemp
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| 7 | Por confirmar | — | Pendiente por dictar | [sesion_magistral-7](sesion_magistral-7/README.md) *(README aún sin diligenciar)* |
-
-> **Nota:** esta clase todavía no se ha dictado. El README de la sesión 7 se completará con **Tipo**, **Fecha** y contenido cubierto una vez tenga lugar la sesión — no es un hueco de documentación, sino un pendiente real.
+| 7 | Mar 18 ago (bloque 1, 14-16) | 🏫 Presencial | Transición de pseudocódigo a Python: 6 ejercicios de repaso retomados de la teoría de la clase 2 (círculo, nómina, edad en días, hipotenusa, calculadora de 4 operaciones, corte de uñas), codificados con apoyo de archivos compartidos por dos estudiantes | [sesion_magistral-7](sesion_magistral-7/README.md) |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
