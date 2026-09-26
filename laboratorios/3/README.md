@@ -24,8 +24,8 @@ Antes de la sesión de laboratorio, vea estos dos videos cortos de Code.org (est
 Al finalizar este laboratorio, el estudiante estará en capacidad de:
 
 * Reconocer, dentro de un problema, en qué punto el algoritmo debe **repetir un conjunto de pasos** en lugar de ejecutarlos una sola vez.
-* Diferenciar entre ciclos controlados por **contador** (`for`, cuando se conoce de antemano el número de iteraciones) y ciclos controlados por **centinela** (`while`, cuando no se conoce de antemano cuántas iteraciones habrá).
-* Diseñar algoritmos que utilicen correctamente las variables de apoyo propias de los ciclos: **contador**, **acumulador** y **centinela**.
+* Reconocer dos patrones frecuentes: ciclos controlados por **contador**, cuando se conoce de antemano el número de iteraciones (para los que suele resultar natural usar `for`), y ciclos controlados por una **condición o centinela**, cuando no se sabe cuántas iteraciones habrá (para los que suele resultar natural usar `while`). No es una regla absoluta: un `while` también puede estar controlado por un contador, como se vio en clase.
+* Diseñar algoritmos que utilicen correctamente las variables de apoyo propias de los ciclos: **variable de control**, **contador**, **acumulador** y **centinela**.
 * Diseñar y depurar **ciclos anidados**, reconociendo cómo el límite de un ciclo interior puede depender del valor de la variable del ciclo exterior.
 * Verificar manualmente un algoritmo con ciclos mediante **prueba de escritorio**, incluyendo casos límite (cero iteraciones, una sola iteración).
 * Implementar en Python ciclos `while` y `for`, simples y anidados.
@@ -49,9 +49,9 @@ Adicionalmente, cada estudiante debe traer hojas y lápiz o lapicero para desarr
 
 ## Metodología de trabajo
 
-Este laboratorio se desarrolla exclusivamente en Python. Para cada problema, se deben seguir estos pasos:
+Este laboratorio se desarrolla exclusivamente en Python. Para cada problema, se deben seguir los tres pasos que se describen a continuación: entender el problema, diseñar, e implementar y verificar.
 
-Los pasos que siguen no son un trámite: cada uno es un compromiso más concreto que el anterior, pero ninguno se da por bueno hasta haber verificado el que lo precede. No se llega al código definitivo de un salto — se pasa primero por el problema en palabras, luego por las variables que lo representan, y luego por una versión del código que expone su propio estado interno mientras se construye, antes de limpiarla para la entrega final.
+Estos pasos no son un trámite: cada uno es un compromiso más concreto que el anterior, pero ninguno se da por bueno hasta haber verificado el que lo precede. No se llega al código definitivo de un salto — se pasa primero por el problema en palabras, luego por las variables que lo representan, y luego por una versión del código que expone su propio estado interno mientras se construye, antes de limpiarla para la entrega final.
 
 Este proceso se relaciona con el ciclo clásico de desarrollo de un programa:
 
@@ -75,32 +75,33 @@ Antes de pasar a la tabla de variables, conviene resumir en palabras cuál va a 
 
 #### De Polya a la práctica
 
-A medida que se va adquiriendo más pericia en el arte de programar, lo que antes se hacía siguiendo cada paso del método de Polya se va sintetizando. Con el proceso ya claro en palabras, basta con tener muy claro qué se va a almacenar en cada variable:
+A medida que se va adquiriendo más pericia en el arte de programar, lo que antes se hacía siguiendo cada paso del método de Polya se va sintetizando. Con el proceso ya claro en palabras, basta con tener muy claro qué se va a almacenar en cada variable y, cuando aplique, qué rol cumple dentro del ciclo:
 
-| Variable | Descripción |
-|---|---|
-| `NOTA_MINIMA` | Constante que define la nota mínima para aprobar |
-| `notas_reprobadas` | Cuenta cuántos estudiantes reprobaron |
-| `notas_aprobadas` | Cuenta cuántos estudiantes aprobaron |
-| `suma_reprobadas` | Acumula la suma de las notas de los estudiantes reprobados |
-| `suma_aprobadas` | Acumula la suma de las notas de los estudiantes aprobados |
-| `N` | Cantidad de estudiantes a procesar (dato de entrada) |
-| `i` | Cuenta cuántos estudiantes se han leído hasta el momento (variable de control del ciclo) |
-| `nota` | Nota del estudiante leída en la iteración actual (dato de entrada) |
-| `suma_notas` | Suma total de todas las notas, aprobadas y reprobadas |
-| `total_notas` | Total de estudiantes procesados |
-| `p_aprobaron` | Porcentaje de estudiantes que aprobaron |
-| `p_reprobaron` | Porcentaje de estudiantes que reprobaron |
-| `prom_nota_reprobada` | Promedio de las notas de los estudiantes reprobados |
-| `prom_nota_aprobada` | Promedio de las notas de los estudiantes aprobados |
-| `prom` | Promedio general de todas las notas |
+| Variable | Descripción | Rol (si aplica) |
+|---|---|---|
+| `NOTA_MINIMA` | Constante que define la nota mínima para aprobar | Constante |
+| `notas_reprobadas` | Cuenta cuántos estudiantes reprobaron | Contador |
+| `notas_aprobadas` | Cuenta cuántos estudiantes aprobaron | Contador |
+| `suma_reprobadas` | Acumula la suma de las notas de los estudiantes reprobados | Acumulador |
+| `suma_aprobadas` | Acumula la suma de las notas de los estudiantes aprobados | Acumulador |
+| `N` | Cantidad de estudiantes a procesar (dato de entrada) | |
+| `i` | Cuenta cuántos estudiantes se han leído hasta el momento | Variable de control del ciclo |
+| `nota` | Nota del estudiante leída en la iteración actual (dato de entrada) | |
+| `suma_notas` | Suma total de todas las notas, aprobadas y reprobadas | |
+| `total_notas` | Total de estudiantes procesados | |
+| `p_aprobaron` | Porcentaje de estudiantes que aprobaron | |
+| `p_reprobaron` | Porcentaje de estudiantes que reprobaron | |
+| `prom_nota_reprobada` | Promedio de las notas de los estudiantes reprobados | |
+| `prom_nota_aprobada` | Promedio de las notas de los estudiantes aprobados | |
+| `prom` | Promedio general de todas las notas | |
 
 Con esto claro, se puede empezar a plantear el algoritmo.
 
 Antes de abrir el editor, se debe plantear la solución físicamente, a mano. Esto es obligatorio e incluye:
 
-* Para cada variable que se vaya a usar en el programa, su **nombre** y una **breve descripción** de para qué sirve — no es necesario indicar tipo, ni si es contador o acumulador, ni observaciones adicionales; basta con dejar claro qué va a guardar cada una.
-* Cualquier **boceto, diagrama o esquema** que haya servido para pensar el problema (diagrama de flujo, dibujo del patrón a imprimir, seguimiento manual de una iteración, etc.).
+* Para cada variable que se vaya a usar en el programa, su **nombre**, una **breve descripción** de para qué sirve y, **cuando aplique**, su **rol** dentro del ciclo (variable de control, contador, acumulador, centinela). No todas las variables tienen uno de estos roles — un dato de entrada o un resultado final se dejan sin rol — y no es necesario indicar el tipo de dato.
+* Cualquier **boceto, diagrama o esquema** que haya servido para pensar el problema (diagrama de flujo, dibujo del patrón a imprimir, etc.).
+* Una **prueba de escritorio** del algoritmo, con al menos un caso general y los casos límite que apliquen (cero iteraciones, una sola iteración) — ver [Verificación](#verificación).
 
 Este material debe conservarse — es la evidencia del proceso de diseño, y podrá solicitarse como parte de la entrega o de la sustentación.
 
@@ -122,13 +123,13 @@ notas_aprobadas = 0
 suma_reprobadas = 0
 suma_aprobadas = 0
 
-# Solicitud de la nota del estudiante
+# Solicitud del numero de estudiantes
 N = int(input('Ingrese el número de estudiantes: '))
 for i in range(N):
     # Solicitud de la nota del estudiante
     nota = float(input(f'Ingrese la nota del estudiante {i+1}: '))
 
-    # Validadación si gano o perdio
+    # Validacion si gano o perdio
     if nota >= NOTA_MINIMA:
         # Gano
         notas_aprobadas += 1
@@ -158,11 +159,11 @@ else:
     p_reprobaron = (notas_reprobadas/total_notas)*100
 
     if notas_aprobadas == 0:
-        # Caso en el que nungun estudiante gano
+        # Caso en el que ningun estudiante gano
         prom_nota_reprobada = suma_reprobadas/notas_reprobadas
         prom_nota_aprobada = 0
     elif notas_reprobadas == 0:
-        # Caso en el que nungun estudiante perdio
+        # Caso en el que ningun estudiante perdio
         prom_nota_reprobada = 0
         prom_nota_aprobada = suma_aprobadas/notas_aprobadas
     else:
@@ -204,13 +205,13 @@ notas_aprobadas = 0
 suma_reprobadas = 0
 suma_aprobadas = 0
 
-# Solicitud de la nota del estudiante
+# Solicitud del numero de estudiantes
 N = int(input('Ingrese el número de estudiantes: '))
 for i in range(N):
     # Solicitud de la nota del estudiante
     nota = float(input(f'Ingrese la nota del estudiante {i+1}: '))
 
-    # Validadación si gano o perdio
+    # Validacion si gano o perdio
     if nota >= NOTA_MINIMA:
         # Gano
         notas_aprobadas += 1
@@ -240,11 +241,11 @@ else:
     p_reprobaron = (notas_reprobadas/total_notas)*100
 
     if notas_aprobadas == 0:
-        # Caso en el que nungun estudiante gano
+        # Caso en el que ningun estudiante gano
         prom_nota_reprobada = suma_reprobadas/notas_reprobadas
         prom_nota_aprobada = 0
     elif notas_reprobadas == 0:
-        # Caso en el que nungun estudiante perdio
+        # Caso en el que ningun estudiante perdio
         prom_nota_reprobada = 0
         prom_nota_aprobada = suma_aprobadas/notas_aprobadas
     else:
@@ -301,33 +302,33 @@ Este laboratorio se realiza de manera **individual**. Cada estudiante es respons
 ## Fechas importantes
 
 * **Asignación:** 28 de septiembre de 2026 (sesión de laboratorio).
-* **Entrega y sustentación:** 12 de octubre de 2026, durante la sesión de laboratorio. Traiga completo el material en papel (ver [Entregables](#entregables)) y esté en capacidad de sustentar cualquiera de los 10 problemas ante el docente.
+* **Entrega y sustentación:** martes 13 de octubre de 2026 (el lunes 12 de octubre es festivo). Traiga completo el material en papel (ver [Entregables](#entregables)) y esté en capacidad de sustentar cualquiera de los 10 problemas ante el docente.
 
 ## Entregables
 
 Al finalizar el laboratorio, cada estudiante debe entregar:
 
-* **En papel (a mano):** para cada uno de los 10 problemas, la tabla de variables (diccionario de datos) y los bocetos o diagramas usados en el diseño, según lo indicado en [Metodología de trabajo](#metodología-de-trabajo). Este material debe traerse a la sesión de laboratorio, ya que es la base para la sustentación del ejercicio ante el docente.
+* **En papel (a mano):** para cada uno de los 10 problemas, la tabla de variables (diccionario de datos), los bocetos o diagramas usados en el diseño y la prueba de escritorio, según lo indicado en [Metodología de trabajo](#metodología-de-trabajo). Este material debe traerse a la sesión de sustentación, ya que es la base para la sustentación del ejercicio ante el docente.
 * **En Python:** un script `.py` por cada problema, que implemente el algoritmo diseñado y permita verificar todos los casos de prueba correspondientes.
 
 ---
 
 # Problemas
 
-Los problemas están organizados de menor a mayor complejidad, según el tipo de ciclo y de variables de apoyo que requieren: primero ciclos simples con contador o centinela, luego ciclos simples con acumuladores dobles o patrones de signo alternante, y finalmente ciclos anidados.
+Los problemas están organizados de menor a mayor complejidad, según el tipo de ciclo y de variables de apoyo que requieren: primero ciclos simples con contador o centinela, luego ciclos simples con acumuladores dobles o patrones de signo alternante, y finalmente ciclos anidados (incluida una serie matemática cuyo factorial se calcula con un ciclo interno).
 
 ## Nivel 1 — Básico
 
 ### 1. Número invertido (con ciclo)
 
-Escriba un programa que le pida al usuario un número entero positivo (de cualquier cantidad de dígitos) y muestre el número resultante de invertir el orden de sus dígitos. Por ejemplo, si el usuario ingresa 123, el programa debe mostrar 321.
+Escriba un programa que le pida al usuario un número entero no negativo (de cualquier cantidad de dígitos) y muestre el número resultante de invertir el orden de sus dígitos. Por ejemplo, si el usuario ingresa 123, el programa debe mostrar 321.
 
 **Restricción:** resuelva este problema usando un ciclo `while`, y las operaciones de división entera (`//`) y módulo (`%`) para ir extrayendo cada dígito — uno a la vez, empezando por el de las unidades. No convierta el número a texto (`str`) ni use técnicas de "volteo" de cadenas (como `[::-1]`); la idea es practicar la construcción del ciclo, no un atajo del lenguaje.
 
 **Ejemplo de ejecución del programa:**
 
 ```
-Ingrese un número entero positivo: 123
+Ingrese un número entero no negativo: 123
 
 Número invertido: 321
 ```
@@ -335,7 +336,7 @@ Número invertido: 321
 <details>
 <summary>Pista adicional</summary>
 
-Necesita dos variables: el número original (que va a ir "encogiendo" en cada vuelta del ciclo) y un **acumulador** que va construyendo el resultado. En cada vuelta: obtenga el último dígito del número con `% 10`, agréguelo al acumulador (multiplicando el acumulador por 10 antes de sumar el nuevo dígito), y luego reduzca el número con `// 10`. El ciclo continúa **mientras el número sea mayor que 0** — no necesita una variable centinela aparte, porque el número mismo, al irse achicando, le indica cuándo detenerse.
+Necesita dos variables: el número original (que va a ir "encogiendo" en cada vuelta del ciclo) y un **acumulador** que va construyendo el resultado. En cada vuelta: obtenga el último dígito del número con `% 10`, agréguelo al acumulador (multiplicando el acumulador por 10 antes de sumar el nuevo dígito), y luego reduzca el número con `// 10`. El ciclo continúa **mientras el número sea mayor que 0**: el propio número actúa como **variable de control** del ciclo — en cada iteración se reduce con `// 10` hasta llegar a 0, momento en el que la condición del `while` deja de cumplirse. Note que esto no es un centinela: un centinela es un valor especial que el usuario ingresa para indicar que no hay más datos (como el `-1` del problema siguiente).
 
 </details>
 
@@ -364,7 +365,7 @@ Desarrolle una aplicación que determine si alguno de los clientes de una tienda
 * Total de todos los créditos aplicados a la cuenta del cliente en el mes.
 * Límite de crédito permitido.
 
-El programa debe usar una instrucción `while` para recibir como entrada cada uno de estos datos, calcular el nuevo saldo (`= saldo inicial + cargos − créditos`) y determinar si éste **excede** el límite de crédito del cliente. Para los clientes cuyo límite se haya excedido, el programa debe mostrar el número de cuenta, el límite de crédito, el nuevo saldo, y el mensaje `Se excedió el límite de su crédito`. El programa termina cuando el usuario ingresa `-1` como número de cuenta.
+El programa debe usar una instrucción `while` para recibir como entrada cada uno de estos datos, calcular el nuevo saldo (`= saldo inicial + cargos − créditos`) y determinar si éste **excede** el límite de crédito del cliente. Para **todos** los clientes, el programa debe mostrar el nuevo saldo; si además el nuevo saldo excede el límite de crédito, debe mostrar el número de cuenta, el límite de crédito, el nuevo saldo, y el mensaje `Se excedió el límite de su crédito`. El programa termina cuando el usuario ingresa `-1` como número de cuenta.
 
 **Ejemplo de ejecución del programa:**
 
@@ -413,7 +414,7 @@ Esta es la estructura clásica de **ciclo controlado por centinela**: no se sabe
 
 ### 3. Clasificación de N valores
 
-Dados N valores, diseñe un algoritmo que, para cada uno, calcule lo siguiente según el rango en el que caiga:
+Dados N valores **enteros**, diseñe un algoritmo que, para cada uno, calcule lo siguiente según el rango en el que caiga:
 
 * Si el valor es menor que 0, calcule su **cubo**.
 * Si el valor está entre 0 y 100 (ambos incluidos), calcule su **cuadrado**.
@@ -448,6 +449,8 @@ Cuadrado: 0
 
 Esta es la primera vez en el laboratorio que combina un ciclo `for` (para leer los N valores) con una selección por rangos dentro del ciclo (`if`/`elif`/`else`). Cada vuelta del ciclo lee un valor nuevo y, dentro de esa misma vuelta, decide en qué rango cae y calcula el resultado correspondiente — no necesita guardar los N valores en ningún lado, solo procesarlos uno a uno.
 
+Para la raíz cuadrada no necesita ninguna librería: basta con elevar el valor a la potencia 0.5 (`valor ** 0.5`), como en el ejemplo de la hipotenusa visto en clase. Para mostrarla con 2 decimales, use un f-string con formato: `print(f"Raiz cuadrada: {raiz:.2f}")`.
+
 </details>
 
 **Casos de prueba:**
@@ -475,6 +478,8 @@ Los casos 0/100/101/1000 prueban los límites exactos entre los cuatro rangos.
 Para jugar al PUM, N jugadores se sientan en círculo y van diciendo números consecutivos a partir del 1 (1, 2, 3, ...). Se escoge un número X (menor que 10) y, cuando le corresponda a un jugador decir un múltiplo de X, ese jugador debe decir "pum" en lugar del número.
 
 Escriba un programa que lea el número de jugadores N, el número escogido X, y la cantidad de números que se quieren generar, y que muestre el desarrollo del juego para esa cantidad de números, indicando en cada línea el número del jugador al que le tocó el turno y lo que dijo (el número, o "pum").
+
+Suponga que los datos de entrada cumplen: `N >= 1`, `1 <= X <= 9` y la cantidad de números a generar es `>= 0`.
 
 **Ejemplo de ejecución del programa:**
 
@@ -545,7 +550,7 @@ Solo se necesita **un** contador real: el número que se va diciendo, que va de 
 
 A los conductores les preocupa el rendimiento de combustible de sus vehículos. Un conductor ha llevado el registro de varios tanqueos, anotando los kilómetros recorridos y los litros consumidos en cada uno.
 
-Escriba un programa, controlado por centinela, que le pida al usuario los litros consumidos y los kilómetros recorridos en cada tanqueo. El programa debe calcular y mostrar el rendimiento (km/litro) obtenido en cada tanqueo. Después de procesar todos los tanqueos, debe calcular y mostrar el rendimiento promedio general de todos ellos (es decir, el total de kilómetros recorridos dividido entre el total de litros consumidos). El programa termina cuando el usuario ingresa `-1` en los litros consumidos.
+Escriba un programa, controlado por centinela, que le pida al usuario los litros consumidos y los kilómetros recorridos en cada tanqueo. El programa debe calcular y mostrar el rendimiento (km/litro) obtenido en cada tanqueo. Después de procesar todos los tanqueos, debe calcular y mostrar el rendimiento promedio general de todos ellos (es decir, el total de kilómetros recorridos dividido entre el total de litros consumidos). El programa termina cuando el usuario ingresa `-1` en los litros consumidos. Suponga que, para cada tanqueo válido, los litros consumidos son mayores que 0 y los kilómetros recorridos son mayores o iguales a 0; el valor `-1` se reserva exclusivamente como centinela.
 
 Si el usuario ingresa `-1` de inmediato (sin registrar ningún tanqueo), el programa **no debe intentar calcular el promedio general** — evite una división por cero — y en su lugar debe mostrar un mensaje indicando que no se registró ningún tanqueo.
 
@@ -572,6 +577,8 @@ El rendimiento promedio general fue: 12.12 km/l
 <summary>Pista adicional</summary>
 
 Este problema necesita **dos acumuladores** funcionando al mismo tiempo dentro del mismo ciclo centinela: uno para el total de kilómetros y otro para el total de litros. El rendimiento de cada tanqueo individual se calcula y se muestra dentro del ciclo (con los valores de esa vuelta), mientras que el rendimiento promedio general se calcula **una sola vez, después de que termine el ciclo**, usando los dos acumuladores ya completos — no el promedio de los promedios individuales, que daría un resultado distinto (y matemáticamente incorrecto) al pedido.
+
+Para mostrar los rendimientos con 2 decimales, use un f-string con formato, por ejemplo: `print(f"El rendimiento de este tanqueo fue: {rendimiento:.2f} km/l")`.
 
 </details>
 
@@ -617,6 +624,8 @@ Terminos     Aproximacion de pi
 
 Note el patrón de la serie: el numerador siempre es 4, el denominador aumenta de 2 en 2 en cada término (3, 5, 7, 9, 11, ...), y el signo se alterna entre suma y resta en cada término. Se necesitan tres cosas llevando cuenta al mismo tiempo dentro del ciclo: el **acumulador** (la aproximación de π que se va ajustando y se imprime en cada vuelta), una variable para el **denominador** (que aumenta en 2 cada vez), y una variable de **signo** (que se multiplica por −1 en cada vuelta para alternar entre sumar y restar).
 
+Para que la tabla muestre 6 decimales, use un f-string con formato, por ejemplo: `print(f"{i}            {aproximacion:.6f}")`.
+
 </details>
 
 **Casos de prueba:**
@@ -643,7 +652,7 @@ Terminos     Aproximacion de pi
 
 **Pregunta para pensar** (respóndala después de resolver el problema, no antes):
 
-> Ejecute su programa con N=150, N=1000 y N=7000, y observe qué tan cerca queda la aproximación de 3.14159265... ¿Le sorprende cuántos términos hacen falta para acercarse, considerando que la serie converge matemáticamente a π pero lo hace muy lento? (Como dato: se necesitan 151 términos para que la aproximación llegue por primera vez a 3.14, 915 para llegar a 3.141, 7.009 para 3.1415, ¡y más de 130.000 para 3.14159!)
+> Ejecute su programa con N=150, N=1000 y N=7000, y observe qué tan cerca queda la aproximación de 3.14159265... ¿Le sorprende cuántos términos hacen falta para acercarse, considerando que la serie converge matemáticamente a π pero lo hace muy lento? (Como dato: el error de la aproximación es de aproximadamente 1/N — con 150 términos todavía se equivoca en unas 7 milésimas, con 1000 términos en 1 milésima, y con 7000 términos en poco más de 1 diezmilésima.)
 
 ### 7. Conversión de binario a decimal
 
@@ -679,7 +688,7 @@ $$
 \text{Decimal} = 1 + 0 + 4 + 8 = 13
 $$
 
-Se necesitan dos variables además del número original: un **acumulador** para el resultado decimal, y una variable de **valor posicional** que empieza en 1 y se **duplica** en cada vuelta del ciclo (1, 2, 4, 8, 16, ...). En cada vuelta: tome el último dígito del número con `% 10` (el residuo de la tabla anterior), multiplíquelo por el valor posicional actual y súmelo al acumulador; luego reduzca el número con `// 10` (el cociente) y duplique el valor posicional. El ciclo continúa mientras el número sea mayor que 0 — igual que en "Número invertido", el número mismo actúa como centinela.
+Se necesitan dos variables además del número original: un **acumulador** para el resultado decimal, y una variable de **valor posicional** que empieza en 1 y se **duplica** en cada vuelta del ciclo (1, 2, 4, 8, 16, ...). En cada vuelta: tome el último dígito del número con `% 10` (el residuo de la tabla anterior), multiplíquelo por el valor posicional actual y súmelo al acumulador; luego reduzca el número con `// 10` (el cociente) y duplique el valor posicional. El ciclo continúa mientras el número sea mayor que 0 — igual que en "Número invertido", el propio número actúa como variable de control del ciclo.
 
 </details>
 
@@ -697,6 +706,8 @@ Se necesitan dos variables además del número original: un **acumulador** para 
 
 > Compare este problema con "Número invertido", el primero del laboratorio. Ambos usan exactamente el mismo mecanismo para recorrer los dígitos (`% 10` y `// 10` dentro de un `while`). ¿Qué es lo único que realmente cambia entre los dos algoritmos? ¿Qué le dice eso sobre cuántas ideas distintas hay realmente detrás de estos dos problemas, aunque parezcan diferentes a primera vista?
 
+## Nivel 3 — Avanzado (ciclos anidados)
+
 ### 8. Aproximación de cos(x) mediante series
 
 El valor de cos(x) puede aproximarse mediante la siguiente serie infinita:
@@ -710,8 +721,6 @@ Escriba un programa que calcule una aproximación de cos(x) usando esta serie. E
 
 El programa debe calcular la suma de los primeros n términos de la serie y mostrar el resultado.
 
-**Pista adicional:** el signo del término se alterna en cada iteración (positivo, negativo, positivo...) y tanto el exponente de x como el factorial del denominador crecen de 2 en 2 en cada término — es el mismo patrón de signo alternante y denominador creciente que se usó en la aproximación de π, solo que aquí el exponente avanza de dos en dos en lugar de uno en uno.
-
 **Ejemplo de ejecución:**
 
 ```
@@ -720,7 +729,20 @@ Ingrese el numero de terminos: 5
 Aproximacion de cos(1) con 5 terminos: 0.540303
 ```
 
-**Prueba de escritorio (casos de prueba):**
+<details>
+<summary>Pista adicional</summary>
+
+El signo del término se alterna en cada iteración (positivo, negativo, positivo...), igual que en la aproximación de π. Lo que avanza de dos en dos es el exponente de x y el entero al que se aplica el factorial: 0, 2, 4, 6, ... Los valores del factorial, en cambio, crecen mucho más rápido: 0! = 1, 2! = 2, 4! = 24, 6! = 720, ...
+
+Por eso este es un problema de **ciclos anidados**: el ciclo externo recorre los términos de la serie (k desde 0 hasta n − 1), y dentro de cada término un ciclo interno calcula (2k)! multiplicando 1 × 2 × ... × 2k — el mismo algoritmo del factorial visto en clase. Note que el límite del ciclo interno (2k) depende de la variable del ciclo externo (k). La potencia x<sup>2k</sup> se puede calcular directamente con `x ** (2 * k)`.
+
+**Otra forma (opcional, más eficiente):** en lugar de recalcular el factorial desde cero en cada término, puede actualizarse a partir del factorial del término anterior, ya que (2k)! = (2k − 2)! × (2k − 1) × (2k). Así basta con un solo ciclo.
+
+Para mostrar el resultado con 6 decimales, use un f-string con formato: `{aproximacion:.6f}`.
+
+</details>
+
+**Casos de prueba:**
 
 | x | n (términos) | Aproximación esperada | cos(x) real |
 |---|---|---|---|
@@ -728,8 +750,6 @@ Aproximacion de cos(1) con 5 terminos: 0.540303
 | 1.0 | 5 | 0.540303 | 0.540302 |
 | 0.5 | 4 | 0.877582 | 0.877583 |
 | π/3 ≈ 1.047198 | 6 | 0.500000 | 0.500000 |
-
-## Nivel 3 — Avanzado (ciclos anidados)
 
 ### 9. Patrones de triángulos con asteriscos
 
@@ -811,7 +831,39 @@ Tabla de multiplicacion desde 1 hasta 8:
 1x10 = 10, 2x10 = 20, 3x10 = 30, 4x10 = 40, 5x10 = 50, 6x10 = 60, 7x10 = 70, 8x10 = 80
 ```
 
-**Pista adicional:** este problema requiere dos ciclos anidados, pero con una particularidad respecto al problema anterior: el ciclo externo siempre va de 1 a 10 (fijo), mientras que el ciclo interno va de 1 hasta N (el valor que ingresa el usuario) — es decir, el límite *interno* es el variable, no el externo.
+<details>
+<summary>Pista adicional</summary>
+
+Este problema requiere dos ciclos anidados, pero con una particularidad respecto a los problemas anteriores: el ciclo externo siempre va de 1 a 10 (fijo) y recorre los multiplicadores `j`, mientras que el ciclo interno va de 1 hasta N (el valor que ingresa el usuario) y recorre los números `i`. Aquí el límite del ciclo interno **no depende** de la variable del ciclo externo: en todas las vueltas del externo, el interno se repite exactamente N veces.
+
+Cada producto de una misma línea se imprime con `print(..., end='')`, igual que los asteriscos del problema anterior, y al terminar el ciclo interno se usa un `print()` vacío para pasar a la siguiente línea. Tenga cuidado con las comas: van **entre** los productos, no después del último — piense qué condición sobre `i` le indica si debe escribir la coma o no.
+
+</details>
+
+**Casos de prueba:**
+
+**Caso 1 — N=8:** la salida completa es la del ejemplo de ejecución de arriba (10 líneas, de `1x1` a `8x10`).
+
+**Caso 2 — N=3:**
+
+```
+1x1 = 1, 2x1 = 2, 3x1 = 3
+1x2 = 2, 2x2 = 4, 3x2 = 6
+1x3 = 3, 2x3 = 6, 3x3 = 9
+1x4 = 4, 2x4 = 8, 3x4 = 12
+1x5 = 5, 2x5 = 10, 3x5 = 15
+1x6 = 6, 2x6 = 12, 3x6 = 18
+1x7 = 7, 2x7 = 14, 3x7 = 21
+1x8 = 8, 2x8 = 16, 3x8 = 24
+1x9 = 9, 2x9 = 18, 3x9 = 27
+1x10 = 10, 2x10 = 20, 3x10 = 30
+```
+
+**Caso 3 — N=1 (caso límite):** 10 líneas con un solo producto cada una y **ninguna coma**: `1x1 = 1`, `1x2 = 2`, ..., `1x10 = 10`.
+
+**Pregunta para pensar** (respóndala después de resolver el problema, no antes):
+
+> ¿Qué pasaría si intercambiara los dos ciclos, es decir, si el externo recorriera los números `i` de 1 a N y el interno los multiplicadores `j` de 1 a 10? ¿Cuántas líneas se imprimirían y qué mostraría cada una? ¿Cambia la cantidad total de productos calculados?
 
 ---
 
@@ -820,14 +872,14 @@ Tabla de multiplicacion desde 1 hasta 8:
 Seleccione una de las soluciones desarrolladas con ciclos anidados — **Patrones de triángulos con asteriscos** o **Tabla de multiplicación combinada** — y ejecútela utilizando **Python Tutor** (ver [Herramientas necesarias](#herramientas-necesarias)). Observe, para al menos un caso de prueba:
 
 1. cuántas veces se ejecuta el ciclo exterior y cuántas veces, dentro de cada una de esas vueltas, se ejecuta el ciclo interior;
-2. en qué momento el límite del ciclo interior cambia porque depende de la variable del ciclo exterior;
+2. si el límite del ciclo interior depende de la variable del ciclo exterior (como en los triángulos, donde cambia en cada fila) o se mantiene fijo en todas las vueltas (como en la tabla combinada, donde siempre es N);
 3. si la ejecución real coincide con lo que había anticipado en su diseño a mano.
 
 ## Verificación
 
 Para cada problema:
 
-1. Diseñe el algoritmo, identificando explícitamente qué variables actúan como contador, acumulador o centinela.
+1. Diseñe el algoritmo, identificando explícitamente qué variables actúan como variable de control, contador, acumulador o centinela (cuando aplique; no todas las variables cumplen uno de estos roles).
 2. Realice una prueba de escritorio a mano, incluyendo casos límite (cero iteraciones, una sola iteración) además del caso general.
 3. Implemente el programa.
 4. Ejecute todos los casos de prueba proporcionados y compare el resultado obtenido con el esperado.
