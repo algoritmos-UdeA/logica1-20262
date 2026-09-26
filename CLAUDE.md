@@ -29,3 +29,5 @@ This is a course repository for "Lógica y Representación I" (UdeA, 2026-2). It
 The `.py` files under `clases/2/` and `clases/3/` are standalone didactic examples (stdlib only, no dependencies, no tests) — run them with `python <archivo>.py`. There is nothing to build, lint, or test at this stage. When more code is added to this repository, update this file with the actual commands and architecture rather than assuming a structure in advance.
 
 `.gitignore` (added 2026-09-13) excludes draw.io's own temporary backup files (`.$*.bkp`), which appear alongside `.drawio` sources whenever a diagram is edited — don't hand-add these to a commit.
+
+`.gitattributes` (added 2026-09-25) marks `.pdf`, `.pptx`, `.docx`, `.png`, `.jpg`, `.jpeg`, `.zip` and `.xopp` as `binary`, because the instructor's machine has `core.autocrlf = true` and one Deitel PDF in `material/libros/` was once auto-detected as text — without the attribute, a Windows clone could rewrite line endings inside it and corrupt it. `.drawio` files are deliberately left out (they're XML text, so line diffs stay useful). When adding a new binary format to the repo, add its extension there.
