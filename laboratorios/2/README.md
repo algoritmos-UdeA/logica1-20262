@@ -1,3 +1,5 @@
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
+
 # Laboratorio 2 — Estructuras condicionales
 
 ## Antes de empezar
