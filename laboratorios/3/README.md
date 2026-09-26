@@ -7,6 +7,18 @@ Antes de la sesión de laboratorio, vea estos dos videos cortos de Code.org (est
 * [CSA: While Loops](https://www.youtube.com/watch?v=qnz0LVpUr88&start=88): introducción al ciclo `while`, controlado por una condición que se evalúa antes de cada repetición.
 * [CSA: For Loops](https://www.youtube.com/watch?v=EF3laugNVCI&start=148): introducción al ciclo `for`, útil cuando se conoce de antemano el número de repeticiones.
 
+> [!NOTE]
+> Los videos usan **Java**, no Python. Lo importante aquí es el **fundamento** (cómo se construye un ciclo), no el lenguaje: la lógica es la misma que vimos en pseudocódigo, y solo cambia la forma de escribirla. Fíjese en estas diferencias al verlos:
+>
+> | Idea | Pseudocódigo | Java (video) | Python (curso) |
+> |---|---|---|---|
+> | Ciclo por condición | `Mientras (i <= n) Haga` | `while (i <= n) { ... }` | `while i <= n:` |
+> | Ciclo por contador | `Para (i = 1, n, 1) Haga` | `for (int i = 1; i <= n; i++) { ... }` | `for i in range(1, n + 1):` |
+> | Delimitar el cuerpo | `Fin_Mientras` / `Fin_Para` | llaves `{ }` | sangría (indentación) |
+> | Incrementar | `i = i + 1` | `i++` | `i += 1` |
+>
+> Observe que el `for` de Java escribe en la cabecera la inicialización, la condición y la actualización, igual que nuestro `Para`, mientras que en Python el `for` recorre la secuencia que genera `range()`. Para la equivalencia completa entre pseudocódigo y Python, consulte el [Anexo](#anexo-equivalencias-entre-pseudocódigo-y-python).
+
 ## Objetivos
 
 Al finalizar este laboratorio, el estudiante estará en capacidad de:
@@ -857,7 +869,63 @@ El objetivo de esta reflexión no es evaluar si cometió errores, sino reconocer
 ## Recursos
 
 * [Debugging and Profiling · Missing Semester (MIT)](https://missing.csail.mit.edu/2020/debugging-profiling/): referencia sobre *print debugging* como técnica profesional válida.
-* [Plantilla de solución de problemas (método de Polya)](./plantilla_metodo_polya_UdeA.docx): formato opcional para documentar el diseño de cada problema (puede adaptarse para incluir también la tabla de variables).
+* [Real Python Pocket Reference](./python-cheatsheet.pdf): resumen de dos páginas (en inglés) de lo más importante de Python, útil como consulta rápida mientras se programa. Para este laboratorio son relevantes las secciones *Variables & Assignment*, *Numbers & Math*, *Conditionals* y *Loops*; el resto (funciones, clases, excepciones, listas) corresponde a temas que se verán más adelante en el curso.
+
+## Anexo: Equivalencias entre pseudocódigo y Python
+
+Las siguientes tablas resumen, con la notación usada en clase, cómo se escribe en Python cada estructura vista en pseudocódigo hasta el momento. Son material de consulta rápida para pasar del diseño a mano al código. Para más detalles de la sintaxis de Python, consulte también la [Real Python Pocket Reference](./python-cheatsheet.pdf).
+
+### A.1 Instrucciones básicas
+
+| Instrucción | Pseudocódigo | Python |
+|---|---|---|
+| Inicio y fin del algoritmo | `Inicio` ... `Fin` | No se escriben: el programa empieza en la primera línea y termina en la última. |
+| Entrada | `Leer(N)` | `N = int(input('Mensaje: '))` |
+| Salida | `Escribir('Suma: ', suma)` | `print('Suma: ', suma)` |
+| Asignación | `suma = 0` | `suma = 0` |
+| Constante | `NOTA_MINIMA = 3.0` | `NOTA_MINIMA = 3.0` |
+| Valores lógicos | `Verdadero`, `Falso` | `True`, `False` |
+| Actualizar un contador | `i = i + 1` | `i = i + 1` o `i += 1` |
+| Actualizar un acumulador | `suma = suma + nota` | `suma = suma + nota` o `suma += nota` |
+
+> En Python, `input()` siempre devuelve texto (`str`); si el valor se va a usar en una operación numérica, debe convertirse con `int()` o `float()`.
+
+### A.2 Operadores
+
+| Tipo | Pseudocódigo | Python |
+|---|---|---|
+| Aritméticos | `+`, `-`, `*`, `/`, `//`, `%` | `+`, `-`, `*`, `/`, `//`, `%` |
+| Potencia | `^` | `**` |
+| Relacionales | `>`, `>=`, `<`, `<=`, `==`, `!=` | `>`, `>=`, `<`, `<=`, `==`, `!=` |
+| Lógicos | `and`, `or`, `not` | `and`, `or`, `not` |
+
+### A.3 Estructuras condicionales
+
+| Estructura | Pseudocódigo | Python |
+|---|---|---|
+| Alternativa simple | `Si (nota >= 3.0) Entonces`<br>&nbsp;&nbsp;`Escribir('Aprobó')`<br>`Fin_Si` | `if nota >= 3.0:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Aprobó')` |
+| Alternativa doble | `Si (nota >= 3.0) Entonces`<br>&nbsp;&nbsp;`Escribir('Aprobó')`<br>`Sino`<br>&nbsp;&nbsp;`Escribir('Reprobó')`<br>`Fin_Si` | `if nota >= 3.0:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Aprobó')`<br>`else:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Reprobó')` |
+| Alternativa múltiple | `Si (nota >= 4.0) Entonces`<br>&nbsp;&nbsp;`Escribir('Excelente')`<br>`Sino`<br>&nbsp;&nbsp;`Si (nota >= 3.0) Entonces`<br>&nbsp;&nbsp;&nbsp;&nbsp;`Escribir('Aprobó')`<br>&nbsp;&nbsp;`Sino`<br>&nbsp;&nbsp;&nbsp;&nbsp;`Escribir('Reprobó')`<br>&nbsp;&nbsp;`Fin_Si`<br>`Fin_Si` | `if nota >= 4.0:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Excelente')`<br>`elif nota >= 3.0:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Aprobó')`<br>`else:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print('Reprobó')` |
+
+> El pseudocódigo no tiene un equivalente de `elif`: la alternativa múltiple siempre se escribe con bloques `Si ... Sino` anidados. En Python ese mismo algoritmo se puede escribir con `if` anidados o con `if`/`elif`/`else`; las dos formas son correctas, pero la segunda suele ser más fácil de leer.
+>
+> En pseudocódigo el final de cada bloque se marca con `Fin_Si`, `Fin_Mientras` o `Fin_Para`. En Python no existen esas palabras: el bloque lo delimita la **sangría** (indentación), por lo que un espacio de más o de menos cambia el significado del programa.
+
+### A.4 Estructuras repetitivas
+
+| Estructura | Pseudocódigo | Python |
+|---|---|---|
+| Ciclo `Mientras` | `i = 1`<br>`Mientras (i <= N) Haga`<br>&nbsp;&nbsp;`Escribir(i)`<br>&nbsp;&nbsp;`i = i + 1`<br>`Fin_Mientras` | `i = 1`<br>`while i <= N:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print(i)`<br>&nbsp;&nbsp;&nbsp;&nbsp;`i = i + 1` |
+| Ciclo `Para` (paso positivo) | `Para (i = 1, N, 1) Haga`<br>&nbsp;&nbsp;`Escribir(i)`<br>`Fin_Para` | `for i in range(1, N + 1, 1):`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print(i)` |
+| Ciclo `Para` desde 0 | `Para (i = 0, N - 1, 1) Haga`<br>&nbsp;&nbsp;`Leer(nota)`<br>`Fin_Para` | `for i in range(N):`<br>&nbsp;&nbsp;&nbsp;&nbsp;`nota = float(input('Nota: '))` |
+| Ciclo `Para` (paso negativo) | `Para (num = N, 1, -1) Haga`<br>&nbsp;&nbsp;`Escribir(num)`<br>`Fin_Para` | `for num in range(N, 0, -1):`<br>&nbsp;&nbsp;&nbsp;&nbsp;`print(num)` |
+| Ciclo con centinela | `Leer(nota)`<br>`Mientras (nota != -1) Haga`<br>&nbsp;&nbsp;`...`<br>&nbsp;&nbsp;`Leer(nota)`<br>`Fin_Mientras` | `nota = float(input('Nota (-1 para terminar): '))`<br>`while nota != -1:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`...`<br>&nbsp;&nbsp;&nbsp;&nbsp;`nota = float(input('Nota (-1 para terminar): '))` |
+| Terminar el ciclo | `Romper` | `break` |
+| Saltar a la siguiente iteración | `Continuar` | `continue` |
+
+> **Cuidado con `range()`:** en `range(inicio, parada, paso)` el valor de parada **no se incluye**. Por eso el `fin` del pseudocódigo se traduce como `fin + 1` cuando el paso es positivo, y como `fin - 1` cuando el paso es negativo: `Para (num = N, 1, -1)` se escribe `range(N, 0, -1)`, y no `range(N, 2, -1)` (que sería aplicar por error la regla `fin + 1` del paso positivo).
+>
+> `Romper` (`break`) termina el ciclo por completo; `Continuar` (`continue`) solo salta el resto del cuerpo en la iteración actual y sigue con la siguiente.
 
 > [!important]
 > ### Nota de transparencia sobre uso de IA
