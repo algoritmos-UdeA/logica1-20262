@@ -1,10 +1,11 @@
-![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
-
 # Laboratorio 3 — Ciclos
 
 ## Antes de empezar
 
-> **Pendiente de definir:** en el Laboratorio 2 se incluyeron aquí dos videos cortos motivacionales relacionados con el tema (condicionales). Para este laboratorio, indique los videos sobre ciclos (`while`/`for`) que desea incluir, o si prefiere que se propongan opciones para verificar antes de agregarlas.
+Antes de la sesión de laboratorio, vea estos dos videos cortos de Code.org (están en inglés; active los subtítulos en español si los necesita):
+
+* [CSA: While Loops](https://www.youtube.com/watch?v=qnz0LVpUr88&start=88): introducción al ciclo `while`, controlado por una condición que se evalúa antes de cada repetición.
+* [CSA: For Loops](https://www.youtube.com/watch?v=EF3laugNVCI&start=148): introducción al ciclo `for`, útil cuando se conoce de antemano el número de repeticiones.
 
 ## Objetivos
 
@@ -14,7 +15,6 @@ Al finalizar este laboratorio, el estudiante estará en capacidad de:
 * Diferenciar entre ciclos controlados por **contador** (`for`, cuando se conoce de antemano el número de iteraciones) y ciclos controlados por **centinela** (`while`, cuando no se conoce de antemano cuántas iteraciones habrá).
 * Diseñar algoritmos que utilicen correctamente las variables de apoyo propias de los ciclos: **contador**, **acumulador** y **centinela**.
 * Diseñar y depurar **ciclos anidados**, reconociendo cómo el límite de un ciclo interior puede depender del valor de la variable del ciclo exterior.
-* Aplicar el patrón de **extracción de dígitos** (`% 10` y `// 10`) para descomponer y reconstruir números dentro de un ciclo.
 * Verificar manualmente un algoritmo con ciclos mediante **prueba de escritorio**, incluyendo casos límite (cero iteraciones, una sola iteración).
 * Implementar en Python ciclos `while` y `for`, simples y anidados.
 * Usar `print()` como herramienta de depuración (*print debugging*) complementaria a la prueba de escritorio a mano.
@@ -288,7 +288,8 @@ Este laboratorio se realiza de manera **individual**. Cada estudiante es respons
 
 ## Fechas importantes
 
-> **Pendiente de definir.** Como referencia, dado que el laboratorio es individual, se estimaron entre 7 y 9 horas de trabajo total y entre 3 y 4 sesiones de laboratorio (frente a las 2 sesiones que habría tomado en pareja). Indique las fechas concretas de asignación, las sesiones disponibles y la fecha de entrega/sustentación.
+* **Asignación:** 28 de septiembre de 2026 (sesión de laboratorio).
+* **Entrega y sustentación:** 12 de octubre de 2026, durante la sesión de laboratorio. Traiga completo el material en papel (ver [Entregables](#entregables)) y esté en capacidad de sustentar cualquiera de los 10 problemas ante el docente.
 
 ## Entregables
 
