@@ -12,7 +12,9 @@ Continuación de la clase 7: tras el repaso del ciclo `Mientras`/`while` (cerrad
 
 ## Sesiones magistrales
 
-Esta clase todavía no se ha dictado: aún no existe ninguna carpeta `sesion_magistral-N/` para ella. Cuando se dicte, se le asignará el siguiente número continuo de sesión (17, después de la sesión 16 de la clase 7) y esta sección se completará con la tabla de sesión correspondiente.
+| Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
+|---|---|---|---|---|
+| 17 | Mar 22 sep (bloque 1, 14-16) | 🏫 Presencial | Introducción práctica del ciclo `Para`/`for`, programando en vivo los ejemplos 1 a 4 de la teoría: imprimir de 1 a `N` (contrastado con su versión `while`), suma de `N` números (acumulador), factorial (acumulador de producto, con `0! = 1` sin caso especial) y secuencia alternante de signos con `range` descendente, en dos formas (potencia de -1 y bandera booleana) | [sesion_magistral-17](sesion_magistral-17/README.md) |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
