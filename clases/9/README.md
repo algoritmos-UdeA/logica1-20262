@@ -12,7 +12,11 @@ Tras un repaso de todo lo visto hasta ahora (condicionales, ciclos `Mientras` y 
 
 ## Sesiones magistrales
 
-Esta clase todavía no se ha dictado: aún no existe ninguna carpeta `sesion_magistral-N/` para ella. Cuando se dicte, se le asignará el siguiente número continuo de sesión (20, después de la sesión 19 de la clase 8) y esta sección se completará con la tabla de sesiones correspondiente.
+| Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
+|---|---|---|---|---|
+| 20 | Mar 29 sep (bloque 2, 16-18) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
+
+La fecha es tentativa: corresponde al siguiente bloque de clase después de la sesión 19 de la clase 8. Cuando se dicte, se creará la carpeta `sesion_magistral-20/` y esta fila se completará con su contenido y su enlace.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
