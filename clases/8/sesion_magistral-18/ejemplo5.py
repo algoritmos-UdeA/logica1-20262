@@ -34,22 +34,24 @@ for i in range(N):
 if N <= 0:
     # No hay estutiantes
     print("No hay estudiantes")
-elif est_reprob == 0:
-    # Todos ganadon
-    prom_reprob = 0
-    prom_aprob = suma_aprob/est_aprob
-    pass
-elif est_aprob == 0:
-    # Todos perdieron
-    prom_aprob = 0
-    prom_reprob = suma_reprob/est_reprob
 else:
-    # Calculos
-    prom_reprob = suma_reprob/est_reprob
-    prom_aprob = suma_aprob/est_aprob
-    
+    if est_reprob == 0:
+        # Todos ganadon
+        prom_reprob = 0
+        prom_aprob = suma_aprob/est_aprob
+    elif est_aprob == 0:
+        # Todos perdieron
+        prom_aprob = 0
+        prom_reprob = suma_reprob/est_reprob
+    else:
+        # Hay estudiantes que ganaron y que perdieron
+        prom_reprob = suma_reprob/est_reprob
+        prom_aprob = suma_aprob/est_aprob
+
+    # Promedio de notas
     prom_nota = (suma_reprob + suma_aprob)/N
-    # Resultados
+
+    # Despliegue de resultados
     print(f"Ganaron: {est_aprob}")
     print(f"Perdieron: {est_reprob}")
     print(f"Prom reprob: {prom_reprob}")
