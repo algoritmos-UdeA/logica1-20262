@@ -1,7 +1,6 @@
 """
 Resumen:
-Este ejemplo usa un ciclo controlado por un contador. El ciclo se ejecuta un número determinado de veces, que es 
-el número de estudiantes al que se le ingresará la nota.
+
 """
 
 # Constantes
