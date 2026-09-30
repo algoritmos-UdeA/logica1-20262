@@ -29,7 +29,7 @@ A partir de [`ejemplo1.py`](ejemplo1.py), la sesión se organiza en cuatro parte
 
 > Escriba un programa que lea la cantidad de términos `N` y un valor real `x`, y calcule la suma de los primeros `N` términos de la siguiente serie:
 >
-> $$s = 1 + 2x + 3x^2 + 4x^3 + \cdots + N\,x^{N-1}$$
+> $$s = 1 + 2x + 3x^2 + 4x^3 + \cdots + Nx^{N-1}$$
 >
 > Además de la suma final, el programa debe mostrar, para cada término, su posición `i`, la potencia $x^i$, el coeficiente y el valor del término.
 
@@ -58,7 +58,7 @@ Antes de pensar en el ciclo, hay que entender la serie. La forma más segura es 
 | $3x^2$ | 2 | 3 | $x^2$ |
 | $4x^3$ | 3 | 4 | $x^3$ |
 | $\vdots$ | $\vdots$ | $\vdots$ | $\vdots$ |
-| $N\,x^{N-1}$ | $N - 1$ | $N$ | $x^{N-1}$ |
+| $Nx^{N-1}$ | $N - 1$ | $N$ | $x^{N-1}$ |
 
 Leyendo la tabla por columnas aparecen dos patrones:
 
@@ -67,16 +67,16 @@ Leyendo la tabla por columnas aparecen dos patrones:
 
 Con eso, el término que ocupa la posición `i` es:
 
-$$t_i = (i + 1)\,x^i \qquad i = 0, 1, 2, \ldots, N - 1$$
+$$t_i = (i + 1)x^i \qquad i = 0, 1, 2, \ldots, N - 1$$
 
 y la serie completa se puede escribir como una sumatoria:
 
-$$s = \sum_{i=0}^{N-1} (i + 1)\,x^i$$
+$$s = \sum_{i=0}^{N-1} (i + 1)x^i$$
 
 Esta fórmula es la que se programa. El ciclo recorre las posiciones `i = 0, 1, …, N - 1`, en cada vuelta calcula $t_i$ y lo suma al acumulador `s`.
 
 > [!NOTE]
-> El primer término, `1`, no parece seguir el patrón, pero sí lo sigue: con `i = 0` el término general da $(0 + 1)\,x^0 = 1 \cdot 1 = 1$, porque cualquier número elevado a la `0` es `1`. Por eso no hace falta tratarlo como un caso especial.
+> El primer término, `1`, no parece seguir el patrón, pero sí lo sigue: con `i = 0` el término general da $(0 + 1)x^0 = 1 \cdot 1 = 1$, porque cualquier número elevado a la `0` es `1`. Por eso no hace falta tratarlo como un caso especial.
 
 ### Entradas y salidas
 
@@ -106,7 +106,7 @@ La cantidad de términos `N` se lee **antes** del ciclo, así que el número de 
 | `x` | Valor real de la variable de la serie (dato de entrada) | |
 | `i` | Posición del término actual (de `0` a `N - 1`); también es el exponente de `x` | Variable de control del ciclo |
 | `coef` | Coeficiente del término actual (1, 2, 3, …) | Contador |
-| `term` | Valor del término actual, $(i + 1)\,x^i$; se recalcula en cada vuelta | |
+| `term` | Valor del término actual, $(i + 1)x^i$; se recalcula en cada vuelta | |
 | `s` | Suma de los términos calculados hasta el momento (dato de salida) | Acumulador |
 
 Dos detalles:
@@ -319,7 +319,7 @@ print(f"s = {s}")
 </td></tr>
 </table>
 
-La versión sin `coef` es más corta y se parece más a la fórmula $t_i = (i + 1)\,x^i$. La versión con `coef` hace más visible cada parte del término por separado, lo que ayuda mientras se está aprendiendo a descomponer una serie. Las dos son correctas.
+La versión sin `coef` es más corta y se parece más a la fórmula $t_i = (i + 1)x^i$. La versión con `coef` hace más visible cada parte del término por separado, lo que ayuda mientras se está aprendiendo a descomponer una serie. Las dos son correctas.
 
 ### Variante 2 — la potencia como acumulador de producto
 
