@@ -378,6 +378,9 @@ Así, en un mismo archivo quedan el enunciado, el código y los resultados de ha
 > [!IMPORTANT]
 > La salida que se ve debajo de una celda es la de **la última vez que se ejecutó**, y queda guardada dentro del archivo. Si después se modifica el código y no se vuelve a ejecutar la celda, la salida guardada ya no corresponde al código que se ve. En la [Parte 7](#cuántas-vueltas-se-ahorran) aparece un caso real de esto.
 
+> [!TIP]
+> **Antes de guardar o entregar un notebook, reinicie y ejecute todo.** En el menú **Kernel**, use **Restart Kernel and Run All Cells** (en versiones anteriores de Jupyter se llama **Restart & Run All**). Esto borra de la memoria todas las variables y ejecuta las celdas una por una, de arriba hacia abajo. Así se comprueba que el notebook funciona en orden, sin depender de una variable de una ejecución anterior o de una celda que ya se borró, y que cada salida guardada corresponde al código que se ve. Es una de las recomendaciones de *Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks* (Rule et al., 2019): *"make a habit of regularly restarting your kernel and rerunning all cells"*. Tenga en cuenta que las celdas con `input` se detendrán a esperar el dato.
+
 ### Cómo crear un notebook nuevo
 
 1. Abra **Anaconda Navigator** desde el menú Inicio de Windows.
@@ -942,6 +945,33 @@ for div_i in range(2, int(num ** 0.5) + 1):
 ```
 
 Con `num = 10007`, ¿cuántas vueltas da ahora el ciclo, comparado con las 5002 de antes? ¿Sigue respondiendo bien con `num = 25`, cuya raíz cuadrada es exactamente `5`?
+
+### Contar pasos: el mejor caso y el peor caso
+
+La tabla de vueltas de la Parte 7 es, en pequeño, la forma en que se comparan los algoritmos en computación: **contando cuántos pasos dan** según el tamaño de la entrada, en vez de medir segundos (que dependen del computador). CS50x (Harvard) dedica su Week 3 a esta idea y distingue dos situaciones:
+
+* **El peor caso**, que se escribe con la letra **O** ("O grande"): el máximo de pasos que puede necesitar el algoritmo.
+* **El mejor caso**, que se escribe con la letra griega **Ω** ("omega"): el mínimo de pasos, cuando la entrada es la más favorable.
+
+Aplicado a la Parte 7:
+
+| Versión | Mejor caso | Peor caso |
+|---|---|---|
+| Versión 1 (sin `break`) | Todos los candidatos, siempre | Todos los candidatos |
+| Versión 2 (con `break`) | **1 vuelta** (`num` par mayor que `2`) | Todos los candidatos (`num` primo) |
+| Hasta la raíz cuadrada, con `break` | 1 vuelta | Unos $\sqrt{num}$ candidatos |
+
+`break` mejora el mejor caso, pero no el peor: por eso con `10007` las dos versiones dieron 5002 vueltas. En cambio, recorrer solo hasta la raíz cuadrada sí mejora el peor caso. La búsqueda lineal de CS50x se comporta igual que la Versión 2: termina apenas encuentra lo que busca, pero en el peor caso revisa todo.
+
+### Probar todos los candidatos: *guess and check*
+
+La estrategia de la Parte 6 y la Parte 7 (probar uno por uno todos los valores posibles y quedarse con los que cumplen una condición) tiene nombre: **enumeración exhaustiva**, o *guess and check* ("adivinar y comprobar"). El curso 6.0001 del MIT la presenta en su Lecture 3 con otro ejemplo: encontrar la raíz cúbica de un número probando candidatos. Siempre que el conjunto de candidatos sea finito y se pueda recorrer con un ciclo, la estrategia funciona; el costo es la cantidad de candidatos, y por eso vale la pena reducirlos (como con `num // 2` o la raíz cuadrada).
+
+### Referencias
+
+* Malan, D. (Harvard). *CS50 Introduction to Computer Science* — [Lecture 3: Algorithms — Running Time](https://cs50.harvard.edu/x/notes/3/#running-time) (ver también [Linear Search](https://cs50.harvard.edu/x/notes/3/#linear-search)).
+* Bell, A. (MIT). *6.0001 Introduction to Computer Science and Programming in Python* — [Lecture 3: String Manipulation, Guess and Check, Approximations, Bisection](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-3-string-manipulation-guess-and-check-approximations-bisection/) (continúa la Lecture 2 citada en la [sesión 15](../../7/sesion_magistral-15/README.md#referencia)).
+* Rule, A. et al. (2019). [*Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks*](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007007). PLOS Computational Biology (citado en la [Parte 5](#qué-es-un-notebook)).
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
