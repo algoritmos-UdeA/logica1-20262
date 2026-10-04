@@ -14,9 +14,9 @@ Tras un repaso de todo lo visto hasta ahora (condicionales, ciclos `Mientras` y 
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| 21 | Mar 6 oct (bloque 1, 14-16) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
+| 22 | Por definir — tentativa | 🏫 Presencial | Pendiente por dictar | — |
 
-La fecha es tentativa: corresponde al siguiente bloque de clase después de la sesión 20, con la que terminó la clase 8. Cuando se dicte, se creará la carpeta `sesion_magistral-21/` y esta fila se completará con su contenido y su enlace.
+La fecha está por definir: la sesión 21 (6 de octubre) se dedicó a terminar los ciclos anidados de la [clase 8](../8/sesion_magistral-21/README.md), así que la clase 9 empieza en la sesión siguiente. Cuando se dicte, se creará la carpeta `sesion_magistral-22/` y esta fila se completará con su fecha, su contenido y su enlace.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.

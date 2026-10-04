@@ -219,3 +219,6 @@ __marimo__/
 
 # draw.io backup files
 .$*.bkp
+
+# Office lock files (created while a document is open)
+~$*
