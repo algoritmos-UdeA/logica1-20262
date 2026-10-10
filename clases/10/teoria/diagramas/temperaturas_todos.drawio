@@ -1,0 +1,332 @@
+<mxfile host="Electron" version="29.6.1">
+  <diagram name="Programa principal" id="temperaturas_principal">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="temperaturas-ini" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Inicio" vertex="1">
+          <mxGeometry height="40" width="40" x="180" y="0" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-tit" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;Programa de conversion de °C a °F y K&quot;)" vertex="1">
+          <mxGeometry height="30" width="330" x="35" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-menu" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0660377358490566;" value="mostrar_menu()" vertex="1">
+          <mxGeometry height="30" width="160" x="120" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-lop" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer(opcion)" vertex="1">
+          <mxGeometry height="30" width="160" x="120" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-r1" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opcion == 1" vertex="1">
+          <mxGeometry height="60" width="140" x="130" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-r2" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opcion == 2" vertex="1">
+          <mxGeometry height="60" width="140" x="410" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-r3" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="opcion == 3" vertex="1">
+          <mxGeometry height="60" width="140" x="690" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-l1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer(temp_c)" vertex="1">
+          <mxGeometry height="30" width="160" x="120" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-lb_in1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;temp_c&lt;/b&gt; = temp_c" vertex="1">
+          <mxGeometry height="20" width="110" x="210" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-f1" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0660377358490566;" value="celsius_a_fahrenheit()" vertex="1">
+          <mxGeometry height="30" width="180" x="110" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-lb_out1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="temp_f = &lt;b&gt;temp_f&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="110" x="210" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-w1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(temp_c, temp_f)" vertex="1">
+          <mxGeometry height="30" width="190" x="105" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-l2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Leer(temp_c)" vertex="1">
+          <mxGeometry height="30" width="160" x="400" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-lb_in2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;temp_c&lt;/b&gt; = temp_c" vertex="1">
+          <mxGeometry height="20" width="110" x="490" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-f2" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.0660377358490566;" value="celsius_a_kelvin()" vertex="1">
+          <mxGeometry height="30" width="180" x="390" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-lb_out2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="temp_k = &lt;b&gt;temp_k&lt;/b&gt;" vertex="1">
+          <mxGeometry height="20" width="110" x="490" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-w2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(temp_c, temp_k)" vertex="1">
+          <mxGeometry height="30" width="190" x="385" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-w3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;Gracias por usarnos&quot;)" vertex="1">
+          <mxGeometry height="30" width="220" x="650" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-fin" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Fin" vertex="1">
+          <mxGeometry height="40" width="40" x="740" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-w4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;ERROR: Opcion no valida&quot;)" vertex="1">
+          <mxGeometry height="30" width="230" x="885" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y165yes" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="yes" vertex="1">
+          <mxGeometry height="30" width="30" x="165" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y275no" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="no" vertex="1">
+          <mxGeometry height="30" width="30" x="275" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y445yes" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="yes" vertex="1">
+          <mxGeometry height="30" width="30" x="445" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y555no" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="no" vertex="1">
+          <mxGeometry height="30" width="30" x="555" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y725yes" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="yes" vertex="1">
+          <mxGeometry height="30" width="30" x="725" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-y835no" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="no" vertex="1">
+          <mxGeometry height="30" width="30" x="835" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="temperaturas-e0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-ini" target="temperaturas-tit">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-tit" target="temperaturas-menu">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-menu" target="temperaturas-lop">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-lop" target="temperaturas-r1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" source="temperaturas-r1" target="temperaturas-r2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" source="temperaturas-r2" target="temperaturas-r3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-r3" target="temperaturas-w4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-r1" target="temperaturas-l1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-r2" target="temperaturas-l2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-r3" target="temperaturas-w3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-l1" target="temperaturas-f1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e11" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-f1" target="temperaturas-w1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e12" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-l2" target="temperaturas-f2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e13" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-f2" target="temperaturas-w2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e14" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="temperaturas-w3" target="temperaturas-fin">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e15" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" source="temperaturas-w1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e16" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;" source="temperaturas-w2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="temperaturas-e17" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" source="temperaturas-w4" target="temperaturas-menu">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="600" />
+              <mxPoint x="40" y="600" />
+              <mxPoint x="40" y="165" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="mostrar_menu" id="mostrar_menu">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mostrar_menu-frame" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=none;size=0.041666666666666664;" value="" vertex="1">
+          <mxGeometry height="400" width="310" x="259" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-name" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;mostrar_menu()&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="259" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-pin" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;parametros&lt;/b&gt;: ninguno" vertex="1">
+          <mxGeometry height="20" width="160" x="264" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-ini" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="Inicio" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-b0" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;--------------------------------&quot;)" vertex="1">
+          <mxGeometry height="30" width="250" x="289" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="mostrar_menu-ini" target="mostrar_menu-b0">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-b1" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;1. °C a °F&quot;)" vertex="1">
+          <mxGeometry height="30" width="190" x="319" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="mostrar_menu-b0" target="mostrar_menu-b1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-b2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;2. °C a K&quot;)" vertex="1">
+          <mxGeometry height="30" width="190" x="319" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="mostrar_menu-b1" target="mostrar_menu-b2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-b3" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Escribir(&quot;3. Salir&quot;)" vertex="1">
+          <mxGeometry height="30" width="190" x="319" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="mostrar_menu-b2" target="mostrar_menu-b3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-ret" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="return" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="mostrar_menu-b3" target="mostrar_menu-ret">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-pout" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="&lt;b&gt;salidas&lt;/b&gt;: ninguna" vertex="1">
+          <mxGeometry height="20" width="160" x="249" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="mostrar_menu-e5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="mostrar_menu-ini">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="100" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mostrar_menu-e6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" source="mostrar_menu-ret">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="celsius_a_fahrenheit" id="celsius_a_fahrenheit">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="celsius_a_fa-frame" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=none;size=0.041666666666666664;" value="" vertex="1">
+          <mxGeometry height="220" width="290" x="269" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-name" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;celsius_a_fahrenheit()&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="269" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-pin" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;parametros&lt;/b&gt;: temp_c" vertex="1">
+          <mxGeometry height="20" width="160" x="264" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-ini" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="Inicio" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-b0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="temp_f = (9/5)*temp_c + 32" vertex="1">
+          <mxGeometry height="30" width="190" x="319" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-e0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="celsius_a_fa-ini" target="celsius_a_fa-b0">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_fa-ret" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="return" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-e1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="celsius_a_fa-b0" target="celsius_a_fa-ret">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_fa-pout" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="&lt;b&gt;salidas&lt;/b&gt;: temp_f" vertex="1">
+          <mxGeometry height="20" width="160" x="249" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_fa-e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="celsius_a_fa-ini">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="100" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_fa-e3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" source="celsius_a_fa-ret">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="celsius_a_kelvin" id="celsius_a_kelvin">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="celsius_a_ke-frame" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=none;size=0.041666666666666664;" value="" vertex="1">
+          <mxGeometry height="220" width="290" x="269" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-name" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;b&gt;celsius_a_kelvin()&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="180" x="269" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-pin" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;parametros&lt;/b&gt;: temp_c" vertex="1">
+          <mxGeometry height="20" width="160" x="264" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-ini" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="Inicio" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-b0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="temp_k = temp_c + 273.15" vertex="1">
+          <mxGeometry height="30" width="170" x="329" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-e0" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="celsius_a_ke-ini" target="celsius_a_ke-b0">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_ke-ret" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;" value="return" vertex="1">
+          <mxGeometry height="30" width="90" x="369" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-e1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" source="celsius_a_ke-b0" target="celsius_a_ke-ret">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_ke-pout" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;rounded=0;" value="&lt;b&gt;salidas&lt;/b&gt;: temp_k" vertex="1">
+          <mxGeometry height="20" width="160" x="249" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="celsius_a_ke-e2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="celsius_a_ke-ini">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="100" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="celsius_a_ke-e3" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" source="celsius_a_ke-ret">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
