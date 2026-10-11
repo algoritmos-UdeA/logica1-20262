@@ -10,7 +10,7 @@ son provisionales (stubs): devuelven 0.0 hasta que se implementen.
 def mostrar_menu():
     print("--------------------------------")
     print("1. °C a °F")
-    print("2. °C a K")
+    print("2. °C a °K")
     print("3. Salir")
 
 def celsius_a_fahrenheit(temp_c):
@@ -31,7 +31,7 @@ while True:
     elif opcion == 2:
         temp_c = float(input("Digite la temperatura en °C: "))
         temp_k = celsius_a_kelvin(temp_c)
-        print(f"{temp_c}°C = {temp_k:.2f}K\n")
+        print(f"{temp_c}°C = {temp_k:.2f}°K\n")
     elif opcion == 3:
         print("Gracias por usarnos\n")
         break

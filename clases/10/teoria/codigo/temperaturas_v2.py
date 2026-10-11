@@ -8,7 +8,7 @@ Conversion de temperatura con menu: °C a °F y °C a K.
 def mostrar_menu():
     print("--------------------------------")
     print("1. °C a °F")
-    print("2. °C a K")
+    print("2. °C a °K")
     print("3. Salir")
 
 # Conversion de temperatura
