@@ -31,7 +31,7 @@ assert round(celsius_a_kelvin(25), 2) == 298.15        # tipico
 assert round(celsius_a_kelvin(-273.15), 2) == 0.0      # limite: cero absoluto
 
 ############ Programa principal #########
-print("Programa de conversion de °C a °F y K")
+print("Programa de conversion de °C a °F y °K")
 while True:
     # Menu
     mostrar_menu()
@@ -47,7 +47,7 @@ while True:
         # C --> K
         temp_c = float(input("Digite la temperatura en °C: "))
         temp_k = celsius_a_kelvin(temp_c)
-        print(f"{temp_c}°C = {temp_k:.2f}K\n")
+        print(f"{temp_c}°C = {temp_k:.2f}°K\n")
     elif opcion == 3:
         print("Gracias por usarnos\n")
         break
