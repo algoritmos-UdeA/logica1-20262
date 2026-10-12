@@ -1,3 +1,5 @@
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
+
 # Laboratorio 4 — Funciones: instrucción asistida por computador
 
 ## Antes de empezar
