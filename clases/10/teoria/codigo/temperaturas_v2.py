@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Conversion de temperatura con menu: °C a °F y °C a K.
+Conversion de temperatura con menu: °C a °F y °C a °K.
 """
 
 ############ Funciones ############
