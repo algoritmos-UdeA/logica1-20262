@@ -48,6 +48,8 @@ def evaluar_intento(intento, secreto):
 assert evaluar_intento(50, 74) == "mayor"
 assert evaluar_intento(80, 74) == "menor"
 assert evaluar_intento(74, 74) == "correcto"
+# generar_secreto: si minimo == maximo, solo hay un resultado posible
+assert generar_secreto(7, 7) == 7
 # generar_secreto: con la misma semilla, el mismo numero
 random.seed(10)
 primero = generar_secreto(MINIMO, MAXIMO)
