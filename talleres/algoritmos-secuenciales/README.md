@@ -9,15 +9,25 @@
 
 Convierta las siguientes expresiones matemáticas a expresiones algorítmicas:
 
-$$z = x^2 + 4xy$$
+$$
+z = x^2 + 4xy
+$$
 
-$$p = \frac{x+y}{2z} + \frac{3x}{5} - \frac{z}{2(y^2)}$$
+$$
+p = \frac{x+y}{2z} + \frac{3x}{5} - \frac{z}{2(y^2)}
+$$
 
-$$a = \frac{-b + \sqrt[3]{a - 3(2b+3x)}}{2c - 2\sqrt[3]{b^{-3}}}$$
+$$
+a = \frac{-b + \sqrt[3]{a - 3(2b+3x)}}{2c - 2\sqrt[3]{b^{-3}}}
+$$
 
-$$w = \frac{-2(3x^{-2}+5y-2yz)}{5x+4yz-\left(\frac{3}{4}+y\right)^{\frac{2}{5}}}$$
+$$
+w = \frac{-2(3x^{-2}+5y-2yz)}{5x+4yz-\left(\frac{3}{4}+y\right)^{\frac{2}{5}}}
+$$
 
-$$k = \sqrt{\frac{(4z)^2}{(b)^3}}$$
+$$
+k = \sqrt{\frac{(4z)^2}{(b)^3}}
+$$
 
 > [!Tip]
 > **Pista**: si no recuerda el orden en que se evalúan los operadores, consulte la tabla de prioridad y asociatividad del Anexo A.3. Además, una raíz n-ésima se puede escribir como una potencia con exponente fraccionario (por ejemplo, la raíz cúbica de `x` equivale a `x^(1/3)`).
@@ -101,11 +111,15 @@ Finalmente, el algoritmo debe mostrar el total de calorías quemadas al final de
 
 **3.6** Se requiere un programa que calcule la cuota mensual (m) que se debe pagar para comprar una casa cuyo valor es h. Para el cálculo se debe utilizar una tasa de interés i (entre 0 y 100) a un plazo de n años. El cálculo de la cuota se hace con base en la siguiente fórmula:
 
-$$m = \frac{hr}{1-(1+r)^{-12n}}$$
+$$
+m = \frac{hr}{1-(1+r)^{-12n}}
+$$
 
 Tenga presente que:
 
-$$r = \frac{i}{100 \cdot 12}$$
+$$
+r = \frac{i}{100 \cdot 12}
+$$
 
 **3.7** El profesor de geometría requiere que usted desarrolle un programa que le ayude a los estudiantes a calcular los ángulos A y B de un triángulo irregular, a partir del ángulo C y el valor de los catetos a y b.
 

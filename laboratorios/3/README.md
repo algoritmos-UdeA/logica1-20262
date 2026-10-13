@@ -604,7 +604,9 @@ Para mostrar los rendimientos con 2 decimales, use un f-string con formato, por 
 
 Escriba un programa que le pida al usuario la cantidad de términos N que desea usar para aproximar el valor de π, mediante la siguiente serie infinita:
 
-$$\pi \approx 4 - \frac{4}{3} + \frac{4}{5} - \frac{4}{7} + \frac{4}{9} - \frac{4}{11} + \cdots$$
+$$
+\pi \approx 4 - \frac{4}{3} + \frac{4}{5} - \frac{4}{7} + \frac{4}{9} - \frac{4}{11} + \cdots
+$$
 
 El programa debe imprimir una tabla mostrando el valor aproximado de π obtenido usando 1 término, 2 términos, 3 términos, y así sucesivamente, hasta los N términos ingresados por el usuario.
 
@@ -714,7 +716,9 @@ Se necesitan dos variables además del número original: un **acumulador** para 
 
 El valor de cos(x) puede aproximarse mediante la siguiente serie infinita:
 
-$$\cos(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$$
+$$
+\cos(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
+$$
 
 Escriba un programa que calcule una aproximación de cos(x) usando esta serie. El programa debe solicitar al usuario:
 

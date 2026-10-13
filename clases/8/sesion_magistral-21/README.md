@@ -477,7 +477,9 @@ Al ejecutar el script con `N = 5` se obtiene:
 
 > **Enunciado:** dados un valor real `x` y un entero `N >= 0`, aproximar $e^x$ mediante la serie:
 >
-> $$e^x \approx \sum_{n=0}^{N} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^N}{N!}$$
+> $$
+> e^x \approx \sum_{n=0}^{N} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^N}{N!}
+> $$
 
 ### Diseño
 

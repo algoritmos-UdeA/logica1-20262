@@ -38,7 +38,9 @@ El segundo momento cambia de herramienta: los ejemplos se escriben en un **Jupyt
 
 > Escriba un programa que lea la cantidad de términos `N` y un valor real `x`, y calcule la suma de los primeros `N` términos de la siguiente serie:
 >
-> $$s = 1 + 2x + 3x^2 + 4x^3 + \cdots + Nx^{N-1}$$
+> $$
+> s = 1 + 2x + 3x^2 + 4x^3 + \cdots + Nx^{N-1}
+> $$
 >
 > Además de la suma final, el programa debe mostrar, para cada término, su posición `i`, la potencia $x^i$, el coeficiente y el valor del término.
 
@@ -76,11 +78,15 @@ Leyendo la tabla por columnas aparecen dos patrones:
 
 Con eso, el término que ocupa la posición `i` es:
 
-$$t_i = (i + 1)x^i \qquad i = 0, 1, 2, \ldots, N - 1$$
+$$
+t_i = (i + 1)x^i \qquad i = 0, 1, 2, \ldots, N - 1
+$$
 
 y la serie completa se puede escribir como una sumatoria:
 
-$$s = \sum_{i=0}^{N-1} (i + 1)x^i$$
+$$
+s = \sum_{i=0}^{N-1} (i + 1)x^i
+$$
 
 Esta fórmula es la que se programa. El ciclo recorre las posiciones `i = 0, 1, …, N - 1`, en cada vuelta calcula $t_i$ y lo suma al acumulador `s`.
 
