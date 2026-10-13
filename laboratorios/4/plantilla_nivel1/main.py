@@ -11,14 +11,18 @@ Version: 1
 # usa dentro de cai.py.
 
 
-# PISTA: agrupe el programa principal en una funcion def main():
-# PISTA: escriba el programa usando solo la especificacion de las funciones
-# de cai.py. Cada llamada lleva el prefijo cai.
-#     a = cai.generar_operando()
-#     cai.mostrar_pregunta(a, b)
-# PISTA: el programa necesita dos ciclos (ver la pista adicional del
-# nivel 1 en el enunciado). El estudiante termina la practica ingresando 0.
+def main():
+    # PISTA: escriba aqui el programa principal, usando solo la
+    # especificacion de las funciones de cai.py. Cada llamada lleva el
+    # prefijo cai.
+    #     a = cai.generar_operando()
+    #     cai.mostrar_pregunta(a, b)
+    # PISTA: el programa necesita dos ciclos (ver la pista adicional del
+    # nivel 1 en el enunciado). El estudiante termina la practica
+    # ingresando 0.
+    # PISTA: cuando escriba el programa, borre la linea pass.
+    pass
 
 
-# PISTA: al final del archivo, llame a main() dentro de
-#     if __name__ == "__main__":
+if __name__ == "__main__":
+    main()

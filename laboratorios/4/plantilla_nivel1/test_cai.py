@@ -19,7 +19,12 @@ Version: 1
 #
 # PISTA: generar_operando. Fije la semilla con random.seed() y un numero
 # cualquiera, y verifique en un ciclo que 1000 valores generados esten
-# entre 1 y 9.
+# entre 1 y 9. La estructura es:
+#     random.seed(...)
+#     for i in range(1000):
+#         numero = cai.generar_operando()
+#         assert ...      # complete: numero debe estar entre 1 y 9
+# Si algun valor queda fuera del rango, el assert falla en esa vuelta.
 #
 # PISTA: mostrar_pregunta imprime y no retorna nada: no se prueba con assert.
 #

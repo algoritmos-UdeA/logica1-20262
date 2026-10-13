@@ -71,7 +71,7 @@ laboratorio4/
 | `test_cai.py` | `import cai`, las pruebas con `assert` y, al final, `print("Pruebas de cai: todas pasaron")` | `python test_cai.py` |
 | `main.py` | `import cai`, las constantes, el programa principal dentro de `def main():` y la guarda `if __name__ == "__main__":` | `python main.py` |
 
-**Para comenzar un nivel nuevo**, copie la carpeta completa del nivel anterior, cámbiele el nombre (por ejemplo, `nivel1/` → `nivel2/`) y modifique **solo** lo que el nivel pide. La carpeta [`plantilla_nivel1/`](plantilla_nivel1/) tiene los tres archivos del nivel 1 con el encabezado y comentarios `# PISTA`.
+**Para comenzar un nivel nuevo**, copie la carpeta completa del nivel anterior, cámbiele el nombre (por ejemplo, `nivel1/` → `nivel2/`) y modifique **solo** lo que el nivel pide. La carpeta [`plantilla_nivel1/`](plantilla_nivel1/) tiene los tres archivos del nivel 1 con el encabezado y comentarios `# PISTA`. Su `main.py` ya trae escritos `def main():` y la guarda, que se mantienen igual en todos los niveles.
 
 > [!IMPORTANT]
 > * Las funciones que **imprimen** (como `mostrar_pregunta`) también van en `cai.py`, pero **no** se prueban con `assert`.
@@ -114,8 +114,16 @@ def nombre_funcion(parametro):
     Supone:
         Condiciones que deben cumplir los parametros.
     Garantiza:
-        Lo que la funcion retorna si se cumplen las suposiciones.
+        Lo que la funcion retorna (o lo que muestra en pantalla)
+        si se cumplen las suposiciones.
     """
+```
+
+Las funciones que **imprimen** también se especifican: su *Garantiza* dice qué muestran en pantalla y que no retornan ningún valor, como `mostrar_menu` en `temperaturas_v3.py` de la clase 10:
+
+```python
+    Garantiza:
+        Imprime las tres opciones del menú. No retorna ningún valor.
 ```
 
 ### 3. Implementar con stubs y probar
@@ -125,12 +133,12 @@ def nombre_funcion(parametro):
 * Implementar **una función a la vez** en `cai.py`, ejecutando `python test_cai.py` después de cada una, hasta que todas las pruebas pasen. Luego ejecutar `python main.py`.
 
 > [!IMPORTANT]
-> Solo se prueban con `assert` las funciones que **retornan un valor y no leen ni imprimen nada**. Las funciones que usan `random` se prueban con `random.seed()` (ver el ejercicio guiado *Adivina el número*, sección 5). Como `test_cai.py` y `main.py` son archivos distintos, fijar la semilla en las pruebas **no** afecta al programa principal.
+> En este curso, solo se prueban con `assert` las funciones que **retornan un valor y no leen ni imprimen nada**. Las funciones que usan `random` se prueban con `random.seed()` (ver el ejercicio guiado *Adivina el número*, sección 5). Como `test_cai.py` y `main.py` son archivos distintos, fijar la semilla en las pruebas **no** afecta al programa principal.
 
 ### 4. Verificar
 
-* Ejecutar `python test_cai.py`: todas las pruebas deben pasar. Las pruebas con `assert` reemplazan la prueba de escritorio de las funciones de `cai.py`.
-* Ejecutar `python main.py` y comparar su comportamiento con los ejemplos de ejecución del enunciado. El programa principal **no tiene pruebas con `assert`**: por eso en el nivel 3, donde su lógica se vuelve delicada, se pide una prueba de escritorio (ver los [Entregables](#entregables)).
+* Ejecutar `python test_cai.py`: todas las pruebas deben pasar. Las pruebas con `assert` **automatizan** la verificación de las funciones de `cai.py`: cada vez que se ejecutan, comparan el resultado de cada función con el esperado.
+* Ejecutar `python main.py` y comparar su comportamiento con los ejemplos de ejecución del enunciado. El programa principal **no tiene pruebas con `assert`**: para razonar sobre su flujo (ciclos, contadores, condiciones de salida) sigue siendo útil la prueba de escritorio. Por eso en el nivel 3, donde esa lógica se vuelve delicada, se pide una (ver los [Entregables](#entregables)).
 
 ## Trabajo en parejas
 
@@ -281,7 +289,7 @@ Modifique el programa del nivel 2 para que cuente las respuestas **correctas** e
 * Si el porcentaje es **menor que 75 %**: `Por favor, pida ayuda adicional a su profesor.`
 * Si el porcentaje es **75 % o más**: `¡Felicitaciones, está listo para pasar al siguiente nivel!`
 
-En este nivel ya no se usa `0` para terminar: el programa termina después de las 10 respuestas.
+En este nivel ya no se usa `0` para terminar: el programa termina después de las 10 respuestas, **aunque la pregunta en curso no se haya acertado**. Si el estudiante ingresa `0`, se cuenta como una respuesta incorrecta más.
 
 **Funciones nuevas:**
 
@@ -322,6 +330,8 @@ Use dos **contadores** (`aciertos` y `errores`) y un ciclo que termine cuando la
 
 > **Pregunta para pensar:** si el estudiante responde mal 10 veces seguidas la primera pregunta, ¿cuántas preguntas distintas vio? ¿Cuál es su porcentaje? Realice la **prueba de escritorio** de las primeras 5 respuestas de una ronda en la que el estudiante acierta las preguntas 1 y 2, falla una vez la pregunta 3 antes de acertarla, y acierta la pregunta 4. Registre en cada fila los valores de `aciertos`, `errores` y el total de respuestas (incluya esta prueba en los entregables).
 
+> **Pregunta para pensar:** con exactamente 10 respuestas, ¿qué porcentajes son posibles? ¿Cuántas respuestas correctas se necesitan, como mínimo, para recibir el mensaje de felicitación? Si `74.9` nunca aparece en una ronda de 10 respuestas, ¿por qué tiene sentido probar `mensaje_desempeno(74.9)`?
+
 ---
 
 ## Nivel 4 — Niveles de dificultad
@@ -354,6 +364,8 @@ Observe el patrón: 9 = 10¹ − 1, 99 = 10² − 1, 999 = 10³ − 1. En Python
 
 Con el valor por defecto `nivel=1`, la llamada `generar_operando()` del nivel 1 sigue funcionando sin cambios. Esto permite modificar una función **sin romper** el código que ya la usaba.
 
+Al escribir la especificación, piense: ¿qué debe **suponer** `maximo_operando` sobre `nivel`? ¿Qué retornaría con `nivel = 0`?
+
 </details>
 
 > **Pregunta para pensar:** `generar_operando` ahora **llama** a `maximo_operando`, y las dos están en `cai.py`. ¿Necesita `main.py` saber que existe `maximo_operando`? ¿Qué archivos de la carpeta `nivel4/` tuvo que modificar respecto a `nivel3/`, y cuáles quedaron iguales?
@@ -373,15 +385,15 @@ Modifique el programa del nivel 4 para que, además del nivel de dificultad, el 
 
 La pregunta debe adaptarse a la operación: `¿Cuánto es 6 más 7?`, `¿Cuánto es 9 menos 4?`, `¿Cuánto es 6 por 7?`.
 
-Como el programa está dirigido a estudiantes de primaria, **las restas no deben tener resultado negativo**: el primer operando debe ser siempre el mayor.
+Como el programa está dirigido a estudiantes de primaria, **las restas no deben tener resultado negativo**: el primer operando debe ser siempre el mayor. Ordenar los operandos es responsabilidad del **programa principal** (`main.py`), antes de mostrar la pregunta; por eso `calcular_resultado` puede **suponer** que, en una resta, `a >= b`.
 
 **Funciones nuevas o modificadas:**
 
 | Función | Descripción | Tipo |
 |---|---|---|
-| `calcular_resultado(a, b, operacion)` | Retorna el resultado de aplicar la operación (1: suma, 2: resta, 3: multiplicación) a `a` y `b` | Retorna un valor |
+| `calcular_resultado(a, b, operacion)` | Retorna el resultado de aplicar la operación (1: suma, 2: resta, 3: multiplicación) a `a` y `b`. Supone que `a >= b` cuando la operación es una resta | Retorna un valor |
 | `nombre_operacion(operacion)` | Retorna `"más"`, `"menos"` o `"por"` según la operación | Retorna un valor |
-| `elegir_operacion(tipo)` | Si `tipo` es 1, 2 o 3, lo retorna; si es 4, retorna una operación al azar entre 1 y 3 | Retorna un valor (usa `random` en la opción 4) |
+| `elegir_operacion(tipo)` | Si `tipo` es 1, 2 o 3, lo retorna; si es 4, retorna una operación al azar entre 1 y 3. Se llama una vez por cada **pregunta nueva**, no en cada intento: mientras el estudiante reintenta, la operación no cambia | Retorna un valor (usa `random` en la opción 4) |
 | `mostrar_pregunta(a, b, operacion)` | **Modificada:** imprime la pregunta con el nombre de la operación | No retorna valor (imprime) |
 
 **Casos de prueba:**
@@ -398,7 +410,7 @@ Como el programa está dirigido a estudiantes de primaria, **las restas no deben
 <details>
 <summary>Pista adicional</summary>
 
-Para que la resta nunca sea negativa, use las funciones integradas `max()` y `min()` (clase 10): el primer operando es el mayor de los dos números generados y el segundo, el menor.
+Para que la resta nunca sea negativa, use en `main.py` las funciones integradas `max()` y `min()` (clase 10): el primer operando es el mayor de los dos números generados y el segundo, el menor.
 
 `calcular_resultado` debe usarse tanto para calcular la respuesta correcta como para verificarla con `es_correcta`, sin importar el tipo de operación. Así, `es_correcta` no necesita cambiar.
 
