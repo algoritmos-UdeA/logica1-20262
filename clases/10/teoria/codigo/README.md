@@ -108,7 +108,9 @@ Cada carpeta es un programa completo. Sus archivos se ejecutan **desde su propia
 
 > Escriba una función `seno(x, n)` que aproxime el seno de un ángulo `x`, en radianes, sumando los primeros `n` términos de la serie de Taylor:
 >
-> $$\operatorname{sen}(x) = \sum_{k=0}^{n-1} (-1)^k \frac{x^{2k+1}}{(2k+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots$$
+> $$
+> \mathrm{sen}(x) = \sum_{k=0}^{n-1} (-1)^k rac{x^{2k+1}}{(2k+1)!} = x - rac{x^3}{3!} + rac{x^5}{5!} - \cdots
+> $$
 >
 > El factorial se calcula con una función aparte, `factorial(n)`. Si no se indica `n`, se usan 10 términos. Compare el resultado con la función `math.sin` de la librería `math`.
 

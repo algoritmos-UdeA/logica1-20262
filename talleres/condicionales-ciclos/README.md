@@ -628,7 +628,9 @@ Modifique el programa del ejercicio 4.2 para que un usuario tenga **tres intento
 
 **5.1** Escriba un algoritmo que lea un número entero `N` y calcule el resultado de la serie:
 
-$$1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots \pm \frac{1}{N}$$
+$$
+1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots \pm \frac{1}{N}
+$$
 
 | N | Resultado |
 |---|---|
@@ -639,7 +641,9 @@ $$1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots \pm \frac{1}{N}$$
 
 **5.2** Elabore un algoritmo que imprima los términos de la siguiente serie y obtenga su suma:
 
-$$2,\ 5,\ 7,\ 10,\ 12,\ 15,\ 17,\ \ldots,\ 1800$$
+$$
+2,\ 5,\ 7,\ 10,\ 12,\ 15,\ 17,\ \ldots,\ 1800
+$$
 
 Resultado esperado: la serie tiene `720` términos y su suma es `648720`.
 
@@ -648,7 +652,9 @@ Resultado esperado: la serie tiene `720` términos y su suma es `648720`.
 
 **5.3** Cierta sucesión parte de los números 0, 1, 1; de ahí en adelante, cada término nuevo se forma sumando los tres términos inmediatamente anteriores:
 
-$$0,\ 1,\ 1,\ 2,\ 4,\ 7,\ 13,\ 24,\ \ldots$$
+$$
+0,\ 1,\ 1,\ 2,\ 4,\ 7,\ 13,\ 24,\ \ldots
+$$
 
 Haga un algoritmo que genere y muestre los primeros `N` términos de la sucesión.
 
@@ -663,7 +669,9 @@ Haga un algoritmo que genere y muestre los primeros `N` términos de la sucesió
 
 **5.4** Elabore un algoritmo que, dado un valor de `x`, determine la suma de los `N` primeros términos de la serie:
 
-$$f(x) = \frac{x}{2!} + \frac{2x^2}{4!} + \frac{3x^3}{6!} + \frac{4x^4}{8!} + \frac{5x^5}{10!} + \cdots$$
+$$
+f(x) = \frac{x}{2!} + \frac{2x^2}{4!} + \frac{3x^3}{6!} + \frac{4x^4}{8!} + \frac{5x^5}{10!} + \cdots
+$$
 
 | x | N | Resultado |
 |---|---|---|
@@ -676,7 +684,9 @@ $$f(x) = \frac{x}{2!} + \frac{2x^2}{4!} + \frac{3x^3}{6!} + \frac{4x^4}{8!} + \f
 
 **5.5** El seno de un ángulo `x` (en radianes) puede calcularse de forma aproximada sumando los `N` primeros términos de la serie infinita:
 
-$$\operatorname{sen}(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$
+$$
+\mathrm{sen}(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots
+$$
 
 | x | N | Resultado |
 |---|---|---|
@@ -716,8 +726,8 @@ $$\operatorname{sen}(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +
 
 **Referencias**
 
-* Oviedo, E. A. *Lógica de Programación*. Disponible en [`material/libros/`](../../material/libros/Logica-de-Programacion-Efrain-Oviedo.pdf).
-* Farrell, J. (2013). *Introducción a la programación lógica y diseño* (7a ed.). Cengage Learning. Disponible en [`material/libros/`](../../material/libros/Joyce-Farrell_Introduccion-a-la-programacion.pdf).
+* Oviedo, E. A. *Lógica de Programación*.
+* Farrell, J. (2013). *Introducción a la programación lógica y diseño* (7a ed.). Cengage Learning.
 
 ---
 
