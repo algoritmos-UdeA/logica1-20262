@@ -1,0 +1,73 @@
+<mxfile host="Electron" version="29.6.1">
+  <diagram name="Página-1" id="modulos_error_carpetas">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="modulos_error_carpetas-0" value="&lt;font color=&quot;#B85450&quot; style=&quot;font-size:16px&quot;&gt;&lt;b&gt;&amp;#10008; Carpetas distintas&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-1" value="proyecto/" style="shape=folder;tabWidth=60;tabHeight=14;tabPosition=left;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=14;align=left;spacingLeft=10;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="0" y="34" width="180" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-2" value="funciones/" style="shape=folder;tabWidth=56;tabHeight=14;tabPosition=left;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=14;align=left;spacingLeft=10;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="96" width="170" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-3" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;conversiones.py&lt;/b&gt;&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="100" y="148" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-4" value="programa/" style="shape=folder;tabWidth=56;tabHeight=14;tabPosition=left;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=14;align=left;spacingLeft=10;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="170" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-5" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;main.py&lt;/b&gt;&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="100" y="252" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.13;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-1" target="modulos_error_carpetas-2">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="23.4" y="115" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.13;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-1" target="modulos_error_carpetas-4">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="23.4" y="219" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-2" target="modulos_error_carpetas-3">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="75.5" y="167" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-4" target="modulos_error_carpetas-5">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="75.5" y="271" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-10" value="&lt;font color=&quot;#9CDCFE&quot;&gt;&amp;gt; python main.py&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#FF8080&quot;&gt;&lt;b&gt;ModuleNotFoundError: No module named &#x27;conversiones&#x27;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#1E1E1E;fontColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;fontFamily=Consolas, monospace;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="0" y="312" width="460" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-11" value="&lt;font color=&quot;#4D9A3F&quot; style=&quot;font-size:16px&quot;&gt;&lt;b&gt;&amp;#10004; Misma carpeta&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="540" y="0" width="300" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-12" value="proyecto/" style="shape=folder;tabWidth=60;tabHeight=14;tabPosition=left;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontStyle=1;fontSize=14;align=left;spacingLeft=10;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="34" width="180" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-13" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;conversiones.py&lt;/b&gt;&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="590" y="96" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-14" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;main.py&lt;/b&gt;&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="590" y="148" width="240" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-15" value="__pycache__/" style="shape=folder;tabWidth=56;tabHeight=14;tabPosition=left;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontStyle=0;fontColor=#777777;fontSize=14;align=left;spacingLeft=10;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="200" width="170" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.13;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-12" target="modulos_error_carpetas-13">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="563.4" y="115" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.13;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-12" target="modulos_error_carpetas-14">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="563.4" y="167" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#999999;exitX=0.13;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="modulos_error_carpetas-12" target="modulos_error_carpetas-15">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="563.4" y="219" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-19" value="&lt;i&gt;la crea Python al importar;&lt;br&gt;no se entrega&lt;/i&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#777777;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="770" y="200" width="200" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="modulos_error_carpetas-20" value="&lt;font color=&quot;#9CDCFE&quot;&gt;&amp;gt; python main.py&lt;/font&gt;&lt;br&gt;Programa de conversion de °C a °F y °K&lt;br&gt;..." style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#1E1E1E;fontColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;fontFamily=Consolas, monospace;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="540" y="312" width="460" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
