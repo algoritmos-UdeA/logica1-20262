@@ -34,7 +34,8 @@ Una fila por **sesión magistral real**, con el tema y el material vigentes a la
 | 20 | Mar 29 sep (bloque 2, 16-18) | 🏫 | [8](8/README.md) | Ciclo Para | Notebooks en Google Colab; serie de Fibonacci con variables temporales, y nota máxima y mínima de un curso con sus dos formas de inicialización (extremos del rango o primera nota leída) | [sesion_magistral-20](8/sesion_magistral-20/README.md) |
 | 21 | Mar 6 oct (bloque 1, 14-16) — tentativa | 🏫 | [8](8/README.md) | Ciclo Para | Repaso de ciclos anidados: cuadrado de asteriscos lleno y hueco, pirámide centrada, primos (cantidad hasta un número y los primeros `N`) y aproximación de $e^x$ por serie; los dos scripts de primos tienen errores que se dejan como actividad | [sesion_magistral-21](8/sesion_magistral-21/README.md) |
 | 22 | Por definir — tentativa | 🏫 | [9](9/README.md) | Funciones: introducción | Pendiente por dictar | — |
-| Por definir | Por definir — tentativa | 🏫 | [10](10/README.md) | Funciones: diseño, librerías y módulos | Pendiente por dictar | — |
+| 24 | Mar 13 oct (bloque 1, 14-16) — tentativa | 🏫 | [10](10/README.md) | Funciones: diseño, librerías y módulos | Pendiente por dictar | — |
+| 25 | Mar 13 oct (bloque 2, 16-18) — tentativa | 🏫 | [10](10/README.md) | Funciones: diseño, librerías y módulos | Pendiente por dictar | — |
 
 > **Nota:** las sesiones 7 y 8 quedaron agendadas para el mismo martes 18 de agosto (bloque 1 y bloque 2, respectivamente) porque el 17 de agosto es festivo.
 
