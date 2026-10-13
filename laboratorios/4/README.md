@@ -31,7 +31,7 @@ Al finalizar este laboratorio, el estudiante estará en capacidad de:
 
 * **Anaconda**: distribución de Python que incluye el intérprete y Spyder.
 * **Visual Studio Code** (opcional): editor de código con la extensión de Python.
-* **draw.io**: para el diagrama top-down.
+* **draw.io** (opcional): el diagrama top-down puede hacerse a mano; draw.io es una alternativa para dibujarlo en el computador.
 
 ## Descripción general
 
@@ -129,8 +129,8 @@ def nombre_funcion(parametro):
 
 ### 4. Verificar
 
-* Ejecutar el programa completo y comparar su comportamiento con los ejemplos de ejecución del enunciado.
-* Realizar una **prueba de escritorio** de al menos una ronda de preguntas.
+* Ejecutar `python test_cai.py`: todas las pruebas deben pasar. Las pruebas con `assert` reemplazan la prueba de escritorio de las funciones de `cai.py`.
+* Ejecutar `python main.py` y comparar su comportamiento con los ejemplos de ejecución del enunciado. El programa principal **no tiene pruebas con `assert`**: por eso en el nivel 3, donde su lógica se vuelve delicada, se pide una prueba de escritorio (ver los [Entregables](#entregables)).
 
 ## Trabajo en parejas
 
@@ -163,7 +163,7 @@ Este laboratorio se realiza **en parejas**. La organización en archivos permite
 ## Entregables
 
 * **En papel (a mano, uno por pareja):**
-  * El **diagrama top-down** del nivel 5 (el programa completo).
+  * El **diagrama top-down** del nivel 5 (el programa completo). Puede hacerse a mano o, si se prefiere, en draw.io e imprimirse.
   * La **especificación** (*Supone / Garantiza*) de cada función.
   * La **tabla de variables** del programa principal del nivel 5.
   * Una **prueba de escritorio** de las primeras respuestas del nivel 3 (ver la [Pregunta para pensar](#nivel-3--seguimiento-del-desempeño) de ese nivel).
