@@ -75,7 +75,7 @@ Esta carpeta reúne los programas de la clase 10, agrupados por **problema**. Ca
 | Archivo | Qué muestra |
 |---|---|
 | [temperaturas_topdown_paso1.py](temperaturas_topdown_paso1.py) | Paso 1: el programa principal está completo y las dos conversiones son **stubs** que retornan `0.0`. El programa corre, pero el resultado está mal: `100.0°C = 0.00°F`. |
-| [temperaturas_topdown_paso2.py](temperaturas_topdown_paso2.py) | Paso 2: `celsius_a_fahrenheit` ya está implementada y probada; `celsius_a_kelvin` sigue siendo un stub. La prueba de Kelvin está **activa**, así que el programa se detiene con `AssertionError` en la línea 26: las pruebas dicen qué falta por hacer (diapositiva 37). Para que el programa corra, como en la diapositiva 36, se comenta esa línea. |
+| [temperaturas_topdown_paso2.py](temperaturas_topdown_paso2.py) | Paso 2: `celsius_a_fahrenheit` ya está implementada y probada; `celsius_a_kelvin` sigue siendo un stub. La prueba de Kelvin está **comentada** (línea 26), así que el programa corre: `100.0°C = 212.00°F` ya es correcto, pero `25.0°C = 0.00°K` todavía no (diapositiva 36). Si se quita el `#` de la línea 26, el programa se detiene con `AssertionError` en esa línea: las pruebas dicen qué falta por hacer (diapositiva 37). |
 | [temperaturas_v2.py](temperaturas_v2.py) | Paso 3: el programa terminado, sin stubs y con todas las pruebas pasando. |
 
 > [!NOTE]
