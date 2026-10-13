@@ -8,7 +8,8 @@ Antes de la sesión de laboratorio, repase el siguiente material:
 
 * **Clase 9** — definición e invocación de funciones, tipos de funciones según sus entradas y salidas, y pruebas con `assert`.
 * **Clase 10** — especificación de una función (*Supone / Garantiza*), ámbito de las variables, parámetros con valor por defecto, diseño **top-down** con *stubs*, y uso de librerías (`math`, `random`).
-* **Ejercicio guiado [Adivina el número](../../clases/10/teoria/codigo/adivina_numero/)** — muestra, paso a paso, el mismo procedimiento que se exige en este laboratorio: diseño top-down, especificación, implementación con stubs y pruebas con `random.seed()`.
+* **Clase 10, módulos propios** — `import`, `__name__`, `def main()` con la guarda, y la comparación de dónde ubicar las pruebas (carpeta [`temperaturas_modulos/`](../../clases/10/teoria/codigo/temperaturas_modulos/)).
+* **Ejercicio guiado [Adivina el número](../../clases/10/teoria/codigo/adivina_numero/)** — muestra, paso a paso, el mismo procedimiento que se exige en este laboratorio: diseño top-down, especificación, implementación con stubs y pruebas con `random.seed()`. Su **sección 7** (opción 2: archivo de pruebas aparte) es la organización en archivos que se usa en este laboratorio y en los siguientes.
 
 > [!NOTE]
 > Los problemas de este laboratorio están **adaptados** de los ejercicios 5.49 a 5.53 (*Computer-Assisted Instruction*) del libro de P. Deitel y H. Deitel, *C How to Program*, 9.ª edición global, Pearson, 2023, págs. 293-294, disponible en [`material/libros/`](../../material/libros/). El original está planteado en C; aquí se resuelve en Python con las estructuras vistas en el curso.
@@ -22,6 +23,8 @@ Al finalizar este laboratorio, el estudiante estará en capacidad de:
 * Separar las funciones que **calculan** (reciben datos y retornan un valor, sin leer ni imprimir) de las que **interactúan** con el usuario, de modo que las primeras puedan probarse con `assert`.
 * Utilizar el módulo **`random`** para generar datos al azar, y `random.seed()` para obtener resultados repetibles al probar.
 * Utilizar **parámetros con valor por defecto** y **funciones que llaman a otras funciones**.
+* Organizar un programa en **varios archivos**: un módulo con las funciones, un archivo de pruebas y un programa principal.
+* Usar la **especificación** como contrato entre quien escribe una función y quien la usa.
 * Construir un programa de forma **incremental**: cada nivel parte del programa del nivel anterior y le agrega una funcionalidad.
 
 ## Herramientas necesarias
@@ -29,7 +32,6 @@ Al finalizar este laboratorio, el estudiante estará en capacidad de:
 * **Anaconda**: distribución de Python que incluye el intérprete y Spyder.
 * **Visual Studio Code** (opcional): editor de código con la extensión de Python.
 * **draw.io**: para el diagrama top-down.
-* **Python Tutor** ([pythontutor.com](https://pythontutor.com/)): para visualizar la pila de llamadas entre funciones.
 
 ## Descripción general
 
@@ -44,6 +46,51 @@ La **instrucción asistida por computador** (*CAI*, por sus siglas en inglés) c
 | **5** | Tipo de operación: suma, resta, multiplicación o mezcla aleatoria |
 
 Cada nivel **parte del programa del nivel anterior**. Por eso se recomienda terminar y probar un nivel completamente antes de pasar al siguiente.
+
+## Organización en archivos
+
+A partir de este laboratorio, los programas del curso se organizan en **tres archivos**, como en la opción 2 del ejercicio guiado [*Adivina el número*](../../clases/10/teoria/codigo/adivina_numero/) (sección 7.5). Cada nivel va en su **propia carpeta**:
+
+```
+laboratorio4/
+├── nivel1/
+│   ├── cai.py
+│   ├── test_cai.py
+│   └── main.py
+├── nivel2/
+│   ├── cai.py
+│   ├── test_cai.py
+│   └── main.py
+...
+└── nivel5/
+```
+
+| Archivo | Contenido | Se ejecuta con |
+|---|---|---|
+| `cai.py` | `import random` y **todas** las funciones del programa, cada una con su especificación. No tiene pruebas ni programa principal | *(no se ejecuta: se importa)* |
+| `test_cai.py` | `import cai`, las pruebas con `assert` y, al final, `print("Pruebas de cai: todas pasaron")` | `python test_cai.py` |
+| `main.py` | `import cai`, las constantes, el programa principal dentro de `def main():` y la guarda `if __name__ == "__main__":` | `python main.py` |
+
+**Para comenzar un nivel nuevo**, copie la carpeta completa del nivel anterior, cámbiele el nombre (por ejemplo, `nivel1/` → `nivel2/`) y modifique **solo** lo que el nivel pide. La carpeta [`plantilla_nivel1/`](plantilla_nivel1/) tiene los tres archivos del nivel 1 con el encabezado y comentarios `# PISTA`.
+
+> [!IMPORTANT]
+> * Las funciones que **imprimen** (como `mostrar_pregunta`) también van en `cai.py`, pero **no** se prueban con `assert`.
+> * Desde `main.py` y `test_cai.py`, cada función se llama con el prefijo del módulo: `cai.generar_operando()`.
+> * `test_cai.py` no lleva guarda: nadie lo importa, solo se ejecuta directamente.
+> * Ningún archivo puede llamarse como un módulo de Python (`random.py`, `math.py`).
+
+### Errores frecuentes al trabajar con varios archivos
+
+| Síntoma | Causa | Solución |
+|---|---|---|
+| `ModuleNotFoundError: No module named 'cai'` | `main.py` o `test_cai.py` no están en la misma carpeta que `cai.py` | Mantener los tres archivos de un nivel en la misma carpeta |
+| `ModuleNotFoundError: No module named 'cai.py'; 'cai' is not a package` | Se escribió `import cai.py` | Importar sin la extensión: `import cai` |
+| `NameError: name 'es_correcta' is not defined` | Se llamó a la función sin el prefijo del módulo | Escribir `cai.es_correcta(...)` |
+| `AttributeError: module 'random' has no attribute 'randint'` | Un archivo propio se llama `random.py` | Renombrarlo y borrar la carpeta `__pycache__/` |
+| El nivel 3 se comporta como el nivel 2 | Se editó el archivo de la carpeta equivocada al copiar el nivel | Revisar en el editor la ruta del archivo abierto |
+
+> [!NOTE]
+> Al importar `cai` aparece una carpeta `__pycache__/` junto a los archivos. Python la crea automáticamente; puede ignorarse y **no se entrega**.
 
 ## Metodología de trabajo
 
@@ -73,21 +120,40 @@ def nombre_funcion(parametro):
 
 ### 3. Implementar con stubs y probar
 
-* Escribir primero el **programa principal** y las funciones como **stubs** (versiones provisionales que retornan un valor fijo).
-* Escribir las **pruebas con `assert`** de las funciones que calculan. Las pruebas deben fallar mientras las funciones sean stubs.
-* Implementar **una función a la vez**, ejecutando el programa después de cada una, hasta que todas las pruebas pasen.
+* Escribir en `cai.py` las funciones nuevas como **stubs** (versiones provisionales que retornan un valor fijo), y en `main.py` el **programa principal** que las usa.
+* Escribir en `test_cai.py` las **pruebas con `assert`** de las funciones que calculan. Al ejecutar `python test_cai.py`, las pruebas deben fallar mientras las funciones sean stubs.
+* Implementar **una función a la vez** en `cai.py`, ejecutando `python test_cai.py` después de cada una, hasta que todas las pruebas pasen. Luego ejecutar `python main.py`.
 
 > [!IMPORTANT]
-> Solo se prueban con `assert` las funciones que **retornan un valor y no leen ni imprimen nada**. Las funciones que usan `random` se prueban con `random.seed()` (ver el ejercicio guiado *Adivina el número*, sección 5).
+> Solo se prueban con `assert` las funciones que **retornan un valor y no leen ni imprimen nada**. Las funciones que usan `random` se prueban con `random.seed()` (ver el ejercicio guiado *Adivina el número*, sección 5). Como `test_cai.py` y `main.py` son archivos distintos, fijar la semilla en las pruebas **no** afecta al programa principal.
 
 ### 4. Verificar
 
 * Ejecutar el programa completo y comparar su comportamiento con los ejemplos de ejecución del enunciado.
 * Realizar una **prueba de escritorio** de al menos una ronda de preguntas.
 
-## Trabajo individual
+## Trabajo en parejas
 
-Este laboratorio se realiza de manera **individual**. Cada estudiante es responsable de aplicar la metodología en cada nivel y de estar en capacidad de sustentar cualquier parte de su solución.
+Este laboratorio se realiza **en parejas**. La organización en archivos permite que dos personas trabajen al mismo tiempo en el mismo programa, como se vio en la clase 9 (*trabajo simultáneo*), siempre que se pongan de acuerdo en la **especificación** de cada función. En la clase 10 la especificación se presentó como un **contrato**: quien usa la función se compromete a cumplir el *Supone*, y quien la escribe, a cumplir el *Garantiza*. En este laboratorio cada integrante ocupa uno de esos dos lados.
+
+**Autor del módulo**
+
+* Escribe en `cai.py` las funciones del nivel, con su especificación.
+* Escribe en `test_cai.py` las pruebas de esas funciones.
+* Garantiza que cada función cumple su especificación: `python test_cai.py` debe pasar.
+
+**Usuario del módulo**
+
+* Escribe `main.py` usando **solo** la especificación de las funciones, sin mirar cómo están implementadas.
+* Diseña el programa principal: ciclos, contadores, lectura de datos y mensajes.
+* Revisa que la especificación diga todo lo que necesita saber para usar cada función. Si no lo dice, la pareja la corrige.
+
+**Antes de escribir código**, la pareja acuerda en papel el diagrama top-down y la especificación de cada función nueva: ese es el contrato. Al terminar, integran los tres archivos y ejecutan `python main.py`.
+
+**Los roles se alternan en cada nivel**: quien fue autor del módulo en el nivel 1 es usuario en el nivel 2, y así sucesivamente. De esta manera cada integrante escribe funciones y programa principal varias veces.
+
+> [!IMPORTANT]
+> La **sustentación es individual**. Cada integrante debe poder explicar cualquier archivo de cualquier nivel, no solo los que escribió.
 
 ## Fechas importantes
 
@@ -96,18 +162,21 @@ Este laboratorio se realiza de manera **individual**. Cada estudiante es respons
 
 ## Entregables
 
-* **En papel (a mano):**
+* **En papel (a mano, uno por pareja):**
   * El **diagrama top-down** del nivel 5 (el programa completo).
   * La **especificación** (*Supone / Garantiza*) de cada función.
   * La **tabla de variables** del programa principal del nivel 5.
   * Una **prueba de escritorio** de las primeras respuestas del nivel 3 (ver la [Pregunta para pensar](#nivel-3--seguimiento-del-desempeño) de ese nivel).
-* **En Python:** un script por nivel (`nivel1.py`, `nivel2.py`, …, `nivel5.py`). Cada script debe incluir, en este orden: encabezado (título, resumen, autor, fecha y versión), funciones con su especificación, sección de **pruebas con `assert`** y programa principal.
+* **En Python:** una carpeta por nivel (`nivel1/`, `nivel2/`, …, `nivel5/`), cada una con sus tres archivos `cai.py`, `test_cai.py` y `main.py` (ver [Organización en archivos](#organización-en-archivos)), **sin** la carpeta `__pycache__/`. Cada archivo debe tener su encabezado (título, resumen, autores, fecha y versión), y en cada nivel `python test_cai.py` debe pasar todas las pruebas.
 
 ---
 
 # Problemas
 
 ## Nivel 1 — Preguntas de multiplicación
+
+> [!TIP]
+> Comience copiando la carpeta [`plantilla_nivel1/`](plantilla_nivel1/) y renómbrela `nivel1/`. Sus comentarios `# PISTA` indican qué va en cada archivo.
 
 Escriba un programa que ayude a un estudiante de primaria a aprender a multiplicar. El programa debe generar **dos enteros positivos de un dígito** (del 1 al 9) al azar y mostrar una pregunta como:
 
@@ -157,7 +226,7 @@ Fin de la práctica.
 
 El programa necesita dos ciclos: uno **externo** que genera preguntas nuevas, y uno **interno** que repite la misma pregunta mientras la respuesta sea incorrecta. Piense en qué condición debe terminar cada uno, y en dónde debe revisarse si el estudiante ingresó `0`.
 
-Para probar `generar_operando`, use `random.seed()` y verifique que los valores generados estén siempre entre 1 y 9 (por ejemplo, generando 1000 valores en un ciclo).
+Para probar `generar_operando`, escriba en `test_cai.py` un ciclo que genere 1000 valores y verifique con `assert` que todos estén entre 1 y 9. Use `random.seed()` con un número fijo para que la prueba sea repetible.
 
 </details>
 
@@ -287,7 +356,7 @@ Con el valor por defecto `nivel=1`, la llamada `generar_operando()` del nivel 1 
 
 </details>
 
-> **Pregunta para pensar:** `generar_operando` ahora **llama** a `maximo_operando`. Ejecute su programa en **Python Tutor** y observe la pila de llamadas en el momento en que `maximo_operando` retorna. ¿Cuántos marcos (*frames*) hay abiertos? ¿Qué variables tiene cada uno?
+> **Pregunta para pensar:** `generar_operando` ahora **llama** a `maximo_operando`, y las dos están en `cai.py`. ¿Necesita `main.py` saber que existe `maximo_operando`? ¿Qué archivos de la carpeta `nivel4/` tuvo que modificar respecto a `nivel3/`, y cuáles quedaron iguales?
 
 ---
 
@@ -335,7 +404,7 @@ Para que la resta nunca sea negativa, use las funciones integradas `max()` y `mi
 
 </details>
 
-> **Pregunta para pensar:** compare el programa del nivel 5 con el del nivel 1. ¿Qué funciones no cambiaron nunca? ¿Cuáles se modificaron, y cuántas de esas modificaciones obligaron a cambiar el programa principal? ¿Qué le dice esto sobre la ventaja de dividir un programa en funciones?
+> **Pregunta para pensar:** compare el programa del nivel 5 con el del nivel 1. ¿Qué funciones no cambiaron nunca? ¿Cuáles se modificaron, y cuántas de esas modificaciones obligaron a cambiar `main.py`? ¿En qué niveles el usuario del módulo tuvo que esperar a que el autor terminara, y en cuáles le bastó con la especificación? ¿Qué le dice esto sobre la ventaja de dividir un programa en funciones y en archivos?
 
 ---
 
@@ -343,7 +412,6 @@ Para que la resta nunca sea negativa, use las funciones integradas `max()` y `mi
 
 1. **Varios estudiantes:** al terminar las 10 respuestas del nivel 3 (o posteriores), pregunte `¿Otro estudiante? (s/n)` y reinicie los contadores si la respuesta es `s`.
 2. **División:** agregue la división como opción 5. Para que el resultado sea siempre entero, genere primero el divisor y el cociente, y calcule el dividendo como su producto.
-3. **Separación en archivos:** mueva las funciones a un archivo `funciones_cai.py` e impórtelas desde `nivel5.py` (se verá en el siguiente tema de la clase 10).
 
 ## Reflexión final
 
@@ -356,7 +424,7 @@ Para que la resta nunca sea negativa, use las funciones integradas `max()` y `mi
 ## Recursos
 
 * [Documentación oficial del módulo `random` (en español)](https://docs.python.org/es/3/library/random.html)
-* [Python Tutor](https://pythontutor.com/): visualización de la pila de llamadas entre funciones.
+* [Ejercicio guiado *Adivina el número*](../../clases/10/teoria/codigo/adivina_numero/), sección 7: el modelo de organización en archivos de este laboratorio.
 * Deitel, P. y Deitel, H. *C How to Program*, 9.ª edición global, Pearson, 2023, ejercicios 5.49-5.53 (págs. 293-294).
 
 > [!important]
