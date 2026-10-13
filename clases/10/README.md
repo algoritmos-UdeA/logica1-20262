@@ -8,6 +8,7 @@ Continuación de la [clase 9](../9/README.md). A partir del programa de conversi
 
 - [`teoria/README.md`](teoria/README.md) — resumen del tema completo: buenas prácticas, especificación, ámbito de las variables, paso de argumentos y parámetros por defecto, funciones que llaman a otras, diseño top-down con stubs, funciones integradas y librerías (`math`, `random`), módulos propios y el problema que motiva los arreglos.
 - [`teoria/clase-10.pdf`](teoria/clase-10.pdf) / [`teoria/clase-10.pptx`](teoria/clase-10.pptx) — diapositivas completas (60 diapositivas).
+- [`teoria/codigo/README.md`](teoria/codigo/README.md) — **índice del código**: el enunciado de cada problema y los enlaces a los archivos que lo resuelven.
 - [`teoria/codigo/`](teoria/codigo/) — los scripts de los ejemplos: el programa de temperaturas en sus versiones sucesivas (`v1` a `v3` y los pasos top-down), la función `seno` y su comparación con `math.sin`, el mismo programa dividido en módulos (`temperaturas_modulos/`) y el problema de las notas sin arreglos.
 - [`teoria/codigo/adivina_numero/`](teoria/codigo/adivina_numero/) — ejercicio guiado de repaso que integra todo el tema, desde el diseño top-down hasta la división en módulos. Su sección 7 (opción 2: archivo de pruebas aparte) es el modelo de organización en archivos del [laboratorio 4](../../laboratorios/4/).
 

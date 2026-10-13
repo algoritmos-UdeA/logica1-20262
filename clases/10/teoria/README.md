@@ -118,7 +118,7 @@ Diapositivas base del tema 10, que continúa la [clase 9](../../9/teoria/README.
 | [clase-10.pptx](clase-10.pptx) | Diapositivas completas del tema 10, editable (PowerPoint, 60 diapositivas). |
 | [diagramas/](diagramas/) | Fuentes `.drawio` de los diagramas top-down y de módulos (ver la tabla siguiente). |
 | [images/](images/) | Exportación en `.png` de los diagramas de `diagramas/`, más cinco capturas de pantalla usadas en las diapositivas. |
-| [codigo/](codigo/) | Scripts de los ejemplos (ver [Código de ejemplo](#código-de-ejemplo)). |
+| [codigo/](codigo/) | Scripts de los ejemplos (ver [Código de ejemplo](#código-de-ejemplo)). Su [README](codigo/README.md) reúne el **enunciado** de cada problema con los archivos que lo resuelven. |
 | [codigo/adivina_numero/](codigo/adivina_numero/) | Ejercicio guiado *Adivina el número*, con su propia guía (`README.md`): diseño top-down, especificación, stubs, pruebas con `random.seed()` y, al final, el programa dividido en módulos. |
 
 ### Diagramas
