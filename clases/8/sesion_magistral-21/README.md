@@ -6,6 +6,9 @@
 * **Fecha**: 06/10/2026
 * **Parte**: Primer bloque de clase (14-16) — tentativo
 
+> [!NOTE]
+> Esta página se preparó antes de la clase, como material de repaso. En el bloque del 6 de octubre se trabajaron otros ejemplos de ciclos anidados, que surgieron en clase: están en la [sesión 22](../sesion_magistral-22/README.md). Los ejercicios de esta página siguen siendo válidos para practicar.
+
 ## Resumen
 
 Esta sesión vuelve a la [clase 8](../README.md) para cubrir con calma los **ciclos anidados**, el último tema de la [teoría de la clase 8](../teoria/README.md), que no alcanzó a trabajarse bien en las sesiones anteriores. Se resuelven los seis ejercicios de la diapositiva *"Ciclos anidados: Ejercicios"*, cada uno con su script en esta carpeta:
