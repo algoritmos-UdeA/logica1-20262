@@ -15,9 +15,9 @@ Tras un repaso de todo lo visto hasta ahora (condicionales, ciclos `Mientras` y 
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| 23 | Mar 6 oct (bloque 2, 16-18) | 🏫 Presencial | Por documentar | [sesion_magistral-23](sesion_magistral-23/README.md) |
+| 23 | Mar 6 oct (bloque 2, 16-18) | 🏫 Presencial | Definición e invocación de funciones, comparando cada ejemplo sin función y con función para mostrar por qué se reutiliza: conversión de temperatura (`c_to_f`, `c_to_k` y un menú que las integra) y los ciclos anidados de la sesión 22 convertidos en funciones que imprimen (rectángulo de caritas, serie, triángulo y escalera de Mario), en un notebook. El programa de temperaturas hecho en clase es el punto de partida de la clase 10 | [sesion_magistral-23](sesion_magistral-23/README.md) |
 
-La clase 9 empezó en el segundo bloque del 6 de octubre, después de terminar los ciclos anidados de la [clase 8](../8/sesion_magistral-22/README.md) en el primero. La carpeta `sesion_magistral-23/` tiene el código escrito en clase (`codigo_sin_editar/`), pero su página todavía no está escrita.
+La clase 9 empezó en el segundo bloque del 6 de octubre, después de terminar los ciclos anidados de la [clase 8](../8/sesion_magistral-22/README.md) en el primero.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
