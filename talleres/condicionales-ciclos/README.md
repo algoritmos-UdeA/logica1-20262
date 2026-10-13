@@ -186,6 +186,110 @@ print(d)
 
 > **Pregunta para pensar:** ¿qué representa el valor que imprime el código 12? ¿Qué pasa cuando `n` es primo?
 
+### 1.4 `break` y `continue`
+
+Recuerde la diferencia (ver el [anexo A.4](#a4-estructuras-repetitivas)):
+
+* `break` (`Romper`) **termina el ciclo por completo**: la ejecución sigue en la primera instrucción después del ciclo.
+* `continue` (`Continuar`) **salta el resto del cuerpo** solo en la vuelta actual: el ciclo sigue con la siguiente vuelta.
+
+En la prueba de escritorio, marque en qué vuelta se ejecuta cada `break` o `continue`, y qué instrucciones del cuerpo **no** se ejecutan en esa vuelta.
+
+**Código 13.** Variables: `s`, `i`.
+
+```python
+s = 0
+for i in range(1, 10):
+    s = s + i
+    if s > 10:
+        break
+    print(i, s)
+print("Final:", i, s)
+```
+
+> **Pregunta para pensar:** en la vuelta en que se ejecuta el `break`, ¿se alcanza a ejecutar el `print(i, s)` del cuerpo? ¿Qué valores de `i` y `s` muestra la última línea?
+
+**Código 14.** Variable: `i`.
+
+```python
+for i in range(1, 11):
+    if i % 3 == 0:
+        continue
+    print(i, end=" ")
+print()
+```
+
+**Código 15.** Variables: `s`, `i`.
+
+```python
+s = 0
+for i in range(1, 8):
+    if i % 4 == 0:
+        break
+    s = s + i
+    print(i, s)
+print("Final:", s)
+```
+
+**Código 16.** Es el mismo código 15, pero con `continue` en lugar de `break`. Variables: `s`, `i`.
+
+```python
+s = 0
+for i in range(1, 8):
+    if i % 4 == 0:
+        continue
+    s = s + i
+    print(i, s)
+print("Final:", s)
+```
+
+> **Pregunta para pensar:** los códigos 15 y 16 solo se diferencian en una palabra. ¿En qué vuelta empiezan a dar resultados distintos? ¿Qué valor de `i` no se suma en el código 16, y cuáles no se suman en el código 15?
+
+**Código 17.** `continue` dentro de un `while`. Variable: `i`.
+
+```python
+i = 0
+while i < 6:
+    i = i + 1
+    if i % 2 == 0:
+        continue
+    print(i)
+print("Final:", i)
+```
+
+> **Pregunta para pensar:** ¿qué pasaría si la instrucción `i = i + 1` se moviera al **final** del cuerpo, después del `print(i)`? Haga en papel las primeras tres vueltas de esa versión. ¿Por qué en un `while` hay que tener cuidado de que el `continue` no salte la actualización de la variable de control? (En un `for`, `range` avanza solo, así que este problema no ocurre).
+
+**Código 18.** `break` dentro de ciclos anidados. Variables: `i`, `j`.
+
+```python
+for i in range(1, 4):
+    for j in range(1, 4):
+        if j > i:
+            break
+        print(i * j, end=" ")
+    print()
+```
+
+> **Pregunta para pensar:** cuando se ejecuta el `break`, ¿termina el ciclo de `j`, el de `i` o los dos? ¿Cuántas veces se ejecuta el `print()` que salta de línea? (Compare con el consejo 3 de la [sesión 21](../../clases/8/sesion_magistral-21/README.md#3-break-solo-rompe-el-ciclo-más-interno)).
+
+**Código 19.** `break` y `continue` en el mismo ciclo. Haga la prueba de escritorio suponiendo que el usuario ingresa, en este orden: `4`, `7`, `10`, `3`, `-1`. Variables: `suma`, `cnt`, `x`.
+
+```python
+suma = 0
+cnt = 0
+while True:
+    x = int(input("Numero: "))
+    if x == -1:
+        break
+    if x % 2 != 0:
+        continue
+    suma = suma + x
+    cnt = cnt + 1
+print(cnt, suma)
+```
+
+> **Pregunta para pensar:** ¿qué hace este programa con los números impares? ¿Qué rol cumple el `-1`? ¿Qué imprime si el primer número que ingresa el usuario es `-1`?
+
 ---
 
 ## 2. Estructuras condicionales
@@ -589,7 +693,7 @@ $$\operatorname{sen}(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} +
 
 | Ejercicio(s) | Fuente |
 |---|---|
-| 1.1 y 1.3 (códigos 1-3 y 10-12) | Agregados para este taller |
+| 1.1, 1.3 y 1.4 (códigos 1-3 y 10-19) | Agregados para este taller |
 | 1.2 (códigos 4-9) | Taller de ciclos del docente del curso (2022) |
 | 2.1 – 2.9, 2.11 | Oviedo, cap. 4, ejercicios propuestos 32, 34, 25, 26, 29, 30, 31, 36, 37 y 35. En 2.2 se agregó el precio de la manzana como dato de entrada; en 2.8 se fijó el IVA en 19%; en 2.9 se precisó que la distancia es solo de ida |
 | 2.10 | Oviedo, cap. 4, ejercicio propuesto 33, con las preguntas cambiadas por preguntas del curso |
