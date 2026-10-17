@@ -17,9 +17,9 @@ Continuación de la [clase 9](../9/README.md). A partir del programa de conversi
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
 | 24 | Mar 13 oct (bloque 1, 14-16) | 🏫 Presencial | El programa de temperaturas de la sesión 23 mejorado paso a paso: pruebas con `assert` en vez de `print`, funciones y pruebas separadas de la interacción con el usuario, nombres claros, especificación como contrato (*Supone / Garantiza*) y validación del dato con una constante y `continue` antes de llamar a la función | [sesion_magistral-24](sesion_magistral-24/README.md) |
-| 25 | Mar 13 oct (bloque 2, 16-18) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
+| 25 | Mar 13 oct (bloque 2, 16-18) | 🏫 Presencial | Ámbito de las variables (locales y globales, constantes globales, por qué no modificar una global con `global`, `NameError` y `UnboundLocalError`) y formas de pasar argumentos (por posición, por nombre, valores por defecto, una función que llama a otra y la pila de llamadas), con ejemplos nuevos en la tienda de Apu y enlaces a Python Tutor. El diseño top-down quedó pendiente | [sesion_magistral-25](sesion_magistral-25/README.md) |
 
-La primera versión del programa de temperaturas (`teoria/codigo/temperaturas_v1.py`) se escribió en clase, en la sesión 23 de la [clase 9](../9/README.md). La sesión 24 retoma ese programa y lo mejora paso a paso, como camino hacia la división en varios archivos. Cuando se documente la sesión 25, se creará la carpeta `sesion_magistral-25/` y su fila se completará con su contenido y su enlace.
+La primera versión del programa de temperaturas (`teoria/codigo/temperaturas_v1.py`) se escribió en clase, en la sesión 23 de la [clase 9](../9/README.md). La sesión 24 retoma ese programa y lo mejora paso a paso, como camino hacia la división en varios archivos. La sesión 25 cubrió el ámbito de las variables y las formas de pasar argumentos; el diseño top-down y el resto de la teoría quedan para las sesiones siguientes.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
