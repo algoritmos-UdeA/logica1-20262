@@ -16,10 +16,10 @@ Continuación de la [clase 9](../9/README.md). A partir del programa de conversi
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| 24 | Mar 13 oct (bloque 1, 14-16) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
+| 24 | Mar 13 oct (bloque 1, 14-16) | 🏫 Presencial | El programa de temperaturas de la sesión 23 mejorado paso a paso: pruebas con `assert` en vez de `print`, funciones y pruebas separadas de la interacción con el usuario, nombres claros, especificación como contrato (*Supone / Garantiza*) y validación del dato con una constante y `continue` antes de llamar a la función | [sesion_magistral-24](sesion_magistral-24/README.md) |
 | 25 | Mar 13 oct (bloque 2, 16-18) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
 
-La primera versión del programa de temperaturas (`teoria/codigo/temperaturas_v1.py`) se escribió en clase, en la sesión 23 de la [clase 9](../9/README.md). Cuando se dicten las sesiones 24 y 25, se crearán las carpetas `sesion_magistral-24/` y `sesion_magistral-25/`, y estas filas se completarán con su contenido y su enlace.
+La primera versión del programa de temperaturas (`teoria/codigo/temperaturas_v1.py`) se escribió en clase, en la sesión 23 de la [clase 9](../9/README.md). La sesión 24 retoma ese programa y lo mejora paso a paso, como camino hacia la división en varios archivos. Cuando se documente la sesión 25, se creará la carpeta `sesion_magistral-25/` y su fila se completará con su contenido y su enlace.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
