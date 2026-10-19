@@ -9,7 +9,7 @@ Los notebooks de esta carpeta no se editan a mano: cada uno se **genera** con un
 | Archivo | Para qué sirve |
 |---|---|
 | `formato.py` | Formato común: insignias, encabezado con objetivos, índice con anclas, "Cómo usar este notebook", marcas (🔮 ⚠️ 📏 🐍 🔎), enlaces a Python Tutor, salidas esperadas de las celdas con `input()`, ejercicios y ejecución. |
-| `construir_<notebook>.py` | Contenido de un notebook: `construir_repaso_basico.py`, `construir_control_de_flujo.py`, `construir_funciones.py`. |
+| `construir_<notebook>.py` | Contenido de un notebook: `construir_repaso_basico.py`, `construir_control_de_flujo.py`, `construir_funciones.py`, `construir_variables_estructuradas.py`. |
 | `verificar.py` | Comprueba que un notebook cumple el formato. |
 
 ## Requisitos
