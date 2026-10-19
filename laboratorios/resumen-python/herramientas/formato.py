@@ -29,6 +29,7 @@ TUTOR = ("https://pythontutor.com/visualize.html#code={code}&cumulative=false"
 PREDIGA = "> 🔮 **Prediga antes de ejecutar.** "
 ERROR = "> ⚠️ **Error frecuente.** "
 CONV = "> 📏 **Convención del curso.** "
+PYTHON = "> 🐍 **Propio de Python.** "
 
 ANTES_DE_EMPEZAR = ("Este notebook supone que usted ya sabe qué es un algoritmo y qué hace un "
                     "programa: recibe datos, los procesa y muestra resultados. No necesita tener "
@@ -49,7 +50,7 @@ A lo largo del notebook encontrará estas marcas:
 | 🔮 **Prediga antes de ejecutar** | Escriba en papel qué cree que imprime la celda y solo después ejecútela. |
 | ⚠️ **Error frecuente** | Un error típico: el mensaje que da Python y cómo corregirlo. |
 | 📏 **Convención del curso** | Una forma de escribir el código que se acordó en el curso. |
-| 🔎 **Ver paso a paso en Python Tutor** | Abre esa misma celda en [Python Tutor](https://pythontutor.com/), donde puede avanzar instrucción por instrucción y ver cómo cambian las variables. Si la celda usa `input()`, el enlace ya trae los datos de ejemplo cargados. |
+__FILA_PYTHON__| 🔎 **Ver paso a paso en Python Tutor** | Abre esa misma celda en [Python Tutor](https://pythontutor.com/), donde puede avanzar instrucción por instrucción y ver cómo cambian las variables. Si la celda usa `input()`, el enlace ya trae los datos de ejemplo cargados. |
 
 Además del índice de arriba, en Colab puede usar el panel **Índice** (el ícono ☰ de la izquierda) para saltar entre secciones.
 """
@@ -71,6 +72,11 @@ INTRO_EJERCICIOS = ("Para cada fragmento, escriba primero en papel lo que cree q
                     "despliegue la solución o abra el enlace de Python Tutor para comprobarlo paso "
                     "a paso. Si quiere ejecutarlos aquí, cree una celda de código nueva y copie el "
                     "fragmento.")
+
+
+FILA_PYTHON = ("| 🐍 **Propio de Python** | Algo que Python permite pero que el curso no usa en sus ejercicios, "
+               "o que se ve más adelante. Se explica completo aquí; la marca solo le indica dónde queda "
+               "respecto al curso. |\n")
 
 
 def tutor(fuente, entradas=None):
@@ -122,13 +128,20 @@ class Notebook:
     def __init__(self, archivo):
         self.archivo = archivo          # p. ej. "repaso_basico.ipynb"
         self.celdas = []                # (tipo, fuente, entradas o None)
+        self.contextos = {}             # posición de la celda -> código previo para Python Tutor
 
     # ------------------------------------------------------------ celdas
     def md(self, texto):
         self.celdas.append(("markdown", texto.strip("\n"), None))
 
-    def code(self, fuente, entradas=None):
-        """Celda de código. Si usa input(), pase en `entradas` los datos de ejemplo."""
+    def code(self, fuente, entradas=None, contexto=None):
+        """Celda de código. Si usa input(), pase en `entradas` los datos de ejemplo.
+
+        Si la celda usa algo definido en celdas anteriores (por ejemplo, invoca una
+        función), pase ese código en `contexto`: el enlace a Python Tutor lo incluye
+        antes de la celda, para que funcione por sí solo.
+        """
+        self.contextos[len(self.celdas)] = contexto.strip("\n") if contexto else None
         self.celdas.append(("code", fuente.strip("\n"), entradas))
 
     def prediga(self, texto):
@@ -139,6 +152,10 @@ class Notebook:
 
     def convencion(self, texto):
         self.md(CONV + texto)
+
+    def python(self, texto):
+        """Contenido de Python que no es convención del curso o que el curso ve más adelante."""
+        self.md(PYTHON + texto)
 
     # ------------------------------------------------------------ partes fijas
     def insignias(self):
@@ -219,11 +236,15 @@ class Notebook:
 
     def escribir(self, ruta):
         """Arma el notebook, lo ejecuta con Python (salidas reales) y lo guarda."""
+        # La fila 🐍 de la tabla de marcas solo aparece si el notebook usa esa marca.
+        usa_python = any(t == "markdown" and PYTHON.strip() in f for t, f, _ in self.celdas)
+        self.celdas = [(t, f.replace("__FILA_PYTHON__", FILA_PYTHON if usa_python else ""), e)
+                       for t, f, e in self.celdas]
         self._indice()
         nb = nbformat.v4.new_notebook()
         nb.metadata = {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"},
                        "language_info": {"name": "python"}}
-        for tipo, fuente, entradas in self.celdas:
+        for k, (tipo, fuente, entradas) in enumerate(self.celdas):
             if tipo == "markdown":
                 nb.cells.append(nbformat.v4.new_markdown_cell(fuente))
                 continue
@@ -235,8 +256,13 @@ class Notebook:
                 texto = ("Esta celda usa `input()`. Por ejemplo, si el usuario escribe "
                          + " y ".join(f"`{e}`" for e in entradas) + ", la salida es:\n\n```\n"
                          + simular(fuente, entradas) + "\n```\n\n")
-            nb.cells.append(nbformat.v4.new_markdown_cell(
-                texto + f"🔎 [Ver paso a paso en Python Tutor]({tutor(fuente, entradas)})"))
+            contexto = self.contextos.get(k)
+            if contexto:
+                enlace = (f"🔎 [Ver paso a paso en Python Tutor]({tutor(contexto + chr(10) * 2 + fuente, entradas)}) "
+                          "(el enlace incluye también el código de las celdas anteriores que esta celda necesita)")
+            else:
+                enlace = f"🔎 [Ver paso a paso en Python Tutor]({tutor(fuente, entradas)})"
+            nb.cells.append(nbformat.v4.new_markdown_cell(texto + enlace))
 
         # Las celdas con input() no se pueden ejecutar sin usuario: se reemplazan
         # temporalmente por `pass` y quedan sin salida guardada.

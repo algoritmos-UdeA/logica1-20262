@@ -50,7 +50,10 @@ codigo = [i for i, c in enumerate(celdas) if c["cell_type"] == "code"]
 for i in codigo:
     sig = src[i + 1] if i + 1 < len(src) else ""
     m = re.search(r"pythontutor\.com/visualize\.html#code=([^&]+)", sig)
-    ok(m and urllib.parse.unquote(m.group(1)) == src[i], f"Celda {i}: falta el enlace a Python Tutor o no coincide con el código")
+    codigo_tutor = urllib.parse.unquote(m.group(1)) if m else None
+    # El enlace puede llevar antes el código de celdas anteriores (contexto).
+    ok(codigo_tutor is not None and (codigo_tutor == src[i] or codigo_tutor.endswith("\n\n" + src[i])),
+       f"Celda {i}: falta el enlace a Python Tutor o no coincide con el código")
 
 # 5. Celdas con input(): sin salida y con la salida esperada debajo
 def llama_input(fuente):
@@ -69,7 +72,7 @@ for i in codigo:
         ok(sin_salida, f"Celda {i}: usa input() y tiene salida guardada")
         ok("Esta celda usa `input()`" in src[i + 1], f"Celda {i}: usa input() y no muestra la salida esperada")
     else:
-        ok(not sin_salida or not src[i].strip(), f"Celda {i}: no tiene salida (¿se ejecutó el notebook?)")
+        ok(celdas[i].get("execution_count") is not None, f"Celda {i}: no se ejecutó (¿se generó el notebook?)")
 
 # 6. Errores: listar las celdas que fallan, y que cada error de la tabla resumen tenga su ejemplo
 errores = {}

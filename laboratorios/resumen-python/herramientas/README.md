@@ -8,8 +8,8 @@ Los notebooks de esta carpeta no se editan a mano: cada uno se **genera** con un
 
 | Archivo | Para qué sirve |
 |---|---|
-| `formato.py` | Formato común: insignias, encabezado con objetivos, índice con anclas, "Cómo usar este notebook", marcas (🔮 ⚠️ 📏 🔎), enlaces a Python Tutor, salidas esperadas de las celdas con `input()`, ejercicios y ejecución. |
-| `construir_<notebook>.py` | Contenido de un notebook: `construir_repaso_basico.py`, `construir_control_de_flujo.py`. |
+| `formato.py` | Formato común: insignias, encabezado con objetivos, índice con anclas, "Cómo usar este notebook", marcas (🔮 ⚠️ 📏 🐍 🔎), enlaces a Python Tutor, salidas esperadas de las celdas con `input()`, ejercicios y ejecución. |
+| `construir_<notebook>.py` | Contenido de un notebook: `construir_repaso_basico.py`, `construir_control_de_flujo.py`, `construir_funciones.py`. |
 | `verificar.py` | Comprueba que un notebook cumple el formato. |
 
 ## Requisitos
@@ -33,7 +33,7 @@ Después de generar, compare con `git diff`. La única diferencia que puede apar
 
 1. Copie `construir_repaso_basico.py` como `construir_<nombre>.py`.
 2. Cambie el nombre del archivo, el título, la introducción y los objetivos en `nb.encabezado(...)`.
-3. Escriba las secciones con `nb.md(...)`, `nb.code(...)` (con `entradas=[...]` si la celda usa `input()`), `nb.prediga(...)`, `nb.error(...)` y `nb.convencion(...)`.
+3. Escriba las secciones con `nb.md(...)`, `nb.code(...)` (con `entradas=[...]` si la celda usa `input()`, y `contexto=...` con el código de celdas anteriores que necesite, para que su enlace a Python Tutor funcione solo), `nb.prediga(...)`, `nb.error(...)`, `nb.convencion(...)` (📏 convenciones del curso) y `nb.python(...)` (🐍 contenido de Python que el curso no usa en sus ejercicios o ve más adelante; igual se explica completo).
 4. Si hay contenido que no se ha visto en clase, póngalo en una sección final `## Para explorar: ...` con una explicación mínima.
 5. Cierre con `nb.resumen_errores([...])` (cada error de la tabla debe tener una celda que lo muestre), `nb.ejercicios([...])` y `nb.recursos(...)`.
 6. Genere el notebook y páselo por `verificar.py`.
