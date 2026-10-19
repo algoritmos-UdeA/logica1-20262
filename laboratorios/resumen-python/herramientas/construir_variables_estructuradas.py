@@ -77,10 +77,11 @@ nb.md("""
 
 Los tipos de esta sección traen **operaciones propias** que se escriben con un punto después del valor: `texto.upper()`, `lista.append(5)`, `diccionario.keys()`. Esas operaciones se llaman **métodos**. Un método es como una función, pero pertenece a un tipo de dato y se aplica sobre el valor que está antes del punto.
 
-Hay dos clases de métodos, y conviene distinguirlas desde el principio:
+Para entender cualquier método conviene hacerse **dos preguntas**: ¿modifica el valor sobre el que se aplica? y ¿qué devuelve? Son dos cosas independientes:
 
-* Los que **devuelven un valor nuevo** sin cambiar el original, como todos los métodos de los textos: `nombre.upper()` devuelve el texto en mayúsculas, pero `nombre` sigue igual.
-* Los que **modifican** el valor sobre el que se aplican, como `lista.append(5)`: cambian la lista y devuelven `None`.
+* `texto.upper()` **no modifica** el texto y **devuelve** otro texto, en mayúsculas.
+* `lista.append(5)` **modifica** la lista (le agrega el 5) y **devuelve** `None`.
+* `lista.pop()` **modifica** la lista (le quita el último elemento) y **devuelve** el elemento que quitó.
 """)
 nb.python("Los métodos son parte de la **Programación Orientada a Objetos**, que el curso estudia más adelante. Aquí solo se necesita saber usarlos: `valor.metodo(argumentos)`.")
 
@@ -121,7 +122,7 @@ print(min('centella'), max('centella'))
 nb.md("""
 ### Métodos
 
-Los métodos de los strings **nunca cambian el string original** (los strings son inmutables): siempre devuelven un valor nuevo. Para conservar el resultado hay que guardarlo, por ejemplo `nombre = nombre.upper()`.
+Los métodos de los strings **nunca cambian el string original** (los strings son inmutables): siempre devuelven un valor nuevo. Para conservar el resultado hay que guardarlo, por ejemplo `nombre = nombre.upper()`. El tipo de ese valor depende del método: `upper()`, `lower()`, `replace()` y `strip()` devuelven strings; `find()` devuelve un entero; `isalpha()`, `isdigit()`, `islower()` e `isupper()` devuelven un booleano; y `split()` devuelve una lista.
 
 #### Métodos que verifican el contenido de un string
 
@@ -137,7 +138,7 @@ print('124'.isdigit(), '124A'.isdigit())
 print('hello'.islower(), 'Hello'.isupper())
 ''')
 nb.md("""
-> 💡 `isdigit()` sirve para revisar un dato leído con `input()` **antes** de convertirlo con `int()`, y así evitar el `ValueError`. Ojo: `'-5'.isdigit()` y `'3.5'.isdigit()` son `False`, porque el signo y el punto no son dígitos.
+> 💡 `isdigit()` sirve para revisar un dato leído con `input()` **antes** de convertirlo con `int()`, y así evitar el `ValueError`. Ojo: `'-5'.isdigit()` y `'3.5'.isdigit()` son `False`, porque el signo y el punto no son dígitos. Y la comprobación es segura para los dígitos habituales del 0 al 9, pero no para cualquier símbolo: algunos caracteres especiales, como el superíndice `'²'`, cumplen `isdigit()` y sin embargo `int()` no los acepta.
 
 #### Métodos que buscan y reemplazan
 
@@ -251,13 +252,13 @@ nb.md("""
 
 Como en los otros notebooks de esta carpeta, cuando la última línea de una celda es una expresión (por ejemplo, solo el nombre de una lista), Jupyter muestra su valor sin necesidad de `print`. En Python Tutor o en un archivo `.py`, esa línea no muestra nada.
 """)
-nb.convencion("La primera lista del ejemplo mezcla tipos (un entero, un booleano y textos): Python lo permite, pero en el curso cada arreglo tiene un solo tipo de dato. Los nombres `cienciasExatas` y `cienciasHumanas` del ejemplo original están en camelCase; en el curso serían `ciencias_exactas` y `ciencias_humanas`.")
+nb.convencion("La primera lista del ejemplo mezcla tipos (un entero, un booleano y textos): Python lo permite, pero en el curso cada arreglo tiene un solo tipo de dato. Los nombres `cienciasExatas` y `cienciasHumanas` del ejemplo original están en camelCase; en el curso serían `ciencias_exactas` y `ciencias_humanas`. Y las impresiones que unen textos con `+` y `str()` funcionan, pero en código nuevo use f-strings, por ejemplo `print(f'Nota maxima: {M}')`.")
 nb.code(O(9))
 c = Cadena()
 c.code(O(10))
 c.code(O(11))
 nb.prediga("`ciencias` tiene 8 elementos. ¿Qué imprime `ciencias[1::5]`? ¿Y `ciencias[-1:-7:-1]`?")
-c.code(O(12))
+c.code(O(12).replace("# Punto 4\n#cienciasExatas\n", "# Punto 4\n").replace("# ciencias[1])", "# ciencias[1]"))
 c.code(O(13))
 c.code(O(14))
 nb.code(O(15))
@@ -292,6 +293,15 @@ C[0] = 99
 print(A, C)
 ''')
 nb.md("> 💡 Python Tutor es ideal para ver esto: dibuja una flecha desde cada variable hacia la lista, y con `B = A` las dos flechas apuntan a la misma.")
+nb.md("""
+`A[:]` y `list(A)` hacen una **copia superficial**: la lista de afuera es nueva, pero sus elementos son los mismos. Con números (como arriba) eso no importa. Pero si los elementos son a su vez listas, la copia y la original **comparten** esas listas internas, y un cambio dentro de una de ellas se ve desde las dos:
+""")
+nb.code('''
+A = [[1], [2]]
+B = A[:]          # B es una lista nueva...
+B[0][0] = 9       # ...pero B[0] es la misma lista que A[0]
+print(A, B)
+''')
 
 # ---------------------------------------------------------------- métodos de listas
 nb.md("""
@@ -357,7 +367,7 @@ c.code(O(27))
 nb.error("`sort()` necesita comparar los elementos entre sí, y Python no sabe si un texto es menor o mayor que un número: lanza `TypeError: '<' not supported between instances of 'str' and 'int'` (el operador `<` no funciona entre un `str` y un `int`).")
 c.code(O(28), acumular=False)
 nb.md("""
-La corrección del ejemplo original quita los tres textos antes de ordenar. Observe que la lista que se imprime **ya aparece ordenada**, antes de llamar de nuevo a `sort()`: cuando `sort()` falla en la celda anterior, puede dejar la lista **parcialmente reordenada** (aquí alcanzó a ordenar los números antes de encontrar el primer texto). En Python Tutor, que no ejecuta la celda que falla, esa línea se imprime en el orden original.
+La corrección del ejemplo original quita los tres textos antes de ordenar. Observe que la lista que se imprime **ya aparece ordenada**, antes de llamar de nuevo a `sort()`: cuando `sort()` falla en la celda anterior, puede dejar la lista **parcialmente reordenada** (aquí alcanzó a ordenar los números antes de encontrar el primer texto). En Python Tutor, que no ejecuta la celda que falla, esa línea se imprime en el orden original. Por eso, después de un error no suponga que la lista quedó como estaba: si quiere repetir el ejemplo desde el principio, reinicie el entorno y ejecute de nuevo, en orden, las celdas de esta solución.
 """)
 c.code(O(29))
 c.code(O(30))
@@ -488,7 +498,7 @@ Un diccionario guarda **pares clave: valor**. En lugar de buscar un elemento por
 La sintaxis es `{clave1: valor1, clave2: valor2, ..., claveN: valorN}`, y `{}` es un diccionario vacío.
 
 * Las claves no se repiten: asignar a una clave que ya existe reemplaza su valor.
-* Las claves deben ser valores que no cambian, como textos, números o tuplas; una lista no puede ser clave.
+* Las claves deben ser valores que no cambian (Python las llama *hashables*): textos, números o tuplas que no contengan listas. Una lista no puede ser clave, y una tupla que contiene una lista tampoco. En la práctica, casi siempre se usan textos o números.
 * Los pares se guardan en el **orden en que se agregaron**.
 """)
 nb.python("El curso no usa diccionarios en sus ejercicios. Son una de las estructuras más usadas en Python, por ejemplo para representar un registro con varios campos.")
@@ -550,6 +560,16 @@ nb.md("""
 | `d.update(d2)` | Agrega a **d** los pares de **d2** (si una clave ya existe, reemplaza su valor). Devuelve `None` | `A = {'a': 1, 'b': 2}`<br>`B = {'xyz': 1, 'm': [2, 3]}`<br>`A.update(B)` | `A` queda `{'a': 1, 'b': 2, 'xyz': 1, 'm': [2, 3]}`; `B` no cambia |
 
 `keys()`, `values()` e `items()` devuelven unas *vistas* del diccionario: se pueden recorrer con `for` y preguntar con `in`, pero no se puede acceder a ellas por posición. Si se necesita una lista, se convierten con `list()`, por ejemplo `list(A.keys())`.
+""")
+nb.prediga("La vista `claves` se obtuvo **antes** de agregar el curso `'002'`. ¿Aparece `'002'` al imprimirla?")
+nb.code('''
+cursos = {"001": "Matematicas"}
+claves = cursos.keys()
+cursos["002"] = "Fisica"
+print(list(claves))
+''')
+nb.md("""
+Sí: una vista no es una copia, sino una "ventana" al diccionario, y siempre muestra su contenido actual. `list(cursos.keys())`, en cambio, sí crea una lista aparte, que no cambia si después se modifica el diccionario.
 
 #### Ejemplo
 
