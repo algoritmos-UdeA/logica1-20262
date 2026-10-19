@@ -54,6 +54,16 @@ A lo largo del notebook encontrará estas marcas:
 Además del índice de arriba, en Colab puede usar el panel **Índice** (el ícono ☰ de la izquierda) para saltar entre secciones.
 """
 
+LEER_ERRORES = """Cómo leer un mensaje de error:
+
+1. Lea la **última línea**: dice qué tipo de error ocurrió y, casi siempre, por qué.
+2. Busque la **línea del código** que señala el mensaje (las líneas de arriba lo indican, a veces con una flecha `---->` o con `^`).
+3. Revise qué operación hacía esa línea y con qué valores y tipos. Por ejemplo, ante un `TypeError`, compruebe si está sumando un texto y un número.
+
+No cambie cosas al azar: use el mensaje para formular una hipótesis sobre la causa y corrija eso.
+
+En un notebook, el error puede mencionar un archivo con un nombre extraño, como `915546707.py`: es un nombre interno que el notebook le da a la celda, no un archivo suyo. Lo que importa es el **número de línea** dentro de la celda."""
+
 INTRO_EJERCICIOS = ("Para cada fragmento, escriba primero en papel lo que cree que imprime. Luego "
                     "despliegue la solución o abra el enlace de Python Tutor para comprobarlo paso "
                     "a paso. Si quiere ejecutarlos aquí, cree una celda de código nueva y copie el "
@@ -124,6 +134,15 @@ class Notebook:
                 f"## Objetivos\n\nAl terminar este notebook, usted debería poder:\n\n{lista}")
         self.md("__INDICE__")
         self.md(COMO_USAR)
+
+    def resumen_errores(self, filas):
+        """Sección "Resumen: errores frecuentes". `filas`: (error, significado, ejemplo, corrección).
+
+        Cada error de la tabla debe tener en el notebook una celda que lo muestre.
+        """
+        tabla = "\n".join(f"| {e} | {s} | {ej} | {c} |" for e, s, ej, c in filas)
+        self.md(f"## Resumen: errores frecuentes\n\n{LEER_ERRORES}\n\n"
+                f"| Error | Qué significa | Ejemplo típico | Cómo se corrige |\n|---|---|---|---|\n{tabla}")
 
     def ejercicios(self, fragmentos):
         """Sección "Ejercicios: prediga la salida"; las soluciones se calculan ejecutando."""

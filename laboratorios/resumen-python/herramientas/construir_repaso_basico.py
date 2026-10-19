@@ -668,29 +668,15 @@ a++
 ''')
 
 # ---------------------------------------------------------------- errores
-nb.md("""
-## Resumen: errores frecuentes
-
-Cómo leer un mensaje de error:
-
-1. Lea la **última línea**: dice qué tipo de error ocurrió y, casi siempre, por qué.
-2. Busque la **línea del código** que señala el mensaje (las líneas de arriba lo indican, a veces con una flecha `---->` o con `^`).
-3. Revise qué operación hacía esa línea y con qué valores y tipos. Por ejemplo, ante un `TypeError`, compruebe si está sumando un texto y un número.
-
-No cambie cosas al azar: use el mensaje para formular una hipótesis sobre la causa y corrija eso.
-
-En un notebook, el error puede mencionar un archivo con un nombre extraño, como `915546707.py`: es un nombre interno que el notebook le da a la celda, no un archivo suyo. Lo que importa es el **número de línea** dentro de la celda.
-
-| Error | Qué significa | Ejemplo típico | Cómo se corrige |
-|---|---|---|---|
-| `SyntaxError` | El código no está bien escrito; Python ni siquiera empieza a ejecutarlo | `2nota = 3`, `a++`, un paréntesis o una comilla sin cerrar | Revisar la línea señalada con `^` (o la anterior) |
-| `IndentationError` | La sangría (espacios al inicio de la línea) no es la esperada | Una línea con espacios de más al inicio, sin pertenecer a un bloque | Quitar los espacios: en este notebook todas las instrucciones empiezan en el margen izquierdo |
-| `NameError` | Se usa un nombre que no existe | Un nombre mal escrito (`Nota` en vez de `nota`) o una variable usada antes de asignarla | Revisar mayúsculas y que la variable se haya creado antes |
-| `TypeError` | La operación no es válida para esos tipos, o el dato no se puede modificar | `"Test" + 3`, `texto[0] = "x"` | Convertir con `str()`, `int()` o `float()`, o construir un dato nuevo |
-| `ValueError` | El tipo es correcto pero el valor no sirve | `int("3.5")`, `int("tres")` | Leer con el tipo adecuado o validar el dato |
-| `IndexError` | La posición no existe | `texto[len(texto)]` | Recordar que el último índice es `len(texto) - 1` |
-| `ZeroDivisionError` | División por cero | `total / 0` | Comprobar el divisor antes de dividir |
-""")
+nb.resumen_errores([
+    ('`SyntaxError`', 'El código no está bien escrito; Python ni siquiera empieza a ejecutarlo', '`2nota = 3`, `a++`, un paréntesis o una comilla sin cerrar', 'Revisar la línea señalada con `^` (o la anterior)'),
+    ('`IndentationError`', 'La sangría (espacios al inicio de la línea) no es la esperada', 'Una línea con espacios de más al inicio, sin pertenecer a un bloque', 'Quitar los espacios: en este notebook todas las instrucciones empiezan en el margen izquierdo'),
+    ('`NameError`', 'Se usa un nombre que no existe', 'Un nombre mal escrito (`Nota` en vez de `nota`) o una variable usada antes de asignarla', 'Revisar mayúsculas y que la variable se haya creado antes'),
+    ('`TypeError`', 'La operación no es válida para esos tipos, o el dato no se puede modificar', '`"Test" + 3`, `texto[0] = "x"`', 'Convertir con `str()`, `int()` o `float()`, o construir un dato nuevo'),
+    ('`ValueError`', 'El tipo es correcto pero el valor no sirve', '`int("3.5")`, `int("tres")`', 'Leer con el tipo adecuado o validar el dato'),
+    ('`IndexError`', 'La posición no existe', '`texto[len(texto)]`', 'Recordar que el último índice es `len(texto) - 1`'),
+    ('`ZeroDivisionError`', 'División por cero', '`total / 0`', 'Comprobar el divisor antes de dividir'),
+])
 
 # ---------------------------------------------------------------- ejercicios
 EJERCICIOS = [
