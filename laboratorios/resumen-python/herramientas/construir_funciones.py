@@ -46,7 +46,9 @@ nb.encabezado(
     antes_de_empezar=("Este notebook supone que ya sabe usar variables, `print`, f-strings, condicionales y "
                       "ciclos en Python. Si necesita repasarlos, están en los notebooks *Repaso básico de "
                       "Python* y *Control de flujo* de esta misma carpeta. Lo demás que se usa aquí, incluidas "
-                      "las partes marcadas con 🐍, se explica aquí."),
+                      "las partes marcadas con 🐍, se explica aquí. Si es la primera vez que estudia "
+                      "funciones, avance primero hasta la sección *Parámetros con valores por defecto* y "
+                      "después continúe con las partes marcadas con 🐍."),
     objetivos=[
         "Definir funciones con `def`, documentarlas con un *docstring* e invocarlas, distinguiendo entre devolver un valor con `return` y mostrarlo con `print`.",
         "Probar una función con `assert`.",
@@ -142,6 +144,8 @@ nb.md("""
 ### Probar una función con `assert`
 
 La instrucción `assert condición` comprueba que algo sea cierto. Si la condición es verdadera, **no pasa nada** y el programa sigue; si es falsa, Python se detiene con `AssertionError`. Por eso sirve para escribir **pruebas**: cada `assert` compara lo que devuelve la función con el resultado que se sabe correcto.
+
+`assert` sirve para **probar** el programa mientras se desarrolla, no para validar los datos que escribe el usuario: si Python se ejecuta en modo optimizado (`python -O programa.py`), omite todos los `assert`. Para validar datos se usa un `if`.
 """)
 nb.code('''
 def area_rectangulo(base, altura):
@@ -173,7 +177,7 @@ nb.md("""
 
 El **ámbito** de una variable es la parte del programa donde ese nombre existe y se puede usar.
 
-* Una variable creada **dentro** de una función (incluidos sus parámetros) es **local**: existe solo mientras la función se ejecuta y no se ve desde afuera.
+* Una variable creada **dentro** de una función (incluidos sus parámetros) es **local**: su nombre solo existe dentro de la función y no se puede usar desde afuera. El **valor** sí puede seguir existiendo después de que la función termina, si la función lo devuelve con `return`.
 * Una variable creada **fuera** de toda función es **global**: se puede leer desde cualquier parte, también desde dentro de las funciones.
 
 Cuando Python encuentra un nombre, lo busca en este orden, conocido como la [**regla LEGB**](https://www.datacamp.com/tutorial/scope-of-variables-python): primero en la función actual (**L**ocal); luego en las funciones que la contienen, si está definida dentro de otra (**E**nclosing, se ve en *Funciones anidadas*); después en el programa (**G**lobal); y por último entre los nombres propios de Python, como `print` o `len` (**B**uilt-in).
@@ -330,6 +334,7 @@ nb.python("Python permite **anotar el tipo** esperado de un parámetro, por ejem
 nb.md("""
 La función `promedio` usa además el formato con `%`: `%d` se reemplaza por un entero y `%.3f` por un real con 3 decimales, en el orden de los valores que van después del `%`. Con una f-string sería `f"El promedio de la muestra de {len(muestras)} elementos es {promedio:.3f}."`.
 """)
+nb.convencion("Los ejemplos originales de este notebook usan los formatos con `%` y con `.format()`, que se explican donde aparecen. En código nuevo, use f-strings.")
 nb.code(O(37))
 nb.code(O(38), contexto=O(37))
 nb.code(O(39), contexto=O(37))
@@ -343,12 +348,12 @@ def mostrar(*valores):
 mostrar(4, 5, 6)
 mostrar()
 ''')
-nb.error("Si `promedio` se invoca sin argumentos, la tupla queda vacía, `len(muestras)` vale 0 y Python lanza `ZeroDivisionError`. Una función con `*args` debe considerar el caso en que no recibe nada.")
+nb.error("Si `promedio` se invoca sin argumentos, la tupla queda vacía, `len(muestras)` vale 0 y Python lanza `ZeroDivisionError`. Una función con `*args` debe considerar el caso en que no recibe nada. Esta función **supone** que recibe al menos un valor; con las convenciones del curso, esa condición se escribiría en el *Supone* de su docstring.")
 nb.code('''
 promedio()
 ''', contexto=O(37))
 nb.md("""
-Cuando la función tiene varios parámetros, el parámetro que recibe la cantidad variable de argumentos debe definirse al final de la lista de parámetros:
+Cuando la función tiene varios parámetros, el parámetro que recibe la cantidad variable de argumentos debe ir **después** de los parámetros normales. Después de él solo pueden ir `**kwargs` (se ve en la sección siguiente) y parámetros que se pasan obligatoriamente por nombre:
 """)
 nb.code(O(41))
 nb.code(O(42), contexto=O(41))
@@ -378,6 +383,7 @@ En el ejemplo, `dato["tipo"].lower()` usa el método `.lower()`, que devuelve el
 """)
 nb.code(SUPERFICIE)
 nb.md("> 💡 En el notebook original, el valor de π de esta función tenía una errata (`3.14259265`); aquí está corregido a `3.14159265`.")
+nb.convencion("Como en `promedio`, dentro de esta función original la variable del resultado se llama igual que la función (`superficie`). Funciona, pero confunde; un nombre como `resultado` sería mejor.")
 nb.code(O(46), contexto=SUPERFICIE_CON_CTX)
 nb.code(O(47), contexto=SUPERFICIE_CON_CTX)
 nb.code(O(48), contexto=SUPERFICIE_CON_CTX)
@@ -410,7 +416,7 @@ nb.md("""
 
 En Python se puede definir una función dentro de otra. A estas se les conoce como **funciones anidadas**.
 
-Una función anidada puede **leer las variables de la función que la contiene**. Este es el nivel *Enclosing* de la regla LEGB, y se conoce como **cierre** o *closure*.
+Una función anidada puede **leer las variables de la función que la contiene**: es el nivel *Enclosing* de la regla LEGB. Cuando la función anidada **conserva** ese acceso incluso después de que la función externa terminó (porque la función externa la devolvió), se habla de un **cierre** o *closure*. Se ve en la sección siguiente, con la fábrica de funciones `html`.
 
 ### ¿Por qué usar funciones anidadas?
 
@@ -424,6 +430,42 @@ La lista empieza con un solo valor, `[2]`, y crece con `lista.append(numero)`, q
 nb.convencion("Este ejemplo usa `.append()` para que la lista crezca. En los ejercicios del curso, las listas se usan como arreglos de tamaño fijo, sin `.append()`.")
 nb.code(O(51))
 nb.code(O(52), contexto=O(51))
+nb.prediga("La documentación promete los primos \"comprendidos entre el 2 y el valor de limite\". ¿Qué **debería** devolver `lista_primos(1)`? ¿Qué devuelve?")
+nb.code('''
+lista_primos(1)
+''', contexto=O(51))
+nb.md("""
+Con un límite menor que 2 no hay ningún primo en el rango, pero la función devuelve `[2]`, porque la lista empieza con el 2 sin revisar el límite. Es un error de **caso límite**: la función sirve para los valores "normales" y falla en el borde. Por eso las pruebas deben incluir los bordes (aquí, 0, 1 y 2). La siguiente versión corrige el caso con un `if` al inicio, documenta lo que supone y garantiza, y lo prueba con `assert`:
+""")
+nb.code('''
+def lista_primos(limite=100):
+    """Genera una lista de los numeros primos entre 2 y limite.
+
+    Supone: limite es un entero.
+    Garantiza: devuelve los primos menores o iguales que limite;
+               si limite < 2, devuelve una lista vacia.
+    """
+    if limite < 2:
+        return []
+    lista = [2]
+
+    def esprimo(numero):
+        for primo in lista:
+            if numero % primo == 0:
+                return False
+        return True
+
+    for numero in range(3, limite + 1):
+        if esprimo(numero):
+            lista.append(numero)
+    return lista
+
+assert lista_primos(0) == []
+assert lista_primos(1) == []
+assert lista_primos(2) == [2]
+assert lista_primos(10) == [2, 3, 5, 7]
+print("Todas las pruebas pasaron")
+''')
 nb.error("La función anidada solo existe dentro de la función que la contiene. Invocarla desde afuera da `NameError`.")
 nb.code('''
 esprimo(7)
@@ -477,6 +519,8 @@ nb.md("""
 ### Patrón de fábrica de funciones
 
 El ejemplo a continuación muestra un patrón común llamado **fábrica de funciones** (*factory*). La función `html` no hace el trabajo directamente: recibe una función (`funcion`) y **fabrica y devuelve** una función nueva (`empaqueta`), que al invocarse aplica `funcion` y encierra su resultado entre las etiquetas de una página HTML.
+
+`empaqueta` es un **cierre**: cuando se invoca, `html` ya terminó, pero `empaqueta` sigue teniendo acceso a las variables `funcion` y `etiquetas`, que pertenecían a `html`.
 
 En el texto de `etiquetas`, `\\n` es un salto de línea, y las llaves `{}` se reemplazan por un valor con el método `.format()`: `"<p>{}</p>".format("Hola")` produce `"<p>Hola</p>"`.
 """)
@@ -616,6 +660,12 @@ Una función es **recursiva** cuando se invoca a sí misma. Aquí, el factorial 
 """)
 nb.code(O(82))
 nb.code(O(83), contexto=O(82))
+nb.md("""
+Dos precisiones sobre este ejemplo, que busca mostrar la recursividad con `lambda` y no ser una función de factorial completa:
+
+* **Dominio**: la función **supone** que `numero` es un entero mayor o igual que 0 (recuerde que 0! = 1), pero no lo valida. Con otros valores no da error, sino resultados sin sentido matemático: `factorial(-3)` devuelve `1` y `factorial(2.5)` devuelve `3.75`.
+* **Dependencia del nombre**: la `lambda` funciona porque, cada vez que se invoca, busca el nombre global `factorial`. Si ese nombre se reasignara a otra cosa, la recursión dejaría de funcionar. Por eso, para funciones recursivas se recomienda usar `def`.
+""")
 
 # ---------------------------------------------------------------- errores
 nb.resumen_errores([
