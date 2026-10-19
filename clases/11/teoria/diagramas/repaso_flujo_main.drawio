@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="Página-1" id="repaso_flujo_main">
+    <mxGraphModel dx="872" dy="537" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="repaso_flujo_main-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;strokeColor=#333333;fillColor=#FFFFFF;" value="Inicio" vertex="1">
+          <mxGeometry height="44" width="110" x="95" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fontSize=13;strokeColor=#333333;fillColor=#FFFFFF;" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;Leer(temp_c)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="44" width="200" x="50" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-3" parent="1" style="shape=process;backgroundOutline=1;size=0.03333333333333333;whiteSpace=wrap;html=1;fontSize=13;strokeColor=#6C8EBF;fillColor=#DAE8FC;" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;temp_f&amp;nbsp;=&amp;nbsp;celsius_a_fahrenheit(temp_c)&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="74" width="300" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;fixedSize=1;size=16;whiteSpace=wrap;html=1;fontSize=13;strokeColor=#333333;fillColor=#FFFFFF;" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;Escribir(temp_c,&amp;nbsp;temp_f)&lt;/font&gt;" vertex="1">
+          <mxGeometry height="44" width="230" x="35" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=13;strokeColor=#333333;fillColor=#FFFFFF;" value="Fin" vertex="1">
+          <mxGeometry height="44" width="110" x="95" y="306" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-6" edge="1" parent="1" source="repaso_flujo_main-1" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#333333;" target="repaso_flujo_main-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-7" edge="1" parent="1" source="repaso_flujo_main-2" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#333333;" target="repaso_flujo_main-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-8" edge="1" parent="1" source="repaso_flujo_main-3" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#333333;" target="repaso_flujo_main-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-9" edge="1" parent="1" source="repaso_flujo_main-4" style="endArrow=block;endFill=1;html=1;strokeWidth=1.5;strokeColor=#333333;" target="repaso_flujo_main-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-10" parent="1" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;align=left;verticalAlign=middle;spacingLeft=10;fontSize=13;" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;def&amp;nbsp;celsius_a_fahrenheit(temp_c):&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;temp_f&amp;nbsp;=&amp;nbsp;(9&amp;nbsp;/&amp;nbsp;5)&amp;nbsp;*&amp;nbsp;temp_c&amp;nbsp;+&amp;nbsp;32&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return&amp;nbsp;temp_f&lt;/font&gt;" vertex="1">
+          <mxGeometry height="74" width="330" x="430" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;fontColor=#333333;" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;conversiones.py&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="24" width="200" x="430" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-12" edge="1" parent="1" source="repaso_flujo_main-3" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#82B366;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="repaso_flujo_main-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-13" edge="1" parent="1" source="repaso_flujo_main-10" style="endArrow=block;endFill=1;html=1;strokeWidth=2;dashed=1;strokeColor=#B85450;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="repaso_flujo_main-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;align=center;" value="&lt;font color=&quot;#82B366&quot;&gt;&lt;b&gt;llama&lt;/b&gt; con &lt;font face=&quot;Consolas, monospace&quot;&gt;temp_c&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="130" x="300" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="repaso_flujo_main-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;align=center;" value="&lt;font color=&quot;#B85450&quot;&gt;&lt;b&gt;return&lt;/b&gt; &lt;font face=&quot;Consolas, monospace&quot;&gt;temp_f&lt;/font&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="130" x="300" y="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

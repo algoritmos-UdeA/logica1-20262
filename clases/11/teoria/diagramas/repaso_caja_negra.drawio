@@ -1,0 +1,20 @@
+<mxfile host="Electron" version="29.0.3">
+  <diagram name="Página-1" id="repaso_caja_negra">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="repaso_caja_negra-1" value="&lt;font face=&quot;Consolas, monospace&quot; style=&quot;font-size:16px&quot;&gt;&lt;b&gt;celsius_a_fahrenheit&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#1E1E1E;fontColor=#FFFFFF;align=center;verticalAlign=middle;" vertex="1" parent="1"><mxGeometry x="230" y="60" width="260" height="80" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-2" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1"  target="repaso_caja_negra-1"><mxGeometry relative="1" as="geometry"><mxPoint x="60" y="100" as="sourcePoint" /></mxGeometry></mxCell>
+        <mxCell id="repaso_caja_negra-3" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#333333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="repaso_caja_negra-1"><mxGeometry relative="1" as="geometry"><mxPoint x="660" y="100" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="repaso_caja_negra-4" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;temp_c&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;" vertex="1" parent="1"><mxGeometry x="80" y="62" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-5" value="&lt;font face=&quot;Consolas, monospace&quot;&gt;&lt;b&gt;temp_f&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;" vertex="1" parent="1"><mxGeometry x="510" y="62" width="130" height="30" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-6" value="&lt;i&gt;entrada&lt;br&gt;(parámetro)&lt;/i&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;align=center;" vertex="1" parent="1"><mxGeometry x="80" y="108" width="130" height="36" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-7" value="&lt;i&gt;salida&lt;br&gt;(&lt;b&gt;return&lt;/b&gt;)&lt;/i&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;align=center;" vertex="1" parent="1"><mxGeometry x="510" y="108" width="130" height="36" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-8" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#B85450&quot;&gt;&lt;b&gt;100&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1"><mxGeometry x="80" y="150" width="130" height="26" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-9" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#B85450&quot;&gt;&lt;b&gt;212.0&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;" vertex="1" parent="1"><mxGeometry x="510" y="150" width="130" height="26" as="geometry" /></mxCell>
+        <mxCell id="repaso_caja_negra-10" value="&lt;i&gt;ejemplo: &lt;font face=&quot;Consolas, monospace&quot;&gt;celsius_a_fahrenheit(100)&lt;/font&gt; devuelve &lt;font face=&quot;Consolas, monospace&quot;&gt;212.0&lt;/font&gt;&lt;/i&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontColor=#555555;fontSize=12;align=center;" vertex="1" parent="1"><mxGeometry x="130" y="190" width="460" height="24" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
