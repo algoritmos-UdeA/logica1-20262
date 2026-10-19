@@ -126,14 +126,14 @@ Fin
 ```mermaid
 flowchart TD
     Inicio([Inicio]) --> Gen["secreto = generar_secreto(MINIMO, MAXIMO)"]
-    Gen --> Init["intentos = 0<br>resultado = &quot;&quot;"]
-    Init --> Cond{"resultado != &quot;correcto&quot;?"}
+    Gen --> Init["intentos = 0<br>resultado = #quot;#quot;"]
+    Init --> Cond{"resultado != #quot;correcto#quot;?"}
     Cond -- Sí --> Leer[/"Leer(intento)"/]
     Leer --> Cont["intentos = intentos + 1"]
     Cont --> Eval["resultado = evaluar_intento(intento, secreto)"]
-    Eval --> EsMayor{"resultado == &quot;mayor&quot;?"}
+    Eval --> EsMayor{"resultado == #quot;mayor#quot;?"}
     EsMayor -- Sí --> Mayor[/"Escribir('MAYOR')"/]
-    EsMayor -- No --> EsMenor{"resultado == &quot;menor&quot;?"}
+    EsMayor -- No --> EsMenor{"resultado == #quot;menor#quot;?"}
     EsMenor -- Sí --> Menor[/"Escribir('MENOR')"/]
     EsMenor -- No --> Cond
     Mayor --> Cond
