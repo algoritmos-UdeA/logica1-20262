@@ -726,7 +726,7 @@ print("{a} + {b}")
 nb.ejercicios(EJERCICIOS)
 
 # ---------------------------------------------------------------- recursos
-nb.md("## Recursos adicionales")
+nb.recursos()
 nb.md("""
 ### Herramientas
 

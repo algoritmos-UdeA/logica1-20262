@@ -27,7 +27,7 @@ python laboratorios/resumen-python/herramientas/verificar.py laboratorios/resume
 
 Para cambiar un notebook, edite su `construir_<notebook>.py` (nunca el `.ipynb`) y vuelva a generarlo: así los enlaces a Python Tutor, el índice y las salidas quedan sincronizados con el código.
 
-Después de generar, compare con `git diff`: es normal que aparezcan diferencias mínimas en las salidas (Jupyter a veces entrega una misma línea en dos trozos, o cambia el número del archivo interno en los `SyntaxError`). Si solo cambió eso, no hace falta hacer commit.
+Después de generar, compare con `git diff`. La única diferencia que puede aparecer sin haber cambiado nada es el número del archivo interno en los mensajes de `SyntaxError` (por ejemplo `915546707.py`); si solo cambió eso, no hace falta hacer commit. Si cambia `formato.py`, regenere y verifique **todos** los notebooks.
 
 ## Cómo crear un notebook nuevo
 
@@ -35,5 +35,5 @@ Después de generar, compare con `git diff`: es normal que aparezcan diferencias
 2. Cambie el nombre del archivo, el título, la introducción y los objetivos en `nb.encabezado(...)`.
 3. Escriba las secciones con `nb.md(...)`, `nb.code(...)` (con `entradas=[...]` si la celda usa `input()`), `nb.prediga(...)`, `nb.error(...)` y `nb.convencion(...)`.
 4. Si hay contenido que no se ha visto en clase, póngalo en una sección final `## Para explorar: ...` con una explicación mínima.
-5. Cierre con `nb.resumen_errores([...])` (cada error de la tabla debe tener una celda que lo muestre), `nb.ejercicios([...])` y "Recursos adicionales".
+5. Cierre con `nb.resumen_errores([...])` (cada error de la tabla debe tener una celda que lo muestre), `nb.ejercicios([...])` y `nb.recursos(...)`.
 6. Genere el notebook y páselo por `verificar.py`.

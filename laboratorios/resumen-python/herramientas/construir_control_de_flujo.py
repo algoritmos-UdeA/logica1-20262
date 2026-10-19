@@ -248,6 +248,9 @@ Un ciclo que está programado para iterar desde 0 hasta 10, pero que, cuando el 
 """)
 nb.code(O(16))
 nb.md("""
+> 💡 Observe con cuidado: el último valor impreso es `i = 3`, pero cuando se ejecuta el `break`, `i` ya vale **4**, porque la línea `i += 1` está entre el `print` y el `if`. Compruébelo con el enlace a Python Tutor, siguiendo el valor de `i` instrucción por instrucción.
+""")
+nb.md("""
 #### Ejemplo `continue`
 
 El mismo ciclo, pero cuando el valor de la variable de control llega a 4 se ejecuta `continue`.
@@ -335,8 +338,8 @@ nb.md("""
   **Donde**:
 
   * **`inicio`**: es el primer número del rango. Si se omite, vale 0.
-  * **`fin`**: es el valor límite del rango, que **no se incluye**: la sucesión llega hasta **`fin - 1`** (o hasta `fin + 1` si el paso es negativo).
-  * **`paso`**: es la magnitud de los incrementos o decrementos del rango. Si se omite, vale 1.
+  * **`fin`**: es el valor límite del rango, que **nunca se incluye**. Con paso positivo, la sucesión avanza mientras los valores sean **menores** que `fin`; con paso negativo, mientras sean **mayores**. El último valor depende del inicio, del límite y del paso: `range(3, 11, 2)` produce 3, 5, 7, 9 y `range(26, 10, -4)` produce 26, 22, 18, 14.
+  * **`paso`**: es la magnitud de los incrementos o decrementos del rango. Puede ser positivo o negativo, pero no 0. Si se omite, vale 1.
 """)
 nb.code(O(30))
 nb.code(O(31))
@@ -377,7 +380,7 @@ nb.md("""
 ### Cómo funciona en Python: la variable del `for`
 
 * En cada vuelta, el `for` le **asigna** a la variable el siguiente elemento. Si dentro del bloque se le cambia el valor, eso **no altera** las vueltas que faltan: en la vuelta siguiente vuelve a recibir el elemento que le toca.
-* Al terminar el ciclo, la variable conserva **el último valor** que tomó. Compare con el `while` de más arriba, donde `i` terminaba en 4 (un valor más que el último usado), porque la condición tuvo que fallar para salir.
+* Al terminar el ciclo, la variable conserva el valor que tenía al final de la última vuelta: normalmente, el último elemento recorrido (o el valor que se le haya asignado dentro de esa vuelta). Si el `for` no dio ninguna vuelta, la variable no recibe ningún valor, y usarla después puede dar `NameError`. Compare con el `while` de más arriba, donde `i` terminaba en 4 (un valor más que el último usado), porque la condición tuvo que fallar para salir.
 """)
 nb.prediga("¿Cuántas vueltas da este `for`? ¿Qué imprime en cada una?")
 nb.code('''
@@ -433,24 +436,18 @@ for i in range(3):
 nb.md("""
 ## Desempaquetado
 
-El desempaquetado es una característica de Python que permite asignar los elementos de una colección a varias variables en una sola línea de código. En los ejemplos se usa una **lista**: un grupo de valores separados por comas y encerrados entre corchetes, como `['Pepe', 'Pérez', 4.5]`. La sintaxis básica es la siguiente:
+El desempaquetado es una característica de Python que permite asignar los elementos de una colección a varias variables en una sola línea de código. En los ejemplos se usa una **lista**: un grupo de valores separados por comas y encerrados entre corchetes, como `['Pepe', 'Pérez', 4.5]`. La sintaxis básica es la siguiente (es un esquema, no código que se pueda ejecutar):
 
-```python
+```
 <nombre 1>, <nombre 2>, ..., <nombre n> = <colección de tamaño n>
 ```
 
 En caso de que el número de nombres y el tamaño de la colección no coincidan, se produce un error de tipo `ValueError`.
 """)
-nb.code(O(37))
-nb.error("Si hay **más** valores que variables, Python lanza `ValueError: too many values to unpack` (demasiados valores para desempaquetar); si hay **menos**, `ValueError: not enough values to unpack`.")
-nb.code(O(38))
-nb.code('''
-nombre, apellido, calificacion = ['Pepe', 'Perez']    # error: faltan valores
-''')
 nb.md("""
 ### Cómo funciona en Python: asignar varios valores a la vez
 
-Lo mismo funciona sin corchetes: `x, y = 3, 4` asigna 3 a `x` y 4 a `y`. Python calcula **primero** todos los valores de la derecha y **después** los asigna, así que `x, y = y, x` intercambia los valores de dos variables sin necesitar una variable temporal.
+La forma más simple no necesita corchetes: `x, y = 3, 4` asigna 3 a `x` y 4 a `y`. Python calcula **primero** todos los valores de la derecha y **después** los asigna, así que `x, y = y, x` intercambia los valores de dos variables sin necesitar una variable temporal.
 """)
 nb.prediga("¿Qué imprime cada `print`?")
 nb.code('''
@@ -459,7 +456,13 @@ print(x, y)
 x, y = y, x
 print(x, y)
 ''')
-
+nb.md("Lo mismo funciona cuando los valores vienen agrupados en una lista, como en el ejemplo original:")
+nb.code(O(37))
+nb.error("Si hay **más** valores que variables, Python lanza `ValueError: too many values to unpack` (demasiados valores para desempaquetar); si hay **menos**, `ValueError: not enough values to unpack`.")
+nb.code(O(38))
+nb.code('''
+nombre, apellido, calificacion = ['Pepe', 'Perez']    # error: faltan valores
+''')
 # ---------------------------------------------------------------- para explorar
 nb.md("""
 ## Para explorar: listas y diccionarios en un `for`
@@ -562,9 +565,7 @@ print(cuenta)
 ])
 
 # ---------------------------------------------------------------- recursos
-nb.md("""
-## Recursos adicionales
-
+nb.recursos("""
 ### Herramientas
 
 * [Python Tutor](https://pythontutor.com/): visualiza la ejecución de un programa paso a paso. Es especialmente útil para seguir las vueltas de un ciclo.

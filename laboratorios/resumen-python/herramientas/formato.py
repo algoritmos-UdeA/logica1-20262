@@ -37,7 +37,7 @@ ANTES_DE_EMPEZAR = ("Este notebook supone que usted ya sabe qué es un algoritmo
 COMO_USAR = """
 ## Cómo usar este notebook
 
-- Ejecute las celdas **en orden**, de arriba hacia abajo (`Shift + Enter`). Si algo se comporta raro, use *Reiniciar y ejecutar todo* (en Colab: **Entorno de ejecución → Reiniciar sesión y ejecutar todo**).
+- Ejecute las celdas **una por una y en orden**, de arriba hacia abajo (`Shift + Enter`). Si los resultados se ven raros (por ejemplo, después de cambiar muchos valores), **reinicie** el entorno (en Colab: **Entorno de ejecución → Reiniciar sesión**; en Jupyter: **Kernel → Restart**) y vuelva a ejecutar las celdas una por una desde el principio. No use *ejecutar todo*: se detiene en la primera celda que falla a propósito y en las que piden datos con `input()`.
 - Cambie los valores de los ejemplos y vuelva a ejecutar: es la mejor forma de comprobar si entendió.
 - Algunas celdas **fallan a propósito** para mostrar un error; lea el mensaje, es parte del ejemplo.
 - Para probar sus propias ideas, cree una celda de código nueva: en Colab, con el botón **+ Código** de la barra superior; en Jupyter, seleccione una celda (sin estar escribiendo en ella) y presione `B` para crear una debajo.
@@ -64,6 +64,9 @@ No cambie cosas al azar: use el mensaje para formular una hipótesis sobre la ca
 
 En un notebook, el error puede mencionar un archivo con un nombre extraño, como `915546707.py`: es un nombre interno que el notebook le da a la celda, no un archivo suyo. Lo que importa es el **número de línea** dentro de la celda."""
 
+NOTA_RECURSOS = ("Estos recursos son **opcionales**: el notebook incluye todo lo necesario para estudiar "
+                 "sus temas. Úselos si quiere ver más ejemplos, practicar o profundizar.")
+
 INTRO_EJERCICIOS = ("Para cada fragmento, escriba primero en papel lo que cree que imprime. Luego "
                     "despliegue la solución o abra el enlace de Python Tutor para comprobarlo paso "
                     "a paso. Si quiere ejecutarlos aquí, cree una celda de código nueva y copie el "
@@ -89,6 +92,22 @@ def simular(fuente, entradas=()):
     with contextlib.redirect_stdout(buf):
         exec(fuente, {"input": fake_input})
     return buf.getvalue().rstrip("\n")
+
+
+def unir_flujos(salidas):
+    """Une las salidas de texto consecutivas del mismo flujo (stdout/stderr).
+
+    El kernel a veces entrega una misma línea en dos trozos; unirlos deja el
+    JSON estable entre ejecuciones (y los git diff limpios).
+    """
+    unidas = []
+    for o in salidas:
+        if (o.get("output_type") == "stream" and unidas and unidas[-1].get("output_type") == "stream"
+                and unidas[-1]["name"] == o["name"]):
+            unidas[-1]["text"] += o["text"]
+        else:
+            unidas.append(o)
+    return unidas
 
 
 def slug(titulo):
@@ -170,6 +189,11 @@ class Notebook:
 """)
         self.md("\n".join(bloques))
 
+    def recursos(self, texto=""):
+        """Sección "Recursos adicionales", con la nota fija de que son opcionales."""
+        extra = f"\n\n{texto.strip()}" if texto.strip() else ""
+        self.md(f"## Recursos adicionales\n\n{NOTA_RECURSOS}{extra}")
+
     # ------------------------------------------------------------ armar
     def _indice(self):
         entradas, usados = [], set()
@@ -229,7 +253,7 @@ class Notebook:
                 c.outputs, c.execution_count = [], None
             else:
                 n += 1
-                c.outputs, c.execution_count = e.outputs, n
+                c.outputs, c.execution_count = unir_flujos(e.outputs), n
         nb.metadata["language_info"] = ejec.metadata["language_info"]
         for c in nb.cells:
             c.pop("id", None)
