@@ -536,23 +536,35 @@ Esta sección no se vio en clase.
 
 ```text
 📁 sesion_magistral-26/
-├── 📁 codigo/ — versiones revisadas, las que se usan en esta página
-│   ├── 📄 paso1_stubs.py
-│   ├── 📄 paso2_un_archivo.py
-│   ├── 📁 paso3_varios_archivos/
-│   │   ├── 📄 conversion.py
-│   │   ├── 📄 pantalla.py
-│   │   ├── 📄 test_conversion.py
-│   │   └── 📄 main.py
-│   ├── 📁 parentesis_guarda/
-│   │   ├── 📄 saludos.py
-│   │   └── 📄 principal.py
-│   └── 📁 paso4_main_y_guarda/ — no se hizo en clase
-│       ├── 📄 conversion.py
-│       ├── 📄 pantalla.py
-│       ├── 📄 test_conversion.py
-│       └── 📄 main.py
-└── 📁 ejemplos_sin_editar/ — los archivos tal como se escribieron en clase
+├── 📄 README.md — esta página
+└── 📁 codigo/
+    ├── 📁 codigo_sin_editar/ — los originales escritos en la clase, sin cambios
+    │   ├── 📄 conversion.py
+    │   ├── 📁 mono_archivo/
+    │   │   └── 📄 main_temperatura.py
+    │   ├── 📁 multi_archivo/
+    │   │   ├── 📄 conversion.py
+    │   │   ├── 📄 pantalla.py
+    │   │   ├── 📄 test_conversion.py
+    │   │   └── 📄 main.py
+    │   └── 📁 ejemplo/
+    │       ├── 📄 saludos.py
+    │       └── 📄 principal.py
+    ├── 📄 paso1_stubs.py — versiones revisadas, las que se usan en esta página
+    ├── 📄 paso2_un_archivo.py
+    ├── 📁 paso3_varios_archivos/
+    │   ├── 📄 conversion.py
+    │   ├── 📄 pantalla.py
+    │   ├── 📄 test_conversion.py
+    │   └── 📄 main.py
+    ├── 📁 parentesis_guarda/
+    │   ├── 📄 saludos.py
+    │   └── 📄 principal.py
+    └── 📁 paso4_main_y_guarda/ — no se hizo en clase
+        ├── 📄 conversion.py
+        ├── 📄 pantalla.py
+        ├── 📄 test_conversion.py
+        └── 📄 main.py
 ```
 
 | Archivo | Descripción |
@@ -562,7 +574,7 @@ Esta sección no se vio en clase.
 | [`codigo/paso3_varios_archivos/`](codigo/paso3_varios_archivos/) | Paso 3: `conversion.py`, `pantalla.py`, `test_conversion.py` y `main.py` |
 | [`codigo/parentesis_guarda/`](codigo/parentesis_guarda/) | Paréntesis: `saludos.py` y `principal.py`, para ver el valor de `__name__` y el efecto de la guarda |
 | [`codigo/paso4_main_y_guarda/`](codigo/paso4_main_y_guarda/) | Paso 4 (no se hizo en clase): el paso 3 con `def main()`, la guarda y la opción °K a °C |
-| [`ejemplos_sin_editar/`](ejemplos_sin_editar/) | Los archivos tal como se escribieron en clase: `conversion.py` (stubs, paso 1), `mono_archivo/` (paso 2), `multi_archivo/` (paso 3) y `ejemplo/` (paréntesis) |
+| [`codigo/codigo_sin_editar/`](codigo/codigo_sin_editar/) | **Los originales de la clase**, tal como se escribieron el 20/10/2026: `conversion.py` (stubs, paso 1), `mono_archivo/` (paso 2), `multi_archivo/` (paso 3) y `ejemplo/` (paréntesis) |
 
 > [!NOTE]
 > Los archivos de `codigo/` son versiones revisadas de los escritos en clase. Se quitaron los encabezados automáticos de Spyder y se agregó un comentario inicial que describe el paso. Además:
@@ -571,7 +583,7 @@ Esta sección no se vio en clase.
 > * `kelvin_a_celsius` tiene su especificación completa (en clase quedó en blanco), y `test_conversion.py` muestra un solo mensaje al final (en clase, dos).
 > * En el paréntesis, los `print` que muestran `__name__` están activos (en clase quedaron comentados), y la guarda de `saludos.py` imprime `Pruebas de saludos` (en clase, `TESTS`).
 >
-> Los archivos de `ejemplos_sin_editar/` se conservan como referencia.
+> Los archivos de `codigo/codigo_sin_editar/` son los originales de la clase que se dio, y se conservan sin cambios como referencia.
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del código escrito en clase y de las diapositivas de la clase 10. El docente revisó y validó la versión final.
