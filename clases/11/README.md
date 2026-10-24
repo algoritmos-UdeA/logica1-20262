@@ -19,7 +19,7 @@ Continuación de la [clase 10](../10/README.md), que cerró con un problema pend
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| 27 | Mar 20 oct (bloque 2, 16-18) — tentativa | 🏫 Presencial | Pendiente por dictar | — |
+| Por definir | — | — | Pendiente por dictar. Estaba prevista para el 20 de octubre (sesión 27), pero esa sesión se dedicó a la clase 10 | — |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
