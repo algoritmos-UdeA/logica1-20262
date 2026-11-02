@@ -6,6 +6,7 @@ Continuación de la [clase 10](../10/README.md), que cerró con un problema pend
 
 ## Teoría
 
+- [`teoria/README.md`](teoria/README.md) — resumen del tema completo: el problema que motiva los arreglos, definición y partes de un arreglo, la lista usada como arreglo, las operaciones básicas en pseudocódigo y Python, alias y clonación, los tres casos de funciones con listas y la solución del problema de la clase 10, con la descripción de cada diagrama y de cada script.
 - [`teoria/clase-11.pdf`](teoria/clase-11.pdf) / [`teoria/clase-11.pptx`](teoria/clase-11.pptx) — diapositivas completas (51 diapositivas).
 - [`teoria/codigo/`](teoria/codigo/) — los scripts de los ejemplos:
   - `notas_sin_arreglos.py`: el problema que quedó pendiente en la clase 10.
