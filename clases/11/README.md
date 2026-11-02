@@ -20,7 +20,8 @@ Continuación de la [clase 10](../10/README.md), que cerró con un problema pend
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| Por definir | — | — | Pendiente por dictar. Estaba prevista para el 20 de octubre (sesión 27), pero esa sesión se dedicó a la clase 10 | — |
+| 28 | Mar 27 oct (bloque 1, 14-16) | 🏫 Presencial | Diapositivas 8-24, en un notebook y en el tablero: por qué hace falta un arreglo, la lista usada como arreglo, crear, guardar, leer, llenar, recorrer y acumular, el `IndexError` y los recorridos inversos. Se resolvió de una vez el problema pendiente de la clase 10 (cuántas notas son mayores que el promedio), con `for` y con `while` | [sesion_magistral-28](sesion_magistral-28/README.md) |
+| 29 | Mar 27 oct (bloque 2, 16-18) | 🏫 Presencial | **Parcial 2** — sin contenido nuevo de teoría | [sesion_magistral-29](sesion_magistral-29/README.md) |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
