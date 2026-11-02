@@ -88,6 +88,15 @@ assert empieza_con(nombres, ["Ana", "Beto", "Carla", "Dario"])
 assert empieza_con(ids, ["000", "123", "987", "007"])
 assert empieza_con(notas, [3.0, 4.5, 2.0, 4.0])
 
+# ordenar_por_nota con notas repetidas: cada nombre sigue con su nota
+ids = ["1", "2", "3"]
+nombres = ["Ana", "Beto", "Carla"]
+notas = [4.0, 3.0, 4.0]
+ordenar_por_nota(ids, nombres, notas, 3)
+assert notas == [4.0, 4.0, 3.0]
+assert nombres == ["Ana", "Carla", "Beto"]
+assert ids == ["1", "3", "2"]
+
 # Casos especiales de ordenar: curso vacío y un solo estudiante
 ids = [""] * N
 nombres = [""] * N
