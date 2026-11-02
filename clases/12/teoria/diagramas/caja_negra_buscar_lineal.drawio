@@ -1,0 +1,19 @@
+<mxfile host="Electron" version="29.0.3">
+  <diagram name="Página-1" id="caja_negra_caso3">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="caja_negra_buscar_lineal-1" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#1E1E1E;" vertex="1" parent="1"><mxGeometry x="100" y="10" width="460" height="160" as="geometry" /></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-2" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#FFFFFF&quot; style=&quot;font-size:19px&quot;&gt;&lt;b&gt;buscar_lineal&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;verticalAlign=middle;align=center;" vertex="1" parent="1"><mxGeometry x="100" y="20" width="460" height="32" as="geometry" /></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-3" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#FFFFFF&quot; style=&quot;font-size:18px&quot;&gt;&lt;b&gt;lista[ ]&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;verticalAlign=middle;align=left;spacingLeft=18;" vertex="1" parent="1"><mxGeometry x="100" y="64" width="180" height="32" as="geometry" /></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-4" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#FFFFFF&quot; style=&quot;font-size:18px&quot;&gt;&lt;b&gt;valor&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;verticalAlign=middle;align=left;spacingLeft=18;" vertex="1" parent="1"><mxGeometry x="100" y="109" width="180" height="32" as="geometry" /></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-5" value="&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#FFFFFF&quot; style=&quot;font-size:18px&quot;&gt;&lt;b&gt;pos&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;verticalAlign=middle;align=right;spacingRight=16;" vertex="1" parent="1"><mxGeometry x="380" y="64" width="180" height="32" as="geometry" /></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-7" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="20" y="80" as="sourcePoint" /><mxPoint x="100" y="80" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-8" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="20" y="125" as="sourcePoint" /><mxPoint x="100" y="125" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-9" value="" style="endArrow=block;endFill=1;html=1;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1"><mxGeometry relative="1" as="geometry"><mxPoint x="560" y="80" as="sourcePoint" /><mxPoint x="650" y="80" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="caja_negra_buscar_lineal-11" value="&lt;i&gt;ejemplo: &lt;/i&gt;&lt;font face=&quot;Consolas, monospace&quot;&gt;buscar_lineal([5.0, 4.0, 3.5, 2.87], 3.5)&lt;/font&gt;&lt;i&gt; devuelve &lt;/i&gt;&lt;font face=&quot;Consolas, monospace&quot; color=&quot;#B85450&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;verticalAlign=middle;align=center;fontSize=14;fontColor=#555555;" vertex="1" parent="1"><mxGeometry x="0" y="184" width="700" height="26" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
