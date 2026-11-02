@@ -1,4 +1,4 @@
-![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/algoritmos-UdeA/logica1-20262/blob/main/clases/11/sesion_magistral-28/codigo/arreglos.ipynb)
+![Built with AI](https://img.shields.io/badge/Built%20with-AI-blue.svg)
 
 # Sesion magistral 28
 
