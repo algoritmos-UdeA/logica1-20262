@@ -18,7 +18,7 @@ Continuación de la [clase 11](../11/README.md), que cerró con un problema pend
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| Por definir | — | — | Pendiente por dictar | — |
+| 31 | Mar 3 nov (bloque 2, 16-18) | 🏫 Presencial | El tema completo: búsqueda lineal, intercambio con variable temporal, ordenamiento por selección, burbuja e inserción, su comparación contando pasos, búsqueda binaria, y el integrador de notas de un curso con arreglos paralelos parcialmente llenos. Con un notebook complementario a las diapositivas | [sesion_magistral-31](sesion_magistral-31/README.md) |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
