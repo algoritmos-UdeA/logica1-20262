@@ -23,7 +23,7 @@ La clase se divide en dos bloques. El **bloque 1** va del problema al lenguaje: 
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
 |---|---|---|---|---|
-| — | Por definir | — | Por definir | — |
+| 32 | Mar 10 nov (bloques 1 y 2, 14-18) | 🏫 Presencial | El bloque 1 completo: todo dato es un objeto, paradigmas, clase y objeto, UML y su paso a Python, y cinco ejemplos que crecen (rectángulo, ventilador, celular, cuenta bancaria con su titular y un arreglo de cuentas) hasta la clase `Banco`; composición y agregación, el UML del bloque 2 y errores típicos. Con un notebook complementario a las diapositivas. Ocupa los dos bloques del día | [sesion_magistral-32](sesion_magistral-32/README.md) |
 
 > [!Important]
 > Se usó IA generativa para redactar y organizar este contenido a partir del material de la clase. El docente revisó y validó la versión final.
