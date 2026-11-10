@@ -40,7 +40,8 @@ def main():
             id_nuevo = input("Id: ")
             nombre = input("Nombre: ")
             nota = float(input("Nota: "))
-            if curso.agregar_estudiante(Estudiante(id_nuevo, nombre, nota)):
+            estudiante = Estudiante(id_nuevo, nombre, nota)
+            if curso.agregar_estudiante(estudiante):
                 print("Estudiante agregado.")
             else:
                 print("No se pudo agregar: el curso está lleno o el Id ya existe.")

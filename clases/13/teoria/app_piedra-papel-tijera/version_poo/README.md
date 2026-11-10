@@ -11,8 +11,9 @@ Esta es la solución del [juego de piedra, papel o tijera](../README.md#1-el-pro
 3. [Las relaciones entre las clases](#3-las-relaciones-entre-las-clases)
 4. [Los objetos en memoria](#4-los-objetos-en-memoria)
 5. [Los archivos](#5-los-archivos)
-6. [Cómo ejecutarlo paso a paso](#6-cómo-ejecutarlo-paso-a-paso)
-7. [Resumen](#7-resumen)
+6. [Usar las clases: el programa principal](#6-usar-las-clases-el-programa-principal)
+7. [Cómo ejecutarlo paso a paso](#7-cómo-ejecutarlo-paso-a-paso)
+8. [Resumen](#8-resumen)
 
 ---
 
@@ -113,7 +114,71 @@ Cada clase va en su propio módulo, con su archivo de pruebas:
 
 Observe en el diagrama de módulos que **`partida.py` importa `ronda.py` pero no `jugador.py`**: la partida escribe `Ronda(...)` porque crea las rondas (composición), pero nunca escribe `Jugador(...)`, porque recibe a los jugadores ya creados (agregación). Las relaciones del UML se ven también en los `import`.
 
-## 6. Cómo ejecutarlo paso a paso
+## 6. Usar las clases: el programa principal
+
+Hasta aquí se vio cómo están **hechas** las tres clases. Pero una clase no hace nada sola: alguien tiene que crear objetos y pedirles cosas. En este programa, ese alguien es `main.py`.
+
+Frente a una clase hay dos papeles: **quien la escribe** (el autor de `jugador.py`, `ronda.py` y `partida.py`) y **quien la usa**, que se suele llamar el **cliente** de la clase. Son los mismos papeles de "autor del módulo" y "usuario del módulo" del laboratorio 4, ahora con objetos.
+
+### 6.1 La idea: una ventanilla
+
+Piense en un objeto como una oficina con ventanilla. El cliente se acerca, pide algo por la ventanilla y recibe una respuesta. No entra a la oficina ni sabe cómo se hace el trabajo por dentro.
+
+![El programa principal pide por la ventanilla del objeto partida](../images/cliente_juego.png)
+
+- **La ventanilla son los métodos públicos**, los que tienen `+` en el UML. Para usar la clase basta con conocerlos: su nombre, qué reciben y qué retornan.
+- **Lo de adentro son los atributos privados** (`-`) y todo el trabajo que hacen los métodos. Cuando `main` pide `jugar_ronda`, la partida crea la `Ronda`, mira el resultado y le suma el punto al ganador; `main` no ve nada de eso, solo recibe el resultado.
+
+> [!NOTE]
+> ¿Qué pasa si el cliente intenta entrar? Leer `partida.__cantidad_rondas` desde `main.py` produce `AttributeError`. Escribir `partida.__cantidad_rondas = 0` es peor: no da error, pero crea **otro** atributo con ese nombre y el verdadero no cambia. Por eso el `__` se entiende como una señal de "no pasar": el cliente usa la ventanilla.
+
+### 6.2 Lo que hace `main`, paso a paso
+
+Todo lo que hace `main.py` con los objetos cabe en tres pasos:
+
+```python
+# 1. Crear los objetos
+usuario = Jugador(input("Su nombre: "))
+maquina = Jugador("Máquina")
+partida = Partida(usuario, maquina, RONDAS_PARA_GANAR)
+
+while not partida.terminada():
+    # 2. Pedirles cosas
+    jugada_usuario = leer_jugada()
+    partida.jugar_ronda(jugada_usuario, jugar_maquina())
+
+    # 3. Mostrar lo que responden
+    print(partida.get_ultima_ronda())
+    print("Marcador:", partida)
+
+print("Ganador de la partida:", partida.get_ganador().get_nombre())
+```
+
+| Paso | Qué hace el cliente | Qué **no** hace |
+|---|---|---|
+| 1. Crear | Los dos `Jugador` y la `Partida` | No crea las rondas: eso lo hace la partida |
+| 2. Pedir | `partida.jugar_ronda(...)`, `partida.terminada()` | No decide quién ganó ni suma puntos |
+| 3. Mostrar | `print(ronda)`, `print(partida)`, el nombre del ganador | No arma los textos: eso lo hacen los `__str__` |
+
+Compare con la versión estructurada: allí `main` llevaba cuatro variables (dos nombres y dos puntos), llamaba a `definir_ganador` y actualizaba los puntos con `sumar_si_gana`. Aquí `main` lee jugadas, le habla a la partida por la ventanilla y muestra lo que ella responde.
+
+### 6.3 Un adelanto: el diagrama de secuencia
+
+El diagrama de clases (UML) muestra **qué hay**: las clases, sus atributos y sus métodos. Para mostrar **qué pasa** cuando el programa corre (quién le pide qué a quién, y en qué orden) existe otro diagrama UML, el **diagrama de secuencia**. Este es el de una ronda:
+
+![Diagrama de secuencia de una ronda](../images/secuencia_ronda.png)
+
+Cómo leerlo:
+
+- Cada columna es un participante: `main.py` y tres objetos. El nombre subrayado (`partida : Partida`) indica un objeto, no una clase. `ronda` aparece más abajo porque la partida la crea en ese momento.
+- El tiempo corre **de arriba hacia abajo**. Cada flecha llena es una llamada; cada flecha punteada es lo que se retorna.
+- Las flechas que hay entre la llamada `jugar_ronda(PIEDRA, TIJERA)` y su respuesta `GANA_USUARIO` ocurren **dentro** de ese método: es el `jugar_ronda` de la sección 2, dibujado. `main` solo ve la llamada y la respuesta.
+- `sumar_punto()` no tiene flecha de retorno porque no retorna nada.
+
+> [!IMPORTANT]
+> Los diagramas de secuencia **hacen parte de otro curso**: se estudian más adelante en la carrera, en los cursos de análisis y diseño de software. Aquí solo se muestran para que los reconozca cuando los vea. No se pide dibujarlos.
+
+## 7. Cómo ejecutarlo paso a paso
 
 1. Abra una terminal (o el Anaconda Prompt) y ubíquese en la carpeta del código:
 
@@ -147,7 +212,7 @@ Observe en el diagrama de módulos que **`partida.py` importa `ronda.py` pero no
 
    La salida es igual a la de la versión estructurada: tiene la forma de la [partida de ejemplo](../README.md#1-el-problema).
 
-## 7. Resumen
+## 8. Resumen
 
 - Un jugador **existe**: es un objeto `Jugador` con su nombre y sus puntos.
 - La `Partida` lleva el estado del juego y suma los puntos; `main` solo lee jugadas y muestra resultados.

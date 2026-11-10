@@ -10,8 +10,9 @@ Esta es la solución del [problema del curso](../README.md#1-el-problema) con **
 2. [El diseño en UML](#2-el-diseño-en-uml)
 3. [Los objetos en memoria](#3-los-objetos-en-memoria)
 4. [Los archivos](#4-los-archivos)
-5. [Cómo ejecutarlo paso a paso](#5-cómo-ejecutarlo-paso-a-paso)
-6. [Resumen](#6-resumen)
+5. [Usar las clases: el programa principal](#5-usar-las-clases-el-programa-principal)
+6. [Cómo ejecutarlo paso a paso](#6-cómo-ejecutarlo-paso-a-paso)
+7. [Resumen](#7-resumen)
 
 ---
 
@@ -95,7 +96,69 @@ curso.agregar_estudiante(Estudiante("555", "Elena", 3.8))
 
 El método no necesita recibir los arreglos ni `cantidad`, porque ya los tiene en `self`. Tampoco hay que guardar un valor de retorno para no perder la `cantidad`: el `True` o `False` que retorna solo avisa si se pudo agregar.
 
-## 5. Cómo ejecutarlo paso a paso
+## 5. Usar las clases: el programa principal
+
+Hasta aquí se vio cómo están **hechas** las clases. Pero una clase no hace nada sola: alguien tiene que crear objetos y pedirles cosas. En este programa, ese alguien es `main.py`.
+
+Por eso, frente a una clase hay dos papeles: **quien la escribe** (el autor de `estudiante.py` y `curso.py`) y **quien la usa**, que se suele llamar el **cliente** de la clase. Son los mismos papeles de "autor del módulo" y "usuario del módulo" del laboratorio 4, ahora con objetos.
+
+### 5.1 La idea: una ventanilla
+
+Piense en un objeto como una oficina con ventanilla. El cliente se acerca, pide algo por la ventanilla y recibe una respuesta. No entra a la oficina ni sabe cómo están organizados los papeles por dentro.
+
+![El programa principal pide por la ventanilla del objeto curso](../images/cliente_curso.png)
+
+- **La ventanilla son los métodos públicos**, los que tienen `+` en el UML. Para usar la clase basta con conocerlos: su nombre, qué reciben y qué retornan. No hace falta leer cómo están programados.
+- **Lo de adentro son los atributos privados**, los que tienen `-`. Cómo se guarda el arreglo, cómo se busca o cómo se ordena es asunto del objeto. Si mañana se cambia la forma de guardar los estudiantes, el cliente no se entera, siempre que la ventanilla siga igual.
+
+> [!NOTE]
+> ¿Qué pasa si el cliente intenta entrar? Leer `curso.__cantidad` desde `main.py` produce `AttributeError: 'Curso' object has no attribute '__cantidad'`. Escribir `curso.__cantidad = 0` es peor: no da error, pero crea **otro** atributo con ese nombre y la cantidad verdadera no cambia (`curso.get_cantidad()` sigue dando lo mismo). Por eso el `__` se entiende como una señal de "no pasar": el cliente usa la ventanilla.
+
+### 5.2 Lo que hace `main`, paso a paso
+
+Todo lo que hace `main.py` con los objetos cabe en tres pasos:
+
+```python
+# 1. Crear los objetos
+curso = Curso(N)
+curso.agregar_estudiante(Estudiante("000", "Ana", 3.0))
+
+# 2. Pedirles cosas (opción 1 del menú)
+estudiante = Estudiante(id_nuevo, nombre, nota)
+if curso.agregar_estudiante(estudiante):
+
+    # 3. Mostrar el resultado según lo que respondieron
+    print("Estudiante agregado.")
+else:
+    print("No se pudo agregar: el curso está lleno o el Id ya existe.")
+```
+
+| Paso | Qué hace el cliente | Qué **no** hace |
+|---|---|---|
+| 1. Crear | `Curso(N)`, `Estudiante(...)` | No crea arreglos ni lleva `cantidad` |
+| 2. Pedir | `curso.agregar_estudiante(...)`, `curso.ordenar_por_nota()`… | No recorre el arreglo ni intercambia estudiantes |
+| 3. Mostrar | Un mensaje según el `True`/`False` que recibe, o `print(curso.get_estudiante(pos))` | No arma la línea del estudiante: eso lo hace `__str__` |
+
+Compare con la versión estructurada: allí `main` tenía en sus manos los tres arreglos y la `cantidad`, y los pasaba a cada función. Aquí `main` tiene **una sola variable**, `curso`, y le habla por la ventanilla.
+
+### 5.3 Un adelanto: el diagrama de secuencia
+
+El diagrama de clases (UML) muestra **qué hay**: las clases, sus atributos y sus métodos. Para mostrar **qué pasa** cuando el programa corre (quién le pide qué a quién, y en qué orden) existe otro diagrama UML, el **diagrama de secuencia**. Este es el de la opción 1 del menú:
+
+![Diagrama de secuencia de la opción 1: agregar un estudiante](../images/secuencia_agregar.png)
+
+Cómo leerlo:
+
+- Cada columna es un participante: `main.py` y dos objetos. El nombre subrayado (`curso : Curso`) indica un objeto, no una clase. `estudiante` aparece más abajo porque se crea en ese momento.
+- El tiempo corre **de arriba hacia abajo**. Cada flecha llena es una llamada; cada flecha punteada es lo que se retorna.
+- La flecha que vuelve sobre `curso` es una llamada del objeto a sí mismo: dentro de `agregar_estudiante`, el curso usa su propio `buscar_id`, que retorna `-1` porque el Id `"555"` no está.
+
+Cada flecha corresponde a una línea de código: `Estudiante(...)` y `curso.agregar_estudiante(estudiante)` en `main.py`; `estudiante.get_id()` y `self.buscar_id(...)` dentro de `Curso.agregar_estudiante`.
+
+> [!IMPORTANT]
+> Los diagramas de secuencia **hacen parte de otro curso**: se estudian más adelante en la carrera, en los cursos de análisis y diseño de software. Aquí solo se muestran para que los reconozca cuando los vea. No se pide dibujarlos.
+
+## 6. Cómo ejecutarlo paso a paso
 
 1. Abra una terminal (o el Anaconda Prompt) y ubíquese en la carpeta del código:
 
@@ -147,7 +210,7 @@ El método no necesita recibir los arreglos ni `cantidad`, porque ya los tiene e
 > [!NOTE]
 > La opción 4 (buscar) imprime al estudiante con `print(curso.get_estudiante(pos))`, que usa `__str__`. Por eso su línea sale separada con tabuladores, igual que el listado, mientras que en la versión estructurada sale separada con espacios.
 
-## 6. Resumen
+## 7. Resumen
 
 - Un estudiante **existe**: es un objeto `Estudiante` con sus tres datos adentro.
 - `cantidad` **vive dentro del `Curso`**: ningún método la recibe ni la retorna.
