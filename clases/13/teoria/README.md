@@ -50,6 +50,8 @@ Diapositivas base del tema 13, que continúa la [clase 12](../../12/teoria/READM
 | [diagramas/](diagramas/) | Fuentes `.drawio` de los diagramas (ver la tabla siguiente). |
 | [images/](images/) | Exportación en `.png` de los diagramas de `diagramas/`. |
 | [codigo/](codigo/) | Scripts de los ejemplos (ver [Código de ejemplo](#código-de-ejemplo)). Su [README](codigo/README.md) reúne el **enunciado** de cada ejemplo con los archivos que lo resuelven. |
+| [app_curso/](app_curso/README.md) | El programa del curso resuelto con arreglos paralelos y con las clases `Estudiante` y `Curso` (el bloque 2 implementado), con una página de comparación. |
+| [app_piedra-papel-tijera/](app_piedra-papel-tijera/README.md) | El juego de piedra, papel o tijera resuelto con funciones y con las clases `Jugador`, `Ronda` y `Partida`, con una página de comparación. |
 
 > [!TIP]
 > El código de cada ejemplo está completo y probado en `codigo/`. Para copiar código, conviene tomarlo de los scripts y no de las diapositivas, donde las líneas largas se parten para que quepan.

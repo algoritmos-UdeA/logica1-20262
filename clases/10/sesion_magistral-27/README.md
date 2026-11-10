@@ -467,6 +467,7 @@ Esta sección no se vio en clase.
 * **Elegir al azar un elemento de una lista.** `random.choice(lista)` retorna un elemento al azar de una lista: `random.choice(["piedra", "papel", "tijera"])`. Las listas se estudian en la [clase 11](../../11/README.md); después de verlas, intente reescribir `jugar_maquina` con `random.choice`.
 * **Top-down y bottom-up.** En el diseño **bottom-up** (de abajo hacia arriba) se empieza por las funciones más pequeñas y se prueban antes de armar el programa. La comparación entre las dos formas está en la [teoría de la clase 10](../teoria/README.md#contenido-cubierto) (sección "Top-down y bottom-up").
 * **Otro programa con `random`, de principio a fin.** El ejercicio guiado [adivina el número](../teoria/codigo/adivina_numero/README.md) recorre el diseño top-down, la especificación, los stubs y las pruebas con `random.seed()`.
+* **El juego, más adelante.** En la clase 13, este juego se convierte en una partida a 3 rondas y se resuelve con funciones y con objetos: [app_piedra-papel-tijera](../../13/teoria/app_piedra-papel-tijera/README.md). Esa versión trae `definir_ganador` resuelta, así que ábrala **después** de terminar la actividad de la Parte 4.
 
 ## Archivos
 

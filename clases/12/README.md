@@ -14,6 +14,9 @@ Continuación de la [clase 11](../11/README.md), que cerró con un problema pend
   - `ordenamientos.py` y `test_ordenamientos.py`: `intercambiar`, `posicion_menor` y los tres métodos de ordenamiento, con sus pruebas.
   - `curso/`: el programa integrador en tres archivos (`curso.py`, `test_curso.py` y `main.py`).
 
+> [!TIP]
+> Este mismo programa se resuelve con objetos en la clase 13. La página [app_curso](../13/teoria/app_curso/README.md) pone las dos versiones lado a lado: arreglos paralelos frente a las clases `Estudiante` y `Curso`.
+
 ## Sesiones magistrales
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |

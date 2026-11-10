@@ -19,6 +19,15 @@ La clase se divide en dos bloques. El **bloque 1** va del problema al lenguaje: 
   - `ej5_arreglo_cuentas.py`: un arreglo de cuentas.
   - `ej6_banco.py`: la clase `Banco`, que guarda el arreglo de cuentas.
 
+## Aplicaciones completas: estructurada frente a POO
+
+Dos programas completos, cada uno resuelto **dos veces**: con programación estructurada y con POO. Tienen el mismo comportamiento, la misma organización en archivos y una página que los compara paso a paso. Conviene estudiarlos después del bloque 1.
+
+- [`teoria/app_curso/`](teoria/app_curso/README.md) — **la administración de notas de un curso**: el integrador de la clase 12 (arreglos paralelos) frente a las clases `Estudiante` y `Curso`. Es el **bloque 2 implementado**: lo que en las diapositivas solo aparece como diagrama UML, aquí está programado y probado. Muestra la **agregación**.
+- [`teoria/app_piedra-papel-tijera/`](teoria/app_piedra-papel-tijera/README.md) — **el juego de piedra, papel o tijera** de la clase 10, convertido en una partida a 3 rondas: funciones y variables sueltas frente a las clases `Jugador`, `Ronda` y `Partida`. Muestra cómo crece un diseño y reúne las tres relaciones: **asociación, agregación y composición**.
+
+En las dos, la versión POO termina con una sección sobre **cómo usa las clases el programa principal** (el "cliente"), con un adelanto del diagrama de secuencia.
+
 ## Sesiones magistrales
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |
