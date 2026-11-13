@@ -52,6 +52,7 @@ No se puede inscribir un Id repetido ni pasar del cupo. "Ordenar por nota" deja 
 ├── 📁 version_poo/
 │   ├── 📄 README.md — la solución con las clases Estudiante y Curso
 │   └── 📁 codigo/ — estudiante.py, curso.py, test_estudiante.py, test_curso.py, main.py, ordenamientos.py
+├── 📁 notebooks/ — los dos notebooks que construyen el programa paso a paso
 ├── 📁 diagramas/ — fuentes .drawio de todas las figuras
 └── 📁 images/ — las figuras exportadas (.png)
 ```
@@ -61,6 +62,17 @@ No se puede inscribir un Id repetido ni pasar del cupo. "Ordenar por nota" deja 
 1. Leer [la versión estructurada](version_estructurada/README.md) y ejecutarla. Es el mismo programa del integrador de ordenamiento: si ya se estudió, basta con repasar los diagramas.
 2. Leer [la versión POO](version_poo/README.md) y ejecutarla con las mismas opciones del menú.
 3. Volver a esta página y recorrer la comparación de la sección 4.
+
+### Los notebooks: el programa construido paso a paso
+
+Las páginas anteriores muestran el programa **terminado**. Los dos notebooks lo **construyen**: parten del enunciado, llegan al diseño y escriben una pieza a la vez, cada una con sus pruebas, hasta integrarlas. Todo el código se puede ejecutar, y casi todas las celdas tienen un enlace a Python Tutor.
+
+| Notebook | Qué construye | Abrir en Colab |
+|---|---|---|
+| [Administración de un curso con arreglos paralelos](notebooks/curso_estructurado.ipynb) | Los tres arreglos y la cantidad, y las funciones para buscar, agregar, eliminar, actualizar, listar y ordenar. Termina con lo que resulta incómodo | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/algoritmos-UdeA/logica1-20262/blob/main/clases/13/teoria/app_curso/notebooks/curso_estructurado.ipynb) |
+| [Administración de un curso con objetos](notebooks/curso_poo.ipynb) | Del enunciado a las clases `Estudiante` y `Curso` y su relación, una clase a la vez, y la comparación con la versión anterior | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/algoritmos-UdeA/logica1-20262/blob/main/clases/13/teoria/app_curso/notebooks/curso_poo.ipynb) |
+
+Conviene estudiarlos en ese orden. Los dos ejecutan la misma secuencia de siete operaciones, calculada primero a mano, y dan la misma salida.
 
 ## 4. Comparación de las dos versiones
 

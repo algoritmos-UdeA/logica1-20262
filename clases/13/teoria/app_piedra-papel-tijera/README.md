@@ -84,6 +84,7 @@ Además, la máquina juega al azar en `main.py` y no dentro de la lógica: las f
 ├── 📁 version_poo/
 │   ├── 📄 README.md — la solución con las clases Jugador, Ronda y Partida
 │   └── 📁 codigo/ — reglas.py, jugador.py, ronda.py, partida.py, main.py y sus test_*.py
+├── 📁 notebooks/ — los dos notebooks que construyen el juego paso a paso
 ├── 📁 diagramas/ — fuentes .drawio de todas las figuras
 └── 📁 images/ — las figuras exportadas (.png)
 ```
@@ -95,6 +96,17 @@ Además, la máquina juega al azar en `main.py` y no dentro de la lógica: las f
 1. Leer [la versión estructurada](version_estructurada/README.md) y jugar una partida.
 2. Leer [la versión POO](version_poo/README.md) y jugar otra.
 3. Volver a esta página y recorrer la comparación.
+
+### Los notebooks: el juego construido paso a paso
+
+Las páginas anteriores muestran el programa **terminado**. Los dos notebooks lo **construyen**: parten del enunciado, llegan al diseño y escriben una pieza a la vez, cada una con sus pruebas, hasta integrarlas. Todo el código se puede ejecutar, y casi todas las celdas tienen un enlace a Python Tutor.
+
+| Notebook | Qué construye | Abrir en Colab |
+|---|---|---|
+| [Piedra, papel o tijera con funciones](notebooks/juego_estructurado.ipynb) | Las reglas, las funciones de la partida y el programa principal. Termina con lo que resulta incómodo de las variables sueltas | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/algoritmos-UdeA/logica1-20262/blob/main/clases/13/teoria/app_piedra-papel-tijera/notebooks/juego_estructurado.ipynb) |
+| [Piedra, papel o tijera con objetos](notebooks/juego_poo.ipynb) | Del enunciado a las clases `Jugador`, `Ronda` y `Partida` y sus relaciones, una clase a la vez, y la comparación con la versión anterior | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/algoritmos-UdeA/logica1-20262/blob/main/clases/13/teoria/app_piedra-papel-tijera/notebooks/juego_poo.ipynb) |
+
+Conviene estudiarlos en ese orden. Los dos usan la misma partida de ejemplo, calculada primero a mano, y dan la misma salida.
 
 ## 5. Comparación de las dos versiones
 
