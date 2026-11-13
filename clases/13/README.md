@@ -28,6 +28,10 @@ Dos programas completos, cada uno resuelto **dos veces**: con programación estr
 
 En las dos, la versión POO termina con una sección sobre **cómo usa las clases el programa principal** (el "cliente"), con un adelanto del diagrama de secuencia.
 
+Hay una tercera aplicación, resuelta solo con POO, para estudiar **cómo se diseña y se construye un programa con varias clases**:
+
+- [`teoria/app_transporte/`](teoria/app_transporte/README.md) — **una plataforma de transporte** que le asigna a cada cliente el conductor disponible más cercano, con las clases `Punto`, `Cliente`, `Conductor`, `Viaje` y `Plataforma`. Su README es un **manual de usuario**: cómo ejecutarla, qué hace cada opción del menú y una sesión de ejemplo. El diseño se explica paso a paso en el notebook [De una clase a varias](sesion_magistral-32/notebooks/aplicacion_transporte.ipynb): del enunciado a las clases, cada clase probada antes de la siguiente, y la integración. Usa las listas con sus métodos (`append`).
+
 ## Sesiones magistrales
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |

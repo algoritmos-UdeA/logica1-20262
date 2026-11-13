@@ -45,5 +45,32 @@ Además:
 
 El código de la clase, en archivos, está en [`teoria/codigo/`](../teoria/codigo/), con su índice en [`teoria/codigo/README.md`](../teoria/codigo/README.md).
 
+## Notebook de la aplicación de transporte
+
+En la sesión también se escribió, en vivo, un segundo notebook: la clase `Rectangulo` con atributos públicos y después privados, y el comienzo de una **aplicación de transporte** con las clases `Punto` y `Cliente`.
+
+| Notebook | Qué es |
+|---|---|
+| [`notebooks/notebook_sin_editar/nov_10.ipynb`](notebooks/notebook_sin_editar/nov_10.ipynb) | El original de clase, tal como quedó |
+| [`notebooks/aplicacion_transporte.ipynb`](notebooks/aplicacion_transporte.ipynb) | La versión ampliada, **De una clase a varias: una aplicación de transporte**, para estudiar sin haber asistido |
+
+La versión ampliada se concentra en lo que más cuesta cuando el problema crece: **cómo se relacionan varias clases y cómo se juntan en un programa**.
+
+| Parte | Tema |
+|---|---|
+| 0 | Repaso: una clase sola (`Rectangulo`) |
+| 1 | La lista es un objeto: la clase `list` en UML, sus métodos (`append`, `pop`, `remove`, `sort`…) y la diferencia con la lista usada como arreglo |
+| 2 | El problema: el enunciado y un caso calculado a mano |
+| 3 | El diseño: de los sustantivos y los verbos del enunciado a las clases, sus métodos y sus relaciones, con el diagrama UML completo |
+| 4-8 | La construcción, una clase a la vez y cada una con sus pruebas: `Punto`, `Cliente`, `Conductor`, `Viaje` y `Plataforma` |
+| 9 | La integración: el programa principal, y una petición seguida de punta a punta por las cinco clases |
+| 10 | Errores típicos al relacionar clases |
+| 11 | Para practicar: cuatro ejercicios con la solución oculta y un reto |
+| 12 | Referencias |
+
+En cada relación se responden las mismas tres preguntas: **¿quién conoce a quién?, ¿quién crea el objeto?, ¿quién le pide qué a quién?**
+
+La misma aplicación, separada en archivos y con un menú, está en [`teoria/app_transporte/`](../teoria/app_transporte/README.md), que incluye un manual de usuario.
+
 > [!Important]
 > Se usó IA generativa para preparar este contenido a partir de las diapositivas y el código de la clase. El docente revisó y validó la versión final.
