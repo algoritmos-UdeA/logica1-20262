@@ -8,3 +8,4 @@ La siguiente tabla muestra los laboratorios en el curso.
 | 2 | Estructuras condicionales | [Enunciado](./2/) | [Clase 5](../clases/5/) - [Clase 6](../clases/6/) | 5 | Publicado |
 | 3 | Estructuras repetitivas (ciclos) | [Enunciado](./3/) | [Clase 7](../clases/7/) - [Clase 8](../clases/8/) | 9 | Publicado |
 | 4 | Funciones | [Enunciado](./4/) | [Clase 9](../clases/9/) - [Clase 10](../clases/10/) | por definir | Borrador |
+| 5 | Programación orientada a objetos: un parqueadero | [Enunciado](./5/) | [Clase 13](../clases/13/) | por definir | Borrador |

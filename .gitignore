@@ -222,3 +222,6 @@ __marimo__/
 
 # Office lock files (created while a document is open)
 ~$*
+
+# Laboratorio 5: la solucion vive en local y no se publica
+laboratorios/5/solucion/
