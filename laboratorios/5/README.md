@@ -4,6 +4,9 @@
 
 ## Antes de empezar
 
+> [!TIP]
+> Las diapositivas [**Presentación del laboratorio**](laboratorio-05.pdf) ([versión PowerPoint](laboratorio-05.pptx)) resumen esta guía: qué se construye, el material previo, lo que hay que saber, cómo se trabaja nivel por nivel y qué se entrega. Sirven como mapa antes de leer la guía completa.
+
 Antes de la sesión de laboratorio, repase el siguiente material:
 
 * **[Clase 13](../../clases/13/README.md)** — clase y objeto, atributos y métodos, constructor, encapsulamiento, `__str__`, constantes de clase, diagramas UML y relaciones entre clases.
@@ -866,6 +869,7 @@ Hasta luego.
 
 ## Recursos
 
+* [Presentación del laboratorio](laboratorio-05.pdf) ([versión PowerPoint](laboratorio-05.pptx)): un resumen de esta guía en diapositivas.
 * [Clase 13 — Programación orientada a objetos](../../clases/13/README.md).
 * Notebook [De una clase a varias: una aplicación de transporte](../../clases/13/sesion_magistral-32/notebooks/aplicacion_transporte.ipynb): el mismo camino de este laboratorio, con otro problema.
 * Notebooks [Administración de un curso con objetos](../../clases/13/teoria/app_curso/notebooks/curso_poo.ipynb) y [Piedra, papel o tijera con objetos](../../clases/13/teoria/app_piedra-papel-tijera/notebooks/juego_poo.ipynb).
