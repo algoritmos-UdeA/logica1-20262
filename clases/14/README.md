@@ -25,6 +25,17 @@ La clase cierra con un problema que todavía no se puede resolver bien: al cerra
   - `matriz_poo/`: la clase `Matriz`, sus pruebas y un programa que la usa.
   - `sala_cine/`: la sala de cine, una matriz de objetos `Silla`, con menú.
 
+## Notebooks
+
+En [`teoria/notebooks/`](teoria/notebooks/). Se abren en Google Colab con el botón de cada uno, o en Jupyter.
+
+| Notebook | Para qué |
+|---|---|
+| [Arreglos bidimensionales (matrices)](teoria/notebooks/matrices.ipynb) | Acompaña las diapositivas: los mismos ejemplos, listos para ejecutar, con un enlace a Python Tutor en cada celda y los errores típicos en vivo (`[[0.0] * M] * N`, el acumulador que no se reinicia, la copia que comparte las filas) |
+| [Notas finales de un curso con una matriz, paso a paso](teoria/notebooks/notas_finales_paso_a_paso.ipynb) | Construye el problema integrador función por función, cada una con sus pruebas |
+| [La clase `Matriz`, paso a paso](teoria/notebooks/clase_matriz_paso_a_paso.ipynb) | La clase crece en cuatro pasos, del constructor a `transpuesta` y `sumar` |
+| [Sala de cine: una matriz de objetos, paso a paso](teoria/notebooks/sala_cine_paso_a_paso.ipynb) | `Silla`, después `Sala` en tres pasos y una sesión de taquilla. Es el camino del laboratorio 5 con otro problema |
+
 ## Sesiones magistrales
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |

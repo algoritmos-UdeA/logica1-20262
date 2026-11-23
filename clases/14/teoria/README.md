@@ -40,7 +40,7 @@ Diapositivas base del tema 14. Siguen el mismo camino de la [clase 11](../../11/
 - **El problema resuelto** (diapositivas 42-49):
   - Entender (Polya) y calcular a mano: Beto tiene la nota más alta (4.55) y Carla la más baja (2.90). `nombres` es paralelo a las filas y `pesos`, a las columnas.
   - Árbol top-down.
-  - `calcular_notas_finales` con su prueba de escritorio. La suma de Ana da `2.9499999999999997`, por eso se usa `round` y `:.2f`.
+  - `calcular_notas_finales` con su prueba de escritorio. Las cuentas tienen errores de redondeo (`0.3 * 3.0` da `0.8999999999999999` y la nota de Carla, `2.9000000000000004`), por eso se usa `round` y `:.2f`.
   - Los empates con `posiciones_iguales`: el patrón de `posiciones_mayores_que` de la clase 11 (contar, crear del tamaño justo, llenar), sin `append`.
   - Los tres archivos y `main.py` con su salida.
   - ¿Qué fue incómodo? Datos sueltos, índices sin protección, crear y copiar a mano, operaciones aparte. Eso lleva al bloque 2.
@@ -78,6 +78,7 @@ Diapositivas base del tema 14. Siguen el mismo camino de la [clase 11](../../11/
 | [diagramas/](diagramas/) | Fuentes `.drawio` de los diagramas (ver la tabla siguiente). |
 | [images/](images/) | Exportación en `.png` de los diagramas de `diagramas/`. |
 | [codigo/](codigo/) | Scripts de los ejemplos. Su [README](codigo/README.md) reúne el **enunciado** de cada problema con los archivos que lo resuelven. |
+| [notebooks/](notebooks/) | Cuatro notebooks: uno que acompaña las diapositivas ([matrices.ipynb](notebooks/matrices.ipynb)) y tres que construyen paso a paso las notas finales, la clase `Matriz` y la sala de cine. Ver el [README de la clase](../README.md#notebooks). |
 
 ### Diagramas
 

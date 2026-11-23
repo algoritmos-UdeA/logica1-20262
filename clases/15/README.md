@@ -24,6 +24,16 @@ Según el cronograma, archivos es el último tema del curso. La clase cierra con
   - `notas_archivo/`: el problema de las notas finales, leído de un archivo.
   - `sala_archivo/`: la sala de cine que se guarda y se carga.
 
+## Notebooks
+
+En [`teoria/notebooks/`](teoria/notebooks/). Se abren en Google Colab con el botón de cada uno, o en Jupyter. Cada uno **crea sus propios archivos de datos** en la carpeta de trabajo (en Colab, en el almacenamiento temporal de la sesión), así que funciona sin descargar nada más. Python Tutor no permite abrir archivos, y por eso estos notebooks muestran el contenido de cada archivo después de escribirlo.
+
+| Notebook | Para qué |
+|---|---|
+| [Archivos](teoria/notebooks/archivos.ipynb) | Acompaña las diapositivas: escribir, `"w"` frente a `"a"`, las cuatro formas de leer, `strip`/`split`/`float`, CSV, `with` y los errores típicos en vivo |
+| [Notas finales desde un archivo, paso a paso](teoria/notebooks/notas_archivo_paso_a_paso.ipynb) | Las funciones de lectura y escritura, una a la vez, cada una probada con su propio archivo de prueba, y el integrador |
+| [La sala de cine que se guarda, paso a paso](teoria/notebooks/sala_archivo_paso_a_paso.ipynb) | La `Sala` de la clase 14 gana `guardar` y `cargar`; se simulan dos ejecuciones para ver que las ventas no se pierden |
+
 ## Sesiones magistrales
 
 | Sesión | Fecha | Modalidad | Contenido cubierto | Detalle |

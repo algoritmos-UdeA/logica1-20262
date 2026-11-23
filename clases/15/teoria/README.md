@@ -50,6 +50,7 @@ Diapositivas base del tema 15. Retoman el problema que dejó la [clase 14](../..
 | [diagramas/](diagramas/) | Fuentes `.drawio` de los diagramas. |
 | [images/](images/) | Exportación en `.png` de los diagramas. |
 | [codigo/](codigo/) | Scripts de los ejemplos. Su [README](codigo/README.md) explica cada problema y cómo ejecutarlo. |
+| [notebooks/](notebooks/) | Tres notebooks: uno que acompaña las diapositivas ([archivos.ipynb](notebooks/archivos.ipynb)) y dos que construyen paso a paso las notas finales desde un archivo y la sala que se guarda. Ver el [README de la clase](../README.md#notebooks). |
 
 ### Diagramas
 
