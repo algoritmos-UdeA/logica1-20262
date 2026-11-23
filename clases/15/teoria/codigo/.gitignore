@@ -1,0 +1,10 @@
+# Archivos que crean los programas de la clase 15 al ejecutarse.
+# No se suben: cada quien los genera al correr los ejemplos.
+saludo.txt
+nombres.txt
+notas.txt
+lista.txt
+notas_copia.csv
+prueba_*.csv
+prueba_*.txt
+notas_archivo/notas_finales.csv
