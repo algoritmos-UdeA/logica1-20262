@@ -109,6 +109,8 @@ En las diapositivas, cada método aparece primero como un algoritmo suelto, con 
 
 > Un curso admite máximo N = 10 estudiantes. De cada uno se guarda su id (texto), su nombre y su nota. Por ahora hay 4 inscritos; se pueden agregar más hasta llenar el cupo. Se necesita un programa para administrar el curso: agregar, eliminar, actualizar, buscar, listar y ordenar.
 
+La carpeta `curso/` tiene su propio [README](curso/README.md), con cómo ejecutarla, una sesión del menú y qué hacer si algo falla.
+
 *(Diapositiva 44).*
 
 | Id | Nombre | Nota |

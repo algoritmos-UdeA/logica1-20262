@@ -2,7 +2,7 @@
 
 # Clase 14 — Código de ejemplo (índice por problema)
 
-Todos los programas usan solo Python (3.11), sin bibliotecas externas. Los scripts sueltos se ejecutan desde esta carpeta (`python ej05_recorrer_mostrar.py`). Los de las carpetas se ejecutan **desde su propia carpeta**: primero las pruebas y después el programa.
+Todos los programas usan solo Python (3.11), sin bibliotecas externas. Los scripts sueltos se ejecutan desde esta carpeta (`python ej05_recorrer_mostrar.py`). Los de las carpetas se ejecutan **desde su propia carpeta**: primero las pruebas y después el programa. Cada carpeta ([`notas_matriz/`](notas_matriz/README.md), [`matriz_poo/`](matriz_poo/README.md), [`sala_cine/`](sala_cine/README.md)) tiene su propio README: qué hace, sus archivos, cómo ejecutarla, la salida esperada y qué hacer si algo falla.
 
 Los datos son los mismos en toda la clase: 4 estudiantes (Ana, Beto, Carla, Dario) y 3 parciales.
 

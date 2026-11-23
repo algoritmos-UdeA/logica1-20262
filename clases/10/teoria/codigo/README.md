@@ -89,6 +89,8 @@ Esta carpeta reúne los programas de la clase 10, agrupados por **problema**. Ca
 
 El mismo programa de la [sección 1](#1-conversión-de-temperatura), organizado en **varios archivos**: un módulo `conversiones.py` con las funciones de conversión y un programa principal `main.py` que lo importa con `import conversiones`. *(Diapositivas 47-54).*
 
+La carpeta tiene su propio [README](temperaturas_modulos/README.md), con cómo ejecutar cada paso y su salida.
+
 ### Archivos
 
 Cada carpeta es un programa completo. Sus archivos se ejecutan **desde su propia carpeta**, porque `main.py` solo encuentra a `conversiones.py` si los dos están en la misma carpeta.

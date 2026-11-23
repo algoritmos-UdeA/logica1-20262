@@ -7,6 +7,8 @@ Todos los programas usan solo Python (3.11), sin bibliotecas externas.
 > [!IMPORTANT]
 > Los programas buscan sus archivos de datos **en la carpeta desde la que se ejecutan**. Antes de ejecutar, entre a la carpeta del ejemplo: `cd codigo` para los scripts sueltos, `cd codigo/notas_archivo` o `cd codigo/sala_archivo` para los otros. Si aparece `FileNotFoundError`, revise la carpeta.
 
+Las dos carpetas ([`notas_archivo/`](notas_archivo/README.md) y [`sala_archivo/`](sala_archivo/README.md)) tienen su propio README: qué hace, sus archivos, cómo ejecutarla, la salida esperada y qué hacer si algo falla.
+
 Varios ejemplos **crean archivos** al ejecutarse (`saludo.txt`, `nombres.txt`, `notas_copia.csv`, `notas_finales.csv`, `prueba_*.csv`…). Esos archivos no se suben al repositorio; el [`.gitignore`](.gitignore) de esta carpeta los excluye.
 
 ## Archivos de datos
