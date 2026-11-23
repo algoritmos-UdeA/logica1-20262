@@ -8,7 +8,7 @@
 
 ## Tabla fusionada de sesiones (índice + bitácora)
 
-Una fila por **sesión magistral real**, con el tema y el material vigentes a la fecha.
+Una fila por **sesión magistral real**, con el tema y el material vigentes a la fecha. Las clases ya preparadas que todavía no se han dictado aparecen al final, con la sesión y la fecha **Por definir**; cuando se dicten, esa fila se reemplaza por la de la sesión real.
 
 | Sesión | Fecha | Modalidad | Clase | Tema | Contenido cubierto | Sesión magistral |
 |---|---|---|---|---|---|---|
@@ -44,6 +44,8 @@ Una fila por **sesión magistral real**, con el tema y el material vigentes a la
 | 30 | Mar 3 nov (bloque 1, 14-16) | 🏫 | [11](11/README.md) | Arreglos unidimensionales y listas | Diapositivas 25-47: comparar vecinos, alias y clonar una lista; funciones con listas en sus tres casos (recibe una lista y devuelve un valor, devuelve una lista nueva, modifica la lista que recibe), con definición, invocación y pruebas; y el problema pendiente de la clase 10 resuelto con diseño top-down, en dos pasos: especificación con *stubs* y programa completo | [sesion_magistral-30](11/sesion_magistral-30/README.md) |
 | 31 | Mar 3 nov (bloque 2, 16-18) | 🏫 | [12](12/README.md) | Ordenamiento y búsqueda | El tema completo: búsqueda lineal, intercambio con variable temporal, ordenamiento por selección, burbuja e inserción, su comparación contando pasos, búsqueda binaria, y el integrador de notas de un curso con arreglos paralelos parcialmente llenos. Con un notebook complementario a las diapositivas | [sesion_magistral-31](12/sesion_magistral-31/README.md) |
 | 32 | Mar 10 nov (bloques 1 y 2, 14-18) | 🏫 | [13](13/README.md) | Programación orientada a objetos (POO) | El bloque 1 completo: todo dato es un objeto, paradigmas, clase y objeto, UML y su paso a Python, y cinco ejemplos que crecen (rectángulo, ventilador, celular, cuenta bancaria con su titular y un arreglo de cuentas) hasta la clase `Banco`; composición y agregación, el UML del bloque 2 y errores típicos. Con un notebook complementario a las diapositivas. Ocupa los dos bloques del día | [sesion_magistral-32](13/sesion_magistral-32/README.md) |
+| Por definir | Por definir | — | [14](14/README.md) | Arreglos bidimensionales (matrices) | **Preparada, aún no dictada.** La matriz y sus operaciones en pseudocódigo y Python (crear, recorrer por filas y por columnas, acumular, diagonales, transpuesta, copiar), funciones con matrices, las notas finales de un curso con pesos por parcial, y matrices y objetos (la clase `Matriz` y una sala de cine con objetos `Silla`). Con cuatro notebooks: uno que acompaña las diapositivas y tres paso a paso | — |
+| Por definir | Por definir | — | [15](15/README.md) | Archivos | **Preparada, aún no dictada.** Archivos de texto y CSV (abrir, escribir, leer, `with`, la carpeta de trabajo), funciones con archivos y cómo probarlas, las notas finales leídas de un archivo, y la sala de cine que se guarda y se carga. Con tres notebooks: uno que acompaña las diapositivas y dos paso a paso | — |
 
 > **Nota:** las sesiones 7 y 8 quedaron agendadas para el mismo martes 18 de agosto (bloque 1 y bloque 2, respectivamente) porque el 17 de agosto es festivo.
 
