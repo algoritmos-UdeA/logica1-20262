@@ -84,7 +84,7 @@ El semestre se organiza en **3 sesiones semanales de 2 horas** cada una: un labo
 | 14 | **Evaluación parcial 4** · Asesoría de proyecto de aula |
 | 15 – 16 | Trabajo final, sustentación y cierre del curso |
 
-El cronograma detallado, clase por clase, está disponible en `planeacion_tentativa/cronograma.md`.
+El cronograma detallado, clase por clase, está disponible en `planeacion_tentativa/cronograma.md`. Lo que realmente se dictó, semana por semana, está en `planeacion_tentativa/cronograma_real.md`.
 
 ---
 

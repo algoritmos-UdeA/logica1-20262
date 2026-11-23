@@ -1,5 +1,8 @@
 # Cronograma — Lógica y Representación I (2026-2)
 
+> [!NOTE]
+> Este es el cronograma **planeado** al inicio del semestre. Lo que realmente se dictó, semana por semana, está en el [cronograma real](cronograma_real.md), que también compara los dos.
+
 **Estructura semanal:** 3 clases/semana, 2h cada una. La numeración de "Clase" es continua a lo largo de todo el semestre (1–48), no se reinicia por semana.
 - **Laboratorio:** Lunes 16:00–18:00
 - **Teoría:** bloque de 4h (2 sesiones) entre semana, 14:00–18:00
