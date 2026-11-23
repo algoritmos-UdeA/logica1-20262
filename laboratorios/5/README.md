@@ -12,7 +12,7 @@ Antes de la sesión de laboratorio, repase el siguiente material:
 * **[Clase 13](../../clases/13/README.md)** — clase y objeto, atributos y métodos, constructor, encapsulamiento, `__str__`, constantes de clase, diagramas UML y relaciones entre clases.
 * **Notebook [De una clase a varias: una aplicación de transporte](../../clases/13/sesion_magistral-32/notebooks/aplicacion_transporte.ipynb)** — muestra, paso a paso, el mismo camino de este laboratorio: del enunciado al diagrama UML, y de ahí a las clases, una a la vez y cada una con sus pruebas.
 * **Aplicaciones [`app_curso`](../../clases/13/teoria/app_curso/README.md) y [`app_piedra-papel-tijera`](../../clases/13/teoria/app_piedra-papel-tijera/README.md)** — dos programas completos con varias clases, cada uno con un notebook que lo construye.
-* **Matrices** — crear una matriz, entrar a una casilla con dos índices y recorrerla con dos ciclos. La [sección sobre la matriz de puestos](#la-matriz-de-puestos) de esta guía trae un repaso con lo que se necesita.
+* **[Clase 14](../../clases/14/README.md) — Arreglos bidimensionales (matrices)** — crear una matriz en dos pasos, sin `append`; entrar a una casilla con dos índices; recorrerla con dos ciclos; y guardar objetos en ella. El ejemplo de la **sala de cine** ([`sala_cine/`](../../clases/14/teoria/codigo/sala_cine/)) hace el mismo camino de los niveles 4 y 5 con otro problema: una matriz de objetos `Silla`, creada por la sala en su constructor, y las sillas contadas desde 1 para el público y desde 0 en la matriz. La [sección sobre la matriz de puestos](#la-matriz-de-puestos) de esta guía trae un repaso corto con lo que se necesita.
 
 ## Objetivos
 
@@ -207,6 +207,8 @@ El diagrama se lee así:
 Un parqueadero tiene pisos y, en cada piso, puestos. Para encontrar un puesto hacen falta **dos números**: el piso y el número del puesto. La estructura que guarda datos con dos índices es la **matriz**.
 
 ### Repaso: una matriz en Python
+
+Este repaso resume lo que el laboratorio necesita. El tema completo está en la [clase 14](../../clases/14/README.md).
 
 Una matriz es **una lista de filas**, y cada fila es una lista. Se crea en dos pasos, como los arreglos, sin `append`:
 
@@ -610,7 +612,7 @@ Punto de chequeo 3 superado: la clase Recibo pasa todas sus pruebas
 Abrir [`codigo/parqueadero.py`](codigo/parqueadero.py) y completar **6 métodos**: `__init__`, `get_pisos`, `get_puestos_por_piso`, `get_recaudo`, `get_puesto` y `contar_libres`. Los otros cuatro se dejan con su `pass`.
 
 > [!TIP]
-> El constructor es el método más importante del laboratorio. Vuelva a leer el repaso de [la matriz de puestos](#la-matriz-de-puestos): la matriz se crea igual que en el ejemplo, pero en cada casilla, en lugar de un `0`, va un objeto `Puesto` nuevo.
+> El constructor es el método más importante del laboratorio. Vuelva a leer el repaso de [la matriz de puestos](#la-matriz-de-puestos): la matriz se crea igual que en el ejemplo, pero en cada casilla, en lugar de un `0`, va un objeto `Puesto` nuevo. Es la misma idea del constructor de `Sala` en la clase 14, que crea una `Silla` en cada casilla.
 
 > [!WARNING]
 > En la fila `i`, columna `j`, va el puesto del piso `i + 1`, número `j + 1`. Y `get_puesto(piso, numero)` hace el camino contrario: entrega la casilla `[piso - 1][numero - 1]`.
@@ -871,6 +873,7 @@ Hasta luego.
 
 * [Presentación del laboratorio](laboratorio-05.pdf) ([versión PowerPoint](laboratorio-05.pptx)): un resumen de esta guía en diapositivas.
 * [Clase 13 — Programación orientada a objetos](../../clases/13/README.md).
+* [Clase 14 — Arreglos bidimensionales (matrices)](../../clases/14/README.md): la matriz y sus recorridos, la clase `Matriz` y la sala de cine, una matriz de objetos.
 * Notebook [De una clase a varias: una aplicación de transporte](../../clases/13/sesion_magistral-32/notebooks/aplicacion_transporte.ipynb): el mismo camino de este laboratorio, con otro problema.
 * Notebooks [Administración de un curso con objetos](../../clases/13/teoria/app_curso/notebooks/curso_poo.ipynb) y [Piedra, papel o tijera con objetos](../../clases/13/teoria/app_piedra-papel-tijera/notebooks/juego_poo.ipynb).
 * [Documentación oficial de Python en español: Clases](https://docs.python.org/es/3/tutorial/classes.html).
