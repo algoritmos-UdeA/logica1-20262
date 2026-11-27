@@ -1088,13 +1088,16 @@ Casos de prueba, con estas tres preguntas en un cuestionario de cupo 3:
 
 ### Para explorar por su cuenta
 
-* **Intersección de dos segmentos** (Liang, ejercicio 7.9). La recta que pasa por $(x_1, y_1)$ y $(x_2, y_2)$ se puede escribir como:
+**Intersección de dos segmentos** (Liang, ejercicio 7.9). La recta que pasa por $(x_1, y_1)$ y $(x_2, y_2)$ se puede escribir como:
 
-  ```math
-  (y_1 - y_2)\,x - (x_1 - x_2)\,y = (y_1 - y_2)\,x_1 - (x_1 - x_2)\,y_1
-  ```
+$$
+(y_1 - y_2) x - (x_1 - x_2) y = (y_1 - y_2) x_1 - (x_1 - x_2) y_1
+$$
 
-  Escriba una función que reciba los dos puntos de cada segmento, cree un objeto `SistemaEcuaciones` del problema 6.2 con esos coeficientes y retorne el punto donde se cruzan. Con los segmentos de $(2, 2)$ a $(0, 0)$ y de $(0, 2)$ a $(2, 0)$, el cruce es $(1.0, 1.0)$. Es un ejemplo de **reutilizar** una clase en un problema distinto al que la originó.
+Escriba una función que reciba los dos puntos de cada segmento, cree un objeto `SistemaEcuaciones` del problema 6.2 con esos coeficientes y retorne el punto donde se cruzan. Con los segmentos de $(2, 2)$ a $(0, 0)$ y de $(0, 2)$ a $(2, 0)$, el cruce es $(1.0, 1.0)$. Es un ejemplo de **reutilizar** una clase en un problema distinto al que la originó.
+
+Otras ideas:
+
 * **Cronómetro** (Liang, ejercicio 7.8). Diseñe una clase `Cronometro` con `iniciar()`, `detener()` y `calcular_tiempo_transcurrido()`, usando la función `time.time()` del módulo `time`, que retorna los segundos transcurridos desde una fecha fija. Úsela para medir cuánto tarda en ordenarse un arreglo de 1000 notas con el método de selección de la clase 12.
 * **Herencia.** Los capítulos 11 de Gaddis y 12 de Liang continúan con la **herencia**: por ejemplo, un `TrabajadorProduccion` que *es un* `Empleado` con un turno y un pago por hora. No hace parte de este curso, pero es el paso natural después de este tema.
 
